@@ -1,0 +1,6 @@
+import './assets/script.js'
+import './assets/sidenav.js'
+import './assets/typewrite.js'
+import './assets/background.js'
+import './assets/navber.js'
+import './assets/back-to-top.js'
