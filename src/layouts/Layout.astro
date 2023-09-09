@@ -1,0 +1,224 @@
+---
+// interface Props {
+// 	title: string;
+// }
+
+const { title } = Astro.props;
+const { description = "Personal Portfolio Of Swastik Dan" } = Astro.props;
+const { ogImage ="https://emgmlzforbumrtnhpaxc.supabase.co/storage/v1/object/public/portfolio_storage/images/favicon/tile_wide.png" } = Astro.props;
+const { ogUrl ="" } = Astro.props;
+const { keywords = "web developer, web design, website design, web development services, front-end web developmen" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta content={description} name="Description" />
+		<meta content= {keywords} name="keywords" />
+		<meta property="og:title" content={title}>
+		<meta property="og:type" content="website">
+		<meta property="og:url" content={ogUrl}>
+		<meta property="og:image" content={ogImage}>
+		<meta name="robots" content="index, follow">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="language" content="en">
+		<meta name="author" content="Swastik Dan">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+		<meta name="robots" content="noodp ">
+		<link rel="manifest" href="/site.webmanifest" crossorigin="use-credentials">
+		<link rel="shortcut icon" href="/apple-touch-icon.png" type="image/x-icon">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<meta name="theme-color" content="#000000">
+		<link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+		<title>{title}</title>
+		<script is:inline src="https://unpkg.com/scrollreveal"></script>
+		<script is:inline >
+			ScrollReveal({ reset: true });
+		</script>
+	</head>
+	<body class="	space-grotesk bg-white dark:bg-gray-900  mx-auto ">
+		<slot />
+
+
+
+
+		
+	<script is:inline  src="https://emgmlzforbumrtnhpaxc.supabase.co/storage/v1/object/public/portfolio_storage/js/preline.js"></script>
+	</body>
+</html>
+<style is:global>
+
+	@font-face {
+		font-family: 'Space Grotesk';
+		src: url('./src/fonts/space-grotesk-latin-700.woff2') format('woff2'),
+			 url('./src/fonts/space-grotesk-latin-700.woff') format('woff');
+		font-display: swap; 
+	  }
+	@font-face {
+		font-family: 'Gotham';
+		src: url('./src/fonts/Gotham-Book.woff2') format('woff2'),
+			 url('./src/fonts/Gotham-Book.woff') format('woff');
+		font-display: swap; 
+	  }
+	/* @font-face {
+		font-family: 'Gotham';
+		src: url('./src/fonts/Gotham-Medium.woff2') format('woff2');
+		
+		font-display: swap; 
+	  }
+	 */
+	.space-grotesk{font-family: 'Space Grotesk';}
+	.gotham{font-family: 'Gotham';}
+		.code {
+			font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+				Bitstream Vera Sans Mono, Courier New, monospace;
+		}
+
+
+		        /* Add CSS classes for animation here */
+				.slide-down {
+            transform: translateY(0);
+            transition: transform 0.3s ease-in-out;
+        }
+        .slide-up {
+            transform: translateY(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+	</style>
+	<script is:inline>
+
+
+ // Initialize ScrollReveal
+
+
+// ScrollReveal().reveal('.header' , { distance: '-50px' , delay: 0});
+//  ScrollReveal().reveal('.herosection', { distance: '0px', delay: 100 });
+// ScrollReveal().reveal('.tech-stack', { distance: '100px', delay: 500 });
+
+
+
+
+
+        // const sr = ScrollReveal();
+
+        // // Target grid items by class
+        // const gridItems = document.querySelectorAll('.tech-stack-item');
+
+        // // Function to reveal items with a 1000ms interval
+        // const revealWithInterval = (index) => {
+        //     sr.reveal(gridItems[index], {
+        //         distance: '50px', // Adjust this value for animation distance
+        //         opacity: 1,    // Adjust this value for starting opacity
+        //         scale: 0.9,      // Adjust this value for starting scale
+        //         delay: 100 * index // Delay each item by 1000ms (1 second)
+        //     });
+        // };
+
+        // // Loop through grid items and apply the reveal function with intervals
+        // gridItems.forEach((item, index) => {
+        //     revealWithInterval(index);
+        // });
+		// const navBar = document.getElementById("nav-bar");
+		// const scrollDistance = 80;
+		// window.addEventListener("scroll", () => {
+		// 	const scrollY = window.scrollY || window.pageYOffset;
+		// 	if (scrollY >= scrollDistance) {
+		// 		navBar.classList.add("bg-white", "dark:bg-gray-900");
+		// 	} else {
+		// 		navBar.classList.remove("bg-white", "dark:bg-gray-900");
+		// 	}
+		// });
+	
+		const navBar = document.getElementById("nav-bar");
+        const scrollDistance = 80;
+        let lastScrollTop = 0;
+
+        window.addEventListener("scroll", () => {
+            const scrollY = window.scrollY || window.pageYOffset;
+            
+            if (scrollY > lastScrollTop) {
+                // Scrolling down
+                navBar.classList.add("slide-up");
+                navBar.classList.remove("slide-down");
+            } else {
+                // Scrolling up
+                navBar.classList.add("slide-down");
+                navBar.classList.remove("slide-up");
+            }
+
+            if (scrollY >= scrollDistance) {
+                navBar.classList.add("bg-white", "dark:bg-gray-900");
+            } else {
+                navBar.classList.remove("bg-white", "dark:bg-gray-900");
+            }
+
+            lastScrollTop = scrollY;
+        });
+		// const sections = document.querySelectorAll('.section');
+		// 	const navLinks = document.querySelectorAll('ul a');
+	
+		// 	window.addEventListener('scroll', () => {
+		// 		let current = '';
+		// 		sections.forEach(section => {
+		// 			const sectionTop = section.offsetTop;
+		// 			const sectionHeight = section.clientHeight;
+		// 			if (pageYOffset >= sectionTop - sectionHeight / 2) {
+		// 				current = section.getAttribute('id');
+		// 			}
+		// 		});
+	
+		// 		navLinks.forEach(link => {
+		// 			link.classList.remove('active');
+		// 			if (link.getAttribute('href').slice(1) === current) {
+		// 				link.classList.add('active');
+		// 			}
+		// 		});
+		// 	});
+
+
+		document.addEventListener('DOMContentLoaded', function () {
+			const sections = document.querySelectorAll('.section');
+const navLinks = document.querySelectorAll('ul a');
+
+// Function to update the active link based on scroll position
+function updateActiveLink() {
+    let current = '';
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+
+        if (window.pageYOffset >= sectionTop - sectionHeight / 2) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('text-blue-500');
+        if (link.getAttribute('href').split('#')[1] === current) {
+            link.classList.add('text-blue-500');
+        }
+    });
+}
+
+// Add scroll event listener to update active link
+window.addEventListener('scroll', updateActiveLink);
+
+// Initial call to set the active link on page load
+updateActiveLink();
+
+
+
+});
+
+
+
+
+	</script>
+
+
+ 
