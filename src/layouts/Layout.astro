@@ -3,10 +3,10 @@
 // 	title: string;
 // }
 
-const { title } = Astro.props;
-const { description = "Personal Portfolio Of Swastik Dan" } = Astro.props;
+const { title ="Swastik Dan | Personal Portfolio" } = Astro.props;
+const { description = "Explore the portfolio site of Swastik Dan with a range of creative skills and experiences, including problem solving, research, and proficiency in Full Stack Web Development" } = Astro.props;
 const { ogImage ="https://emgmlzforbumrtnhpaxc.supabase.co/storage/v1/object/public/portfolio_storage/images/favicon/tile_wide.png" } = Astro.props;
-const { ogUrl ="" } = Astro.props;
+const { ogUrl ="https://swastik.vercel.app/" } = Astro.props;
 const { keywords = "web developer, web design, website design, web development services, front-end web developmen" } = Astro.props;
 ---
 
@@ -39,6 +39,10 @@ const { keywords = "web developer, web design, website design, web development s
 		<script is:inline >
 			ScrollReveal({ reset: true });
 		</script>
+		<!-- <script>
+			window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+		  </script>
+		  <script defer src="/_vercel/insights/script.js"></script> -->
 	</head>
 	<body class="	space-grotesk bg-white dark:bg-gray-900  mx-auto ">
 		<slot />
