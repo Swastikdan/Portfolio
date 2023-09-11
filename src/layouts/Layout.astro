@@ -39,19 +39,12 @@ const { keywords = "web developer, web design, website design, web development s
 		<script is:inline >
 			ScrollReveal({ reset: true });
 		</script>
-		<!-- <script>
-			window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-		  </script>
-		  <script defer src="/_vercel/insights/script.js"></script> -->
+		  <script is:inline src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.0/dist/smooth-scroll.min.js"></script>
+
 	</head>
 	<body class="	space-grotesk bg-white dark:bg-gray-900  mx-auto ">
 		<slot />
 
-
-
-
-		
-	<script is:inline  src="https://emgmlzforbumrtnhpaxc.supabase.co/storage/v1/object/public/portfolio_storage/js/preline.js"></script>
 	</body>
 </html>
 <style is:global>
@@ -68,13 +61,6 @@ const { keywords = "web developer, web design, website design, web development s
 			 url('../fonts/Gotham-Book.woff') format('woff');
 		font-display: swap; 
 	  }
-	/* @font-face {
-		font-family: 'Gotham';
-		src: url('./src/fonts/Gotham-Medium.woff2') format('woff2');
-		
-		font-display: swap; 
-	  }
-	 */
 	.space-grotesk{font-family: 'Space Grotesk';}
 	.gotham{font-family: 'Gotham';}
 		.code {
@@ -84,7 +70,7 @@ const { keywords = "web developer, web design, website design, web development s
 
 
 		        /* Add CSS classes for animation here */
-				.slide-down {
+			.slide-down {
             transform: translateY(0);
             transition: transform 0.3s ease-in-out;
         }
@@ -92,51 +78,42 @@ const { keywords = "web developer, web design, website design, web development s
             transform: translateY(-100%);
             transition: transform 0.3s ease-in-out;
         }
+		#navbar {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+/* Styles for the open navigation bar */
+#navbar.nav-open {
+  transform: translateY(0);
+}
 	</style>
-	<script is:inline>
+	<script is:inline>	
+// JavaScript to toggle the navigation bar open/close
+document.addEventListener('DOMContentLoaded', function() {
+  const toggleButton = document.querySelector('#toggle_nav');
+  const navbar = document.querySelector('#navbar');
+
+  // Function to toggle the navigation bar
+  function toggleNavbar() {
+    navbar.classList.toggle('nav-open');
+  }
+
+  // Add an event listener to the toggle button
+  toggleButton.addEventListener('change', toggleNavbar);
+
+  // Add event listeners to the navigation links to close the navigation bar when a link is clicked
+  const navLinks = document.querySelectorAll('ul li a');
+  navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      if (toggleButton.checked) {
+        toggleButton.checked = false; // Uncheck the toggle button to close the navbar
+        toggleNavbar(); // Close the navbar immediately
+      }
+    });
+  });
+});
 
 
- // Initialize ScrollReveal
-
-
-// ScrollReveal().reveal('.header' , { distance: '-50px' , delay: 0});
-//  ScrollReveal().reveal('.herosection', { distance: '0px', delay: 100 });
-// ScrollReveal().reveal('.tech-stack', { distance: '100px', delay: 500 });
-
-
-
-
-
-        // const sr = ScrollReveal();
-
-        // // Target grid items by class
-        // const gridItems = document.querySelectorAll('.tech-stack-item');
-
-        // // Function to reveal items with a 1000ms interval
-        // const revealWithInterval = (index) => {
-        //     sr.reveal(gridItems[index], {
-        //         distance: '50px', // Adjust this value for animation distance
-        //         opacity: 1,    // Adjust this value for starting opacity
-        //         scale: 0.9,      // Adjust this value for starting scale
-        //         delay: 100 * index // Delay each item by 1000ms (1 second)
-        //     });
-        // };
-
-        // // Loop through grid items and apply the reveal function with intervals
-        // gridItems.forEach((item, index) => {
-        //     revealWithInterval(index);
-        // });
-		// const navBar = document.getElementById("nav-bar");
-		// const scrollDistance = 80;
-		// window.addEventListener("scroll", () => {
-		// 	const scrollY = window.scrollY || window.pageYOffset;
-		// 	if (scrollY >= scrollDistance) {
-		// 		navBar.classList.add("bg-white", "dark:bg-gray-900");
-		// 	} else {
-		// 		navBar.classList.remove("bg-white", "dark:bg-gray-900");
-		// 	}
-		// });
-	
 		const navBar = document.getElementById("nav-bar");
         const scrollDistance = 80;
         let lastScrollTop = 0;
@@ -162,66 +139,74 @@ const { keywords = "web developer, web design, website design, web development s
 
             lastScrollTop = scrollY;
         });
-		// const sections = document.querySelectorAll('.section');
-		// 	const navLinks = document.querySelectorAll('ul a');
+		const sections = document.querySelectorAll('.section');
+			const navLinks = document.querySelectorAll('ul a');
 	
-		// 	window.addEventListener('scroll', () => {
-		// 		let current = '';
-		// 		sections.forEach(section => {
-		// 			const sectionTop = section.offsetTop;
-		// 			const sectionHeight = section.clientHeight;
-		// 			if (pageYOffset >= sectionTop - sectionHeight / 2) {
-		// 				current = section.getAttribute('id');
-		// 			}
-		// 		});
+			window.addEventListener('scroll', () => {
+				let current = '';
+				sections.forEach(section => {
+					const sectionTop = section.offsetTop;
+					const sectionHeight = section.clientHeight;
+					if (pageYOffset >= sectionTop - sectionHeight / 2) {
+						current = section.getAttribute('id');
+					}
+				});
 	
-		// 		navLinks.forEach(link => {
-		// 			link.classList.remove('active');
-		// 			if (link.getAttribute('href').slice(1) === current) {
-		// 				link.classList.add('active');
-		// 			}
-		// 		});
-		// 	});
+				navLinks.forEach(link => {
+					link.classList.remove('active');
+					if (link.getAttribute('href').slice(1) === current) {
+						link.classList.add('active');
+					}
+				});
+			});
 
+const scroll = new SmoothScroll('a[href*="#"]', {
+    speed: 800, // Adjust the scroll speed as needed
+    offset: 5, // Adjust the scroll offset if you have a fixed header
+  });
 
-		document.addEventListener('DOMContentLoaded', function () {
-			const sections = document.querySelectorAll('.section');
-const navLinks = document.querySelectorAll('ul a');
+// Function to add the active class to the appropriate navigation link
+function setActiveNavLink() {
+  const sections = ['home', 'projects', 'about', 'skills', 'contact'];
+  const navLinks = document.querySelectorAll('ul li a');
 
-// Function to update the active link based on scroll position
-function updateActiveLink() {
-    let current = '';
+  let currentActiveSection = null; // Store the currently active section
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
+  sections.forEach((section) => {
+    const target = document.getElementById(section);
+    const link = document.querySelector(`a[href="/#${section}"]`);
 
-        if (window.pageYOffset >= sectionTop - sectionHeight / 2) {
-            current = section.getAttribute('id');
-        }
-    });
+    if (target && link) {
+      const rect = target.getBoundingClientRect();
+      if (rect.top <= 100 && rect.bottom >= 100) {
+        currentActiveSection = section; // Update the currently active section
+      }
+    } else {
+      console.error(`Section with ID "${section}" or matching link not found.`);
+    }
+  });
 
-    navLinks.forEach(link => {
-        link.classList.remove('text-blue-500');
-        if (link.getAttribute('href').split('#')[1] === current) {
-            link.classList.add('text-blue-500');
-        }
-    });
+  // Remove the 'text-blue-600' class from all navigation links
+  navLinks.forEach((link) => {
+    link.classList.remove('text-blue-600');
+  });
+
+  // Add the 'text-blue-600' class to the currently active navigation link
+  if (currentActiveSection) {
+    const activeLink = document.querySelector(`a[href="/#${currentActiveSection}"]`);
+    if (activeLink) {
+      activeLink.classList.add('text-blue-600');
+    }
+  }
 }
 
-// Add scroll event listener to update active link
-window.addEventListener('scroll', updateActiveLink);
+// Call the setActiveNavLink function after the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', setActiveNavLink);
 
-// Initial call to set the active link on page load
-updateActiveLink();
+// Call the setActiveNavLink function on scroll
+window.addEventListener('scroll', setActiveNavLink);
 
-
-
-});
-
-
-
-
+  
 	</script>
 
 
