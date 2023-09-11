@@ -39,6 +39,22 @@ const { keywords = "web developer, web design, website design, web development s
 
 	</head>
 	<body class="	space-grotesk bg-white dark:bg-gray-900  mx-auto ">
+    <div id="preloader" style="position:fixed;overflow:hidden;width:100%;z-index:999" class="overflow-hidden">
+      <div
+        class="min-h-[100vh] flex flex-col bg-white dark:bg-gray-900 border-gray-700 shadow-slate-700/[.7] z-50 fi">
+        <div class="flex flex-auto flex-col justify-center items-center p-4 md:p-5">
+          <div class="flex justify-center">
+            <div
+              class="animate-spin inline-block w-14 h-14 md:w-20 md:h-20 border-[3.5px] border-current border-t-transparent text-blue-600 rounded-full"
+              role="status" aria-label="loading">
+ 
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>var loader = document.getElementById("preloader"); window.addEventListener("load", function () { loader.style.display = "none"; });</script>
 		<slot />
 
 	</body>
