@@ -5,7 +5,6 @@ const { ogImage ="https://emgmlzforbumrtnhpaxc.supabase.co/storage/v1/object/pub
 const { ogUrl ="https://swastik.vercel.app/" } = Astro.props;
 const { keywords = "web developer, web design, website design, web development services, front-end web developmen" } = Astro.props;
 ---
-
 <!doctype html>
 <html lang="en">
 	<head>
@@ -16,12 +15,17 @@ const { keywords = "web developer, web design, website design, web development s
 		<meta property="og:type" content="website">
 		<meta property="og:url" content={ogUrl}>
 		<meta property="og:image" content={ogImage}>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content={title}>
+    <meta name="twitter:description" content={description}>
+    <meta name="twitter:image" content={ogImage}>
 		<meta name="robots" content="index, follow">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="language" content="en">
 		<meta name="author" content="Swastik Dan">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://swastik.vercel.app/">
 		<meta name="robots" content="noodp ">
 		<link rel="manifest" href="/site.webmanifest" crossorigin="use-credentials">
 		<link rel="shortcut icon" href="/apple-touch-icon.png" type="image/x-icon">
@@ -31,7 +35,6 @@ const { keywords = "web developer, web design, website design, web development s
 		<meta name="theme-color" content="#000000">
 		<link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
 		<title>{title}</title>
-		<script is:inline src="https://unpkg.com/scrollreveal"></script>
 		<script is:inline >
 			ScrollReveal({ reset: true });
 		</script>
