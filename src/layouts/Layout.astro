@@ -1,7 +1,7 @@
 ---
 const { title ="Swastik Dan | Personal Portfolio" } = Astro.props;
 const { description = "Explore the portfolio site of Swastik Dan with a range of creative skills and experiences, including problem solving, research, and proficiency in Full Stack Web Development" } = Astro.props;
-const { ogImage ="https://emgmlzforbumrtnhpaxc.supabase.co/storage/v1/object/public/portfolio_storage/images/favicon/tile_wide.png" } = Astro.props;
+const { ogImage ="https://ik.imagekit.io/swastikmain/tr:f-auto,q-50/public/Og_Image_Main.png" } = Astro.props;
 const { ogUrl ="https://swastik.vercel.app/" } = Astro.props;
 const { keywords = "web developer, web design, website design, web development services, front-end web developmen" } = Astro.props;
 ---
@@ -28,16 +28,13 @@ const { keywords = "web developer, web design, website design, web development s
     <link rel="canonical" href="https://swastik.vercel.app/">
 		<meta name="robots" content="noodp ">
 		<link rel="manifest" href="/site.webmanifest" crossorigin="use-credentials">
-		<link rel="shortcut icon" href="/apple-touch-icon.png" type="image/x-icon">
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="shortcut icon" href="https://ik.imagekit.io/swastikmain/tr:f-auto,q-80/public/apple-touch-icon.png" type="image/x-icon">
+		<link rel="apple-touch-icon" sizes="180x180" href="https://ik.imagekit.io/swastikmain/tr:f-auto,q-80/public/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="https://ik.imagekit.io/swastikmain/tr:f-auto,q-80/public/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="https://ik.imagekit.io/swastikmain/tr:f-auto,q-80/public/favicon-16x16.png">
 		<meta name="theme-color" content="#000000">
 		<link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
 		<title>{title}</title>
-		<script is:inline >
-			ScrollReveal({ reset: true });
-		</script>
 		  <script is:inline src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.0/dist/smooth-scroll.min.js"></script>
       <script type="application/ld+json">
         {
@@ -120,14 +117,14 @@ const { keywords = "web developer, web design, website design, web development s
 .reveal-element {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 1s ease, transform 1s ease;
+  transition: opacity 1s ease, transform 2s ease;
   /* Add any other styling you want for your elements */
 }
 
 /* Add reduced motion styles */
 @media (prefers-reduced-motion: reduce) {
   .reveal-element {
-    transition-duration: 0.2s; /* Shorten the duration for reduced motion */
+    transition-duration: 0.2s; 
   }
 }
 
@@ -180,8 +177,8 @@ function handleIntersection(entries, observer) {
 // Create an Intersection Observer
 const observer = new IntersectionObserver(handleIntersection, {
     root: null, // Use the viewport as the root
-    // rootMargin: '0px', // No margin
-    threshold: 0.2, // Trigger the callback when 20% of the element is visible
+    rootMargin: '0px', // No margin
+    threshold: 0.20, // Trigger the callback when 20% of the element is visible
 });
 
 // Observe all elements with the 'reveal-element' class
