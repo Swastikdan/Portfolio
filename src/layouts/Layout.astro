@@ -33,7 +33,7 @@ const { keywords = "web developer, web design, website design, web development s
 		<link rel="icon" type="image/png" sizes="32x32" href="https://ik.imagekit.io/swastikmain/tr:f-auto,q-80/public/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="https://ik.imagekit.io/swastikmain/tr:f-auto,q-80/public/favicon-16x16.png">
 		<meta name="theme-color" content="#000000">
-		<link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 		<title>{title}</title>
 		 
       <script type="application/ld+json">
@@ -48,6 +48,19 @@ const { keywords = "web developer, web design, website design, web development s
           "description": "Explore the portfolio site of Swastik Dan showcasing creative skills and experiences, including problem solving, research, and proficiency in Full Stack Web Development."
         }
         </script>
+        <script>
+          window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+        </script>
+        <script defer src="/_vercel/insights/script.js"></script>
+        <style>
+
+              body {
+                   margin: 0;             
+                   padding: 0;            
+                  box-sizing: border-box; 
+                  scroll-behavior: smooth; 
+                                            }
+        </style>
         
 	</head>
 	<body class="	space-grotesk bg-white dark:bg-gray-900  mx-auto ">
@@ -177,7 +190,7 @@ function handleIntersection(entries, observer) {
 // Create an Intersection Observer
 const observer = new IntersectionObserver(handleIntersection, {
     root: null, // Use the viewport as the root
-    // rootMargin: '0px', // No margin
+     rootMargin: '0px', // No margin
     threshold: 0.20, // Trigger the callback when 20% of the element is visible
 });
 
