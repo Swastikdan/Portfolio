@@ -3,7 +3,7 @@ const { title ="Swastik Dan | Personal Portfolio" } = Astro.props;
 const { description = "Explore the portfolio site of Swastik Dan with a range of creative skills and experiences, including problem solving, research, and proficiency in Full Stack Web Development" } = Astro.props;
 const { ogImage ="https://ik.imagekit.io/swastikmain/tr:f-auto,q-50/public/Og_Image_Main.png" } = Astro.props;
 const { ogUrl ="https://swastik.vercel.app/" } = Astro.props;
-const { keywords = "web developer, web design, website design, web development services, front-end web developmen" } = Astro.props;
+const { keywords = "web developer, web design, website design, web development services, front-end web development" } = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
@@ -35,7 +35,6 @@ const { keywords = "web developer, web design, website design, web development s
 		<meta name="theme-color" content="#000000">
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 		<title>{title}</title>
-		 
       <script type="application/ld+json">
         {
           "@context": "http://schema.org",
@@ -53,7 +52,6 @@ const { keywords = "web developer, web design, website design, web development s
         </script>
         <script defer src="/_vercel/insights/script.js"></script>
         <style>
-
               body {
                    margin: 0;             
                    padding: 0;            
@@ -61,7 +59,6 @@ const { keywords = "web developer, web design, website design, web development s
                   scroll-behavior: smooth; 
                                             }
         </style>
-        
 	</head>
 	<body class="	space-grotesk bg-white dark:bg-gray-900  mx-auto ">
     <div id="preloader" style="position:fixed;overflow:hidden;width:100%;z-index:999" class="overflow-hidden">
@@ -72,7 +69,6 @@ const { keywords = "web developer, web design, website design, web development s
             <div
               class="animate-spin inline-block w-14 h-14 md:w-20 md:h-20 border-[3.5px] border-current border-t-transparent text-blue-600 rounded-full"
               role="status" aria-label="loading">
- 
               <span class="sr-only">Loading...</span>
             </div>
           </div>
@@ -80,6 +76,7 @@ const { keywords = "web developer, web design, website design, web development s
       </div>
     </div>
     <script>var loader = document.getElementById("preloader"); window.addEventListener("load", function () { loader.style.display = "none"; });</script>
+    <!-- Pages Will be injected here  -->
 		<slot />
 
 	</body>
@@ -108,7 +105,6 @@ const { keywords = "web developer, web design, website design, web development s
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
-
 .slide-down {
   transform: translateY(0);
   transition: transform 0.3s ease-in-out;
@@ -126,25 +122,31 @@ const { keywords = "web developer, web design, website design, web development s
   transform: translateY(0);
 }
 
-/* styles.css */
 .reveal-element {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 1s ease, transform 2s ease;
-  /* Add any other styling you want for your elements */
+  transition: opacity 1s ease, transform 1s ease;
+
+
 }
 
-/* Add reduced motion styles */
+
 @media (prefers-reduced-motion: reduce) {
   .reveal-element {
     transition-duration: 0.2s; 
+    transform: none; /* Remove transform effect */  
   }
 }
 
 .reveal-element.reveal {
   opacity: 1;
   transform: translateY(0);
+   transition: opacity 1s ease, transform 1.5s ease; 
 }
+
+
+
+
 	</style>
 
 <script  is:inline src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.0/dist/smooth-scroll.min.js"></script>
@@ -180,10 +182,11 @@ function handleIntersection(entries, observer) {
         if (entry.isIntersecting) {
             // Add the 'reveal' class to elements that are in the viewport
             entry.target.classList.add('reveal');
-        } else {
-            // Remove the 'reveal' class when the element is not in the viewport
-            entry.target.classList.remove('reveal');
-        }
+        } 
+        // else {
+        //     // Remove the 'reveal' class when the element is not in the viewport
+        //     entry.target.classList.remove('reveal');
+        // }
     });
 }
 
