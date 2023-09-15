@@ -278,13 +278,13 @@ function setActiveNavLink() {
   });
   // Remove the 'text-blue-600' class from all navigation links
   navLinks.forEach((link) => {
-    link.classList.remove('text-blue-600');
+    link.classList.remove('text-sky-600');
   });
   // Add the 'text-blue-600' class to the currently active navigation link
   if (currentActiveSection) {
     const activeLink = document.querySelector(`a[href="/#${currentActiveSection}"]`);
     if (activeLink) {
-      activeLink.classList.add('text-blue-600');
+      activeLink.classList.add('text-sky-600');
     }
   }
 }
