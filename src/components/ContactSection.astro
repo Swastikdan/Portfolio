@@ -62,76 +62,85 @@
           <label for="message" class="block mb-2 text-base md:text-xl font-medium text-gray-900 dark:text-gray-400">Your message <span class=" text-red-600">*</span></label>
           <textarea id="message" name="message" rows="7" style="resize: none;" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-[#3b82f6] focus:border-[#3b82f6] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#3b82f6] dark:focus:border-[#3b82f6] gotham" placeholder="Write Your Message" required></textarea>
         </div>
-        <button type="submit" class="py-3 px-8 text-sm font-medium text-center text-sky-700 rounded-lg  sm:w-fit  focus:ring-2 focus:outline-none focus:ring-sky-500 bg-sky-200 hover:bg-sky-300 dark:bg-gray-200 dark:hover:bg-gray-300 dark:text-gray-950 dark:focus:ring-gray-400">Send message</button>
+        <button type="submit" class="w-full rounded-full bg-sky-500 dark:bg-sky-400 h-11 flex items-center justify-center px-6 py-3 transition hover:bg-sky-600 focus:bg-sky-600 active:bg-sky-800 text-base font-semibold text-white  " >
+        Send  Message
+      </button>
+
+
       </form>
     </div>
   </section>
 </div>
 
   <script is:inline>
-    // Function to sanitize user input
-    function sanitizeInput(input) {
-   	// Use a regular expression to remove any potentially harmful characters
-   	const sanitizedInput = input.replace(/[<>&]/g, '');
+   // Function to sanitize user input
+function sanitizeInput(input) {
+  // Use a regular expression to remove any potentially harmful characters
+  const sanitizedInput = input.replace(/[<>&]/g, '');
+  return sanitizedInput;
+}
 
-   	return sanitizedInput;
-   }
+// Listen for the form submit
+const contactForm = document.getElementById('contact-form');
+const submitButton = contactForm.querySelector('button[type="submit"]');
+contactForm.addEventListener('submit', function (e) {
+  e.preventDefault(); // Prevent the default form submission
 
-   // Listen for the form submit
-   document.getElementById('contact-form').addEventListener('submit', function(e) {
-   	e.preventDefault(); // Prevent the default form submission
+  // Get form data and sanitize it
+  const email = sanitizeInput(document.getElementById('email').value);
+  const subject = sanitizeInput(document.getElementById('subject').value);
+  const message = sanitizeInput(document.getElementById('message').value);
 
-   	// Get form data and sanitize it
-   	const email = sanitizeInput(document.getElementById('email').value);
-   	const subject = sanitizeInput(document.getElementById('subject').value);
-   	const message = sanitizeInput(document.getElementById('message').value);
+  // Create a data object to send to the server
+  const data = {
+    email: email,
+    subject: subject,
+    message: message,
+  };
 
-   	// Create a data object to send to the server
-   	const data = {
-   		email: email,
-   		subject: subject,
-   		message: message,
-   	};
+  // Disable the submit button and show a loading indicator
+  submitButton.setAttribute('disabled', 'true');
+  submitButton.innerHTML = `
+    <div class="animate-spin inline-block w-6 h-6 border-[3px] border-current border-t-transparent text-white rounded-full" role="status" aria-label="loading">
+      <span class="sr-only">Loading...</span>
+    </div>
+  `;
 
-   	const form = e.target; // Get the form element
-   	const submitButton = form.querySelector('button[type="submit"]');
-   	submitButton.setAttribute('disabled', 'true');
-   	submitButton.textContent = 'Sending...';
+  // Make a POST request to the server
+  fetch('https://express-mail-server.vercel.app/send-email', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error('Error - Please try again later.');
+      }
+    })
+    .then((data) => {
+      if (data.success) {
+        submitButton.textContent = 'Thank you for Sending Message!';
 
-   	// Make a POST request to the Express.js server on the other server
-   	fetch('https://express-mail-server.vercel.app/send-email', {
-   			method: 'POST',
-   			headers: {
-   				'Content-Type': 'application/json',
-   			},
-   			body: JSON.stringify(data),
-   		})
-   		.then((response) => {
-   			if (response.ok) {
-   				return response.json();
-   			} else {
-   				throw new Error('Network response was not ok');
-   			}
-   		})
-   		.then((data) => {
-   		
-   			if (data.success) {
-   				submitButton.textContent = '🎉 Message Sent!';
+        // Reset the form and re-enable the submit button after 3 seconds (3000 milliseconds)
+        setTimeout(() => {
+          contactForm.reset();
+          submitButton.removeAttribute('disabled');
+          submitButton.textContent = 'Send message';
+        }, 3000);
+      } else {
+        submitButton.textContent = 'Error Sending Message';
+        throw new Error('Server error: ' + data.error);
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+      submitButton.textContent = 'Error Sending Message: ' + error.message;
+      submitButton.removeAttribute('disabled'); // Re-enable the button on error
+    });
+});
 
-   				// Reset the form and re-enable the submit button after 3 seconds (3000 milliseconds)
-   				setTimeout(() => {
-   					form.reset();
-   					submitButton.removeAttribute('disabled');
-   					submitButton.textContent = 'Send message';
-   				}, 3000);
-   			} else {
-   				submitButton.textContent = 'Error Sending Message';
-   			}
-   		})
-   		.catch((error) => {
-   			console.error(error);
-   			submitButton.textContent = 'Error Sending Message';
-   			submitButton.removeAttribute('disabled'); // Re-enable the button on error
-   		});
-   });
   </script>
