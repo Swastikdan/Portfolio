@@ -9,8 +9,28 @@
   <div class="relative pt-36  ml-auto space-y-20 reveal-element ">
     <div class="relative container m-auto pt-5 md:pt-0 text-black reveal-element">
       <h2 class="text-center font-thin text-sky-900 text-xl dark:text-white  py-2 gotham  reveal-element" style="letter-spacing:-1.5px;">Hey, i'm Swastik 👋 ,‎ I am a</h2>
-      <h3 class=" text-center text-3xl md:text-6xl  xl:text-7xl font-black uppercase pt-2 relative text-transparent bg-clip-text bg-gradient-to-r from-[#0081EC] to-[#00D8E9] dark:from-[#03B3FB] dark:to-[#6FF9CB] gotham reveal-element ">Full Stack Web Developer &</h3>
-      <h3 class="text-center text-3xl md:text-6xl  xl:text-7xl font-black uppercase pb-2 relative text-transparent bg-clip-text bg-gradient-to-r from-[#0081EC] to-[#00D8E9] dark:from-[#03B3FB] dark:to-[#6FF9CB] gotham reveal-element">UI Designer.</h3>
+      <h3 class="  md:hidden text-center text-4xl md:text-7xl  xl:text-9xl font-black uppercase pt-2 relative text-transparent bg-clip-text bg-gradient-to-r from-[#0081EC] to-[#00D8E9] dark:from-[#03B3FB] dark:to-[#6FF9CB]  reveal-element "> Web Developer &</h3>
+      <h3 class=" md:hidden text-center text-4xl md:text-7xl  xl:text-9xl font-black uppercase pb-2 relative text-transparent bg-clip-text bg-gradient-to-r from-[#0081EC] to-[#00D8E9] dark:from-[#03B3FB] dark:to-[#6FF9CB] reveal-element">UI Designer.</h3>
+      <!-- The two texts -->
+<div class="hidden md:block" style=" filter: url(#threshold) blur(0px);">
+  <h3 id="morph_text_1" class=" text-center text-4xl md:text-7xl  xl:text-9xl font-black uppercase pt-2 absolute w-full select-none inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#0081EC] to-[#00D8E9] dark:from-[#03B3FB] dark:to-[#6FF9CB]   "> </h3>
+  <h3 id="morph_text_2" class=" text-center text-4xl md:text-7xl  xl:text-9xl font-black uppercase pt-2 absolute w-full select-none inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#0081EC] to-[#00D8E9] dark:from-[#03B3FB] dark:to-[#6FF9CB]   "> </h3>
+</div>
+
+<!-- The SVG filter used to create the merging effect -->
+<svg id="filters" class="hidden md:block">
+<defs>
+  <filter id="threshold">
+    <!-- Basically just a threshold effect - pixels with a high enough opacity are set to full opacity, and all other pixels are set to completely transparent. -->
+    <feColorMatrix in="SourceGraphic"
+        type="matrix"
+        values="1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 255 -140" />
+  </filter>
+</defs>
+</svg>
       <h4 class="text-center px-5 py-5 gotham dark:text-white text-sm md:text-base lg:text-lg reveal-elemen reveal-element">I'm Swastik and I'm a full stack developer and freelancer. I have a passion for building and designing user-friendly software.<span class="hidden md:block"> I'm also a freelancer and available to work, and I can help you build your next dream project.</span>
       </h4>
     </div>
@@ -46,5 +66,92 @@
   </div>
 </section>
 
-
+<script is:inline>
+  const elts = {
+      morph_text_1: document.getElementById("morph_text_1"),
+      morph_text_2: document.getElementById("morph_text_2")
+  };
+  
+  // The strings to morph between. You can change these to anything you want!
+  const texts = [
+      "WEB DEVELOPER",
+      "UI DESIGNER",
+      "FREELANCER",
+  ];
+  
+  // Controls the speed of morphing.
+  const morphTime = 1;
+  const cooldownTime = 0.25;
+  
+  let textIndex = texts.length - 1;
+  let time = new Date();
+  let morph = 0;
+  let cooldown = cooldownTime;
+  
+  elts.morph_text_1.textContent = texts[textIndex % texts.length];
+  elts.morph_text_2.textContent = texts[(textIndex + 1) % texts.length];
+  
+  function doMorph() {
+      morph -= cooldown;
+      cooldown = 0;
+      
+      let fraction = morph / morphTime;
+      
+      if (fraction > 1) {
+          cooldown = cooldownTime;
+          fraction = 1;
+      }
+      
+      setMorph(fraction);
+  }
+  
+  // A lot of the magic happens here, this is what applies the blur filter to the text.
+  function setMorph(fraction) {
+      // fraction = Math.cos(fraction * Math.PI) / -2 + .5;
+      
+      elts.morph_text_2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+      elts.morph_text_2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+      
+      fraction = 1 - fraction;
+      elts.morph_text_1.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+      elts.morph_text_1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+      
+      elts.morph_text_1.textContent = texts[textIndex % texts.length];
+      elts.morph_text_2.textContent = texts[(textIndex + 1) % texts.length];
+  }
+  
+  function doCooldown() {
+      morph = 0;
+      
+      elts.morph_text_2.style.filter = "";
+      elts.morph_text_2.style.opacity = "100%";
+      
+      elts.morph_text_1.style.filter = "";
+      elts.morph_text_1.style.opacity = "0%";
+  }
+  
+  // Animation loop, which is called every frame.
+  function animate() {
+      requestAnimationFrame(animate);
+      
+      let newTime = new Date();
+      let shouldIncrementIndex = cooldown > 0;
+      let dt = (newTime - time) / 2000;
+      time = newTime;
+      
+      cooldown -= dt;
+      
+      if (cooldown <= 0) {
+          if (shouldIncrementIndex) {
+              textIndex++;
+          }
+          
+          doMorph();
+      } else {
+          doCooldown();
+      }
+  }
+  
+  // Start the animation.
+  animate();</script>
 
