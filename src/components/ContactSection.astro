@@ -62,7 +62,7 @@
           <label for="message" class="block mb-2 text-base md:text-xl font-medium text-gray-900 dark:text-gray-400">Your message <span class=" text-red-600">*</span></label>
           <textarea id="message" name="message" rows="7" style="resize: none;" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-[#3b82f6] focus:border-[#3b82f6] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#3b82f6] dark:focus:border-[#3b82f6] gotham" placeholder="Write Your Message" required></textarea>
         </div>
-        <button type="submit" class="w-full rounded-full h-11 flex items-center justify-center px-6 py-3 transition text-base font-semibold text-sky-950 bg-sky-400 dark:bg-white hover:scale-105 duration-300  " >
+        <button type="submit" class="w-full rounded-full h-11 flex items-center justify-center px-6 py-3 transition text-base font-semibold  hover:bg-sky-200 focus:bg-sky-200 border-2 border-sky-200 dark:border-sky-500 hover:dark:bg-sky-500 focus:dark:bg-sky-500 text-sky-800 dark:text-white g-gradient-to-b    duration-300  " >
         Send  Message
       </button>
 
@@ -101,11 +101,14 @@ contactForm.addEventListener('submit', function (e) {
   // Disable the submit button and show a loading indicator
   submitButton.setAttribute('disabled', 'true');
   submitButton.innerHTML = `
-    <div class="animate-spin inline-block w-6 h-6 border-[3px] border-current border-t-transparent text-white rounded-full" role="status" aria-label="loading">
-      <span class="sr-only">Loading...</span>
+    <div class="flex items-center justify-center gap-x-2">
+    <div class="animate-spin inline-block w-6 h-6 border-[3px] border-current border-t-transparent text-sky-950 dark:text-white rounded-full" role="status" aria-label="Sending">
+     
+    </div>
+    <span >Sending...</span>
     </div>
   `;
-
+  submitButton.classList.add('bg-sky-200', 'dark:bg-sky-500');
   // Make a POST request to the server
   fetch('https://express-mail-server.vercel.app/send-email', {
     method: 'POST',
@@ -130,6 +133,7 @@ contactForm.addEventListener('submit', function (e) {
           contactForm.reset();
           submitButton.removeAttribute('disabled');
           submitButton.textContent = 'Send message';
+          submitButton.classList.remove('bg-sky-200', 'dark:bg-sky-500');
         }, 3000);
       } else {
         submitButton.textContent = 'Error Sending Message';
