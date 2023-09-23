@@ -6,7 +6,7 @@ const { ogUrl ="https://swastik.vercel.app/" } = Astro.props;
 const { keywords = "web developer, web design, website design, web development services, front-end web development" } = Astro.props;
 ---
 <!doctype html >
-<html lang="en" class="dark" >
+<html lang="en"  >
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta content={description} name="Description" />
@@ -49,10 +49,10 @@ const { keywords = "web developer, web design, website design, web development s
           "description": "Explore the portfolio site of Swastik Dan showcasing creative skills and experiences, including problem solving, research, and proficiency in Full Stack Web Development."
         }
         </script>
-        <script>
+        <!-- <script>
           window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-        </script>
-        <script defer src="/_vercel/insights/script.js"></script>
+        </script> -->
+        <!-- <script defer src="/_vercel/insights/script.js"></script> -->
         <style>
               body {
                    margin: 0;             
@@ -62,7 +62,7 @@ const { keywords = "web developer, web design, website design, web development s
                                             }
         </style>
 	</head>
-	<body class="	space-grotesk bg-white dark:bg-gray-900  mx-auto ">
+	<body class="	 bg-white dark:bg-gray-900  mx-auto ">
     <div id="preloader" style="position:fixed;overflow:hidden;width:100%;z-index:999" class="overflow-hidden">
       <div
         class="min-h-[100vh] flex flex-col bg-white dark:bg-gray-900 border-gray-700 shadow-slate-700/[.7] z-50 fi">
@@ -278,13 +278,13 @@ function setActiveNavLink() {
   });
   // Remove the 'text-blue-600' class from all navigation links
   navLinks.forEach((link) => {
-    link.classList.remove('text-sky-600');
+    link.classList.remove('text-sky-600','dark:text-white');
   });
   // Add the 'text-blue-600' class to the currently active navigation link
   if (currentActiveSection) {
     const activeLink = document.querySelector(`a[href="/#${currentActiveSection}"]`);
     if (activeLink) {
-      activeLink.classList.add('text-sky-600');
+      activeLink.classList.add('text-sky-600','dark:text-white' );
     }
   }
 }
