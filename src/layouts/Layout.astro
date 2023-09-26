@@ -62,7 +62,7 @@ const { keywords = "web developer, web design, website design, web development s
                                             }
         </style>
 	</head>
-	<body class="	space-grotesk bg-white dark:bg-gray-900  mx-auto ">
+	<body class="	space-grotesk bg-white dark:bg-gray-900  mx-auto select-none md:select-auto">
     <div id="preloader" style="position:fixed;overflow:hidden;width:100%;z-index:999" class="overflow-hidden">
       <div
         class="min-h-[100vh] flex flex-col bg-white dark:bg-gray-900 border-gray-700 shadow-slate-700/[.7] z-50 fi">
@@ -147,7 +147,11 @@ const { keywords = "web developer, web design, website design, web development s
 }
 
 
-
+/* Customize the appearance of selected text */
+::selection {
+  background-color: #0077b6; /* Background color when text is selected */
+  color: #fff; /* Text color when text is selected */
+}
 
 	</style>
 
