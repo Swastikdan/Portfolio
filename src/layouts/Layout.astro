@@ -329,14 +329,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
     input.setAttribute('role', 'textbox');
   });
 
-  // Ensure all buttons are keyboard accessible
+  // Ensure all buttons are keyboard accessible and have role="button" and aria-label
   document.querySelectorAll('button').forEach((button) => {
     button.setAttribute('tabindex', '0');
-    // Add ARIA role
     button.setAttribute('role', 'button');
+    if (!button.getAttribute('aria-label')) {
+      button.setAttribute('aria-label', button.textContent || 'Button');
+    }
   });
 });
-
 	</script>
 
 
