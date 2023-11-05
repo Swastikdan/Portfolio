@@ -1,7 +1,7 @@
 ---
 const { title ="Swastik Dan | Personal Portfolio" } = Astro.props;
 const { description = "Explore the portfolio site of Swastik Dan with a range of creative skills and experiences, including problem solving, research, and proficiency in Full Stack Web Development" } = Astro.props;
-const { ogImage ="https://ik.imagekit.io/swastikdan/tr:f-auto,q-50/public/Og_Image_Main.png" } = Astro.props;
+const { ogImage ="https://ik.imagekit.io/swastikdan/tr:f-auto,q-50/OG_Image_Main.png" } = Astro.props;
 const { ogUrl ="https://swastik.vercel.app/" } = Astro.props;
 const { keywords = "web developer, web design, website design, web development services, front-end web development" } = Astro.props;
 ---
@@ -297,6 +297,35 @@ document.addEventListener('DOMContentLoaded', setActiveNavLink);
 
 // Call the setActiveNavLink function on scroll
 window.addEventListener('scroll', setActiveNavLink);
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    // Force all images to have alt text
+    document.querySelectorAll('img').forEach((img) => {
+        if (!img.alt) {
+            img.alt = 'Image';
+        }
+    });
+
+    // Force all links to have a title attribute
+    document.querySelectorAll('a').forEach((a) => {
+        if (!a.title) {
+            a.title = a.textContent || a.href;
+        }
+    });
+
+    // Force all form inputs to have associated labels
+    document.querySelectorAll('input').forEach((input) => {
+        if (!input.id) {
+            input.id = `input-${Math.random().toString(36).substr(2, 9)}`;
+        }
+        if (!document.querySelector(`label[for="${input.id}"]`)) {
+            const label = document.createElement('label');
+            label.htmlFor = input.id;
+            label.textContent = input.name || input.id;
+            input.parentNode.insertBefore(label, input);
+        }
+    });
+});
 
 	</script>
 
