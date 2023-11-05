@@ -298,32 +298,43 @@ document.addEventListener('DOMContentLoaded', setActiveNavLink);
 window.addEventListener('scroll', setActiveNavLink);
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    // Force all images to have alt text
-    document.querySelectorAll('img').forEach((img) => {
-        if (!img.alt) {
-            img.alt = 'Image';
-        }
-    });
+  // Force all images to have alt text
+  document.querySelectorAll('img').forEach((img) => {
+    if (!img.alt) {
+      img.alt = 'Image';
+    }
+  });
 
-    // Force all links to have a title attribute
-    document.querySelectorAll('a').forEach((a) => {
-        if (!a.title) {
-            a.title = a.textContent || a.href;
-        }
-    });
+  // Force all links to have a title attribute
+  document.querySelectorAll('a').forEach((a) => {
+    if (!a.title) {
+      a.title = a.textContent || a.href;
+    }
+    // Add ARIA role
+    a.setAttribute('role', 'link');
+  });
 
-    // Force all form inputs to have associated labels
-    document.querySelectorAll('input').forEach((input) => {
-        if (!input.id) {
-            input.id = `input-${Math.random().toString(36).substr(2, 9)}`;
-        }
-        if (!document.querySelector(`label[for="${input.id}"]`)) {
-            const label = document.createElement('label');
-            label.htmlFor = input.id;
-            label.textContent = input.name || input.id;
-            input.parentNode.insertBefore(label, input);
-        }
-    });
+  // Force all form inputs to have associated labels
+  document.querySelectorAll('input').forEach((input) => {
+    if (!input.id) {
+      input.id = `input-${Math.random().toString(36).substr(2, 9)}`;
+    }
+    if (!document.querySelector(`label[for="${input.id}"]`)) {
+      const label = document.createElement('label');
+      label.htmlFor = input.id;
+      label.textContent = input.name || input.id;
+      input.parentNode.insertBefore(label, input);
+    }
+    // Add ARIA role
+    input.setAttribute('role', 'textbox');
+  });
+
+  // Ensure all buttons are keyboard accessible
+  document.querySelectorAll('button').forEach((button) => {
+    button.setAttribute('tabindex', '0');
+    // Add ARIA role
+    button.setAttribute('role', 'button');
+  });
 });
 
 	</script>
