@@ -78,7 +78,6 @@ const { keywords = "web developer, web design, website design, web development s
       </div>
     </div>
     <script>var loader = document.getElementById("preloader"); window.addEventListener("load", function () { loader.style.display = "none"; });</script>
-    <!-- Pages Will be injected here  -->
 		<slot />
 
 	</body>
@@ -157,6 +156,7 @@ const { keywords = "web developer, web design, website design, web development s
 
 <script  is:inline src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.0/dist/smooth-scroll.min.js"></script>
 	<script is:inline>	
+
 // JavaScript to toggle the navigation bar open/close
 document.addEventListener('DOMContentLoaded', function() {
   const toggleButton = document.querySelector('#toggle_nav');
@@ -182,17 +182,16 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Function to handle the intersection observer callback
+
 function handleIntersection(entries, observer) {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             // Add the 'reveal' class to elements that are in the viewport
             entry.target.classList.add('reveal');
-        } 
-        // else {
-        //     // Remove the 'reveal' class when the element is not in the viewport
-        //     entry.target.classList.remove('reveal');
-        // }
+
+            // Disconnect the observer for this target
+            observer.unobserve(entry.target);
+        }
     });
 }
 
@@ -256,8 +255,8 @@ revealElements.forEach((element) => {
 			});
 
 const scroll = new SmoothScroll('a[href*="#"]', {
-    speed: 500, // Adjust the scroll speed as needed
-    offset: 5, // Adjust the scroll offset if you have a fixed header
+    speed: 400, // Adjust the scroll speed as needed
+    offset: 55, // Adjust the scroll offset if you have a fixed header
   });
 
 // Function to add the active class to the appropriate navigation link
