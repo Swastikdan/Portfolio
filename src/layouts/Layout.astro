@@ -298,10 +298,16 @@ document.addEventListener('DOMContentLoaded', setActiveNavLink);
 window.addEventListener('scroll', setActiveNavLink);
 
 document.addEventListener('DOMContentLoaded', (event) => {
-  // Force all images to have alt text
+  // Force all images to have alt text and explicit width and height
   document.querySelectorAll('img').forEach((img) => {
     if (!img.alt) {
       img.alt = 'Image';
+    }
+    if (!img.width) {
+      img.width = '500'; // Replace with suitable width
+    }
+    if (!img.height) {
+      img.height = '500'; // Replace with suitable height
     }
   });
 
