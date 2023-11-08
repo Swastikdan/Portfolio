@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/AppHeader.astro';
 import Footer from '../components/Footer.astro';
+import CdnLink from '../components/Data/CdnLink';
 ---
 <Layout title="404 | Page Not Found.">
 	<Header />
@@ -13,7 +14,7 @@ import Footer from '../components/Footer.astro';
     <div class="container flex items-center justify-center min-h-screen px-6 py-12 mx-auto">
         <div class="w-full mx-auto">
             <div class="flex flex-col items-center max-w-lg mx-auto text-center">
-                <img  class=" mx-auto  w-96 " src="/404-computer.svg" alt="404 Image" />
+                <img  class=" mx-auto  w-96 " src=`${CdnLink}404-computer.svg` alt="404 Image" />
                     
                 <h1 class="text-4xl sm:text-6xl font-bold tracking-tight  text-blue-500 dark:text-blue-400">Page not found
                 </h1>
