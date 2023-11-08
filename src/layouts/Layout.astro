@@ -304,11 +304,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     if (!img.alt) {
       img.alt = 'Image';
     }
-    if (!img.width) {
-      img.width = '500'; // Replace with suitable width
-    }
-    if (!img.height) {
-      img.height = '500'; // Replace with suitable height
+    if (!img.getAttribute('width')) {
+      img.setAttribute('width', img.naturalWidth);
     }
   });
 
