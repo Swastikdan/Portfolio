@@ -1,2 +1,2 @@
-const CdnLink = "https://asset.swastikdan.in/Portfolio/";
+const CdnLink = "https://ik.imagekit.io/swastikdan/tr:w-500,f-auto/";
 export default CdnLink;
