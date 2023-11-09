@@ -292,22 +292,25 @@ function setActiveNavLink() {
     }
   }
 }
-// Call the setActiveNavLink function after the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', setActiveNavLink);
+  // Call the setActiveNavLink function after the DOM is fully loaded
+  document.addEventListener('DOMContentLoaded', setActiveNavLink);
 
 // Call the setActiveNavLink function on scroll
 window.addEventListener('scroll', setActiveNavLink);
+	</script>
+  <script>
+  
 
-document.addEventListener('DOMContentLoaded', (event) => {
+  document.addEventListener('DOMContentLoaded', (event) => {
   // Force all images to have alt text and explicit width and height
   document.querySelectorAll('img').forEach((img) => {
-    if (!img.alt) {
-      img.alt = 'Image';
-    }
-    if (!img.getAttribute('width')) {
-      img.setAttribute('width', img.naturalWidth);
-    }
-  });
+  if (!img.alt) {
+    img.alt = 'Image';
+  }
+  if (!img.getAttribute('width')) {
+    img.setAttribute('width', img.naturalWidth.toString());
+  }
+});
 
   // Force all links to have a title attribute
   document.querySelectorAll('a').forEach((a) => {
@@ -342,7 +345,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
   });
 });
-	</script>
+  </script>
 
 
  
