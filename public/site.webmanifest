@@ -1,27 +1,28 @@
 {
-    "short_name": "Swastik Dan",
-    "name": "Personal Portfolio Of Swastik Dan",
-    "icons": [
-      {
-        "src": "/android-chrome-192x192.png",
-        "sizes": "192x192",
-        "type": "image/png"
-      },
-      {
-        "src": "/android-chrome-512x512.png",
-        "sizes": "512x512",
-        "type": "image/png"
-      }
-    ],
-    "start_url": "/",
-    "background_color": "#fafafa",
-    "theme_color": "#fafafa",
-    "display": "standalone",
-    "orientation": "portrait",
-    "description": "Explore the portfolio site of Swastik Dan with a range of creative skills and experiences, including problem solving, research, and proficiency in programming languages like HTML, CSS, JavaScript, Java, C, and data structures. Discover the student's technical abilities and see examples of their work, as well as their education and experience in the field of computer science.",
-    "categories": ["web developer", "web design", "website design", "web development services", "front-end web development"],
-    "lang": "en-US"
-    
-
+  "short_name": "Swastik Dan",
+  "name": "Personal Portfolio Of Swastik Dan",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#fafafa",
+  "theme_color": "#fafafa",
+  "display": "standalone",
+  "orientation": "portrait",
+  "description": "Explore the portfolio site of Swastik Dan with a range of creative skills and experiences...",
+  "categories": ["web developer", "web design", "website design", "web development services", "front-end web development"],
+  "lang": "en-US",
+  "serviceworker": {
+    "src": "/service-worker.js",
+    "scope": "/"
   }
-  
+}
