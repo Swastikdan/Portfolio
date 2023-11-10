@@ -235,8 +235,9 @@ const { keywords = "web developer, web design, website design, web development s
     threshold: 0.2, // Trigger the callback when 20% of the element is visible
   });
 
+
   // Observe all elements with the 'reveal-element' class
-  const revealElements = document.querySelectorAll(".reveal-element");
+  const revealElements = document.querySelectorAll(".reveal-element:not(.header)");
   revealElements.forEach((element) => {
     observer.observe(element);
   });
