@@ -2,7 +2,8 @@
 const { title ="Swastik Dan | Personal Portfolio" } = Astro.props;
 const { description = "Explore the portfolio site of Swastik Dan with a range of creative skills and experiences, including problem solving, research, and proficiency in Full Stack Web Development" } = Astro.props;
 const { ogImage ="https://ik.imagekit.io/swastikdan/OG_Image_Main.png" } = Astro.props;
-const { ogUrl ="https://swastik.vercel.app/" } = Astro.props;
+const { ogUrl ="https://www.swastikdan.in/" } = Astro.props;
+const { altUrl ="https://swastikdan.in/" } = Astro.props;
 const { keywords = "web developer, web design, website design, web development services, front-end web development" } = Astro.props;
 ---
 
@@ -16,9 +17,10 @@ const { keywords = "web developer, web design, website design, web development s
     <meta property="og:type" content="website" />
     <meta property="og:url" content={ogUrl} />
     <meta property="og:image" content={ogImage} />
-    <meta property="description" content={description} />
     <meta property="og:description" content={description} />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content={title} />
+    <meta name="twitter:card" content={ogImage} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
@@ -27,11 +29,7 @@ const { keywords = "web developer, web design, website design, web development s
     <meta name="language" content="en" />
     <meta name="author" content="Swastik Dan" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta
-      name="robots"
-      content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-    />
-
+    <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <link rel="canonical" href="https://swastikdan.in/" />
     <meta name="robots" content="noodp " />
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -64,6 +62,7 @@ const { keywords = "web developer, web design, website design, web development s
     />
     <meta name="theme-color" content="#000000" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="alternate" hreflang="en" href={altUrl} />
     <title>{title}</title>
     <script type="application/ld+json">
       {
