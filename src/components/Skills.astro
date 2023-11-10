@@ -20,7 +20,7 @@ import CdnLink from "./Data/CdnLink";
     <div class="grid gap-6 md:mx-auto md:w-8/12 lg:w-full lg:grid-cols-3">
       {
         WithImage.map((skill) => (
-          <div class="group space-y-6 px-8 py-12 text-center rounded-3xl bg-gray-100 p-4 text-gray-800 dark:text-gray-400 border border-gray-200 dark:bg-gray-700 dark:border-gray-700 duration-200 hover:border-indigo-400 hover:shadow-xl hover:shadow-indigo-600/20 dark:hover:border-indigo-300/30 bg-opacity-50 dark:bg-opacity-50 reveal-element">
+          <div class="group space-y-6 px-8 py-12 text-center rounded-3xl bg-gray-100 p-4 text-gray-800 dark:text-gray-400 border border-gray-200 dark:bg-gray-700 dark:border-gray-700 duration-200 hover:border-blue-600 hover:shadow-xl hover:shadow-blue-600/20 dark:hover:border-indigo-300/30 bg-opacity-50 dark:bg-opacity-50 reveal-element">
             <img
               class="mx-auto w-20"
               src={CdnLink + skill.ImageLink}
@@ -42,7 +42,7 @@ import CdnLink from "./Data/CdnLink";
     >
       {
         WithoutImage.map((skill) => (
-          <div class="group space-y-6 px-4 lg:px-8 py-6 lg:py-12 text-center rounded-3xl bg-gray-100 text-gray-700 border border-gray-200 dark:bg-gray-700 dark:border-gray-700 duration-200 hover:border-indigo-400 hover:shadow-xl hover:shadow-indigo-600/20 dark:hover:border-indigo-300/30 bg-opacity-50 dark:bg-opacity-50 reveal-element">
+          <div class="group space-y-6 px-4 lg:px-8 py-6 lg:py-12 text-center rounded-3xl bg-gray-100 text-gray-700 border border-gray-200 dark:bg-gray-700 dark:border-gray-700 duration-200 hover:border-blue-600 hover:shadow-xl hover:shadow-blue-600/20 dark:hover:border-indigo-300/30 bg-opacity-50 dark:bg-opacity-50 reveal-element">
             <h3 class="text-md lg:text-2xl text-center font-semibold text-gray-800 dark:text-white">
               {skill}
             </h3>
