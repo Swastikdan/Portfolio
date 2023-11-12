@@ -41,7 +41,7 @@ const ProjectData = [
     "ProjectName": "Random Joke API",
     "ProjectDescription": "The Random Joke API is a simple Express-based REST API.",
     "TechStack": ["Express Js"],
-    "ProjectDemoURL": "https://swastikdan.github.io/Random-Jokes-Api/",
+    "ProjectDemoURL": "/projects/api-doc/random-joke-api",
     "ProjectCodeURL": "https://github.com/Swastikdan/Random-Jokes-Api",
     "ProjectImage": "/images/swastikdan.github.ioRandomJokesApi.jpeg",
     "IsOnGoing": false,
