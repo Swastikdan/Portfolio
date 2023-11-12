@@ -39,8 +39,8 @@ const ProjectData = [
     "Display":true
   },{
     "ProjectName": "Random Joke API",
-    "ProjectDescription": "The Random Joke API is a simple Flask-based REST API.",
-    "TechStack": ["Flask"],
+    "ProjectDescription": "The Random Joke API is a simple Express-based REST API.",
+    "TechStack": ["Express Js"],
     "ProjectDemoURL": "https://swastikdan.github.io/Random-Jokes-Api/",
     "ProjectCodeURL": "https://github.com/Swastikdan/Random-Jokes-Api",
     "ProjectImage": "/images/swastikdan.github.ioRandomJokesApi.jpeg",
