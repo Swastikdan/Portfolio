@@ -1,175 +1,35 @@
 ---
-
+import ContactForm from "./contact/ContactForm.astro";
+import ContactFormAnimation from "./contact/ContactFormAnimation.astro";
 ---
-<div class="mx-auto  relative max-w-7xl px-6 md:px-12 xl:px-6 py-16 ">
-  <div class="techs scale-90 text-center relative pt-16 flex items-center justify-center gap-x-8 reveal-element">
-    <svg aria-hidden="true" class="relative z-[11] fill-cyan-900/50 dark:fill-white/60"
-      xmlns="http://www.w3.org/2000/svg" height="42px" viewBox="0 0 448 512">
-      <path
-        d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM243.8 381.4c0 43.6-25.6 63.5-62.9 63.5-33.7 0-53.2-17.4-63.2-38.5l34.3-20.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.6-5.4 22.6-26.5V237.7h42.1v143.7zm99.6 63.5c-39.1 0-64.4-18.6-76.7-43l34.3-19.8c9 14.7 20.8 25.6 41.5 25.6 17.4 0 28.6-8.7 28.6-20.8 0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5 0-31.6 24.1-55.6 61.6-55.6 26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18-12.3 0-20.1 7.8-20.1 18 0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2 0 37.8-29.8 58.6-69.7 58.6z" />
-    </svg>
-    <div class="relative -m-14 rounded-full p-14">
-      <div class="absolute inset-0 m-auto rotate-180 w-full h-full scale-[.98]">
-        <svg viewBox="0 0 558 558" fill="none" aria-hidden="true" class="w-full h-full animate-spin">
-          <defs>
-            <linearGradient id=":R3b9m:" x1="79" y1="16" x2="105" y2="237" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#0DCAFE"></stop>
-              <stop offset="1" stop-color="#13B5C8" stop-opacity="0"></stop>
-            </linearGradient>
-          </defs>
-          <path opacity=".2"
-            d="M1 279C1 125.465 125.465 1 279 1s278 124.465 278 278-124.465 278-278 278S1 432.535 1 279Z"
-            stroke="#13B5C8"></path>
-          <path d="M1 279C1 125.465 125.465 1 279 1" stroke="url(#:R3b9m:)" stroke-linecap="round"></path>
-        </svg>
-      </div>
-      <div class="relative z-20 rounded-full">
-        <div class="relative rounded-full overflow-hidden tw-look">
-          <div class="absolute dark:opacity-90 inset-0 h-full w-full blur-lg grid gap-2 grid-cols-2 duration-700">
-            <div class="h-full scale-y- rounded-tl-full bg-secondary"></div>
-            <div class="h-full rounded-tr-full bg-yellow-200 dark:bg-teal-400"></div>
-            <div class="h-full rounded-bl-full bg-indigo-400 dark:bg-sky-600"></div>
-            <div class="h-full rounded-br-full bg-purple-200 dark:bg-indigo-600"></div>
-          </div>
-          <div class="relative z-[2] h-20 w-20  rounded-full flex bg-white/80 dark:bg-gray-900/80 scale-[.97]">
-            <svg class="w-10 h-auto m-auto text-sky-900/90 dark:text-gray-200" viewBox="0 0 153 92" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M76.5 0.122345C56.1002 0.122345 43.3498 10.3176 38.25 30.7074C45.9 20.5122 54.8248 16.6891 65.025 19.238C70.8444 20.692 75.0041 24.9124 79.6084 29.5832C87.109 37.193 95.7894 46 114.75 46C135.15 46 147.9 35.8048 153 15.4149C145.35 25.6101 136.425 29.4333 126.225 26.8843C120.406 25.4303 116.246 21.2099 111.642 16.5391C104.141 8.9293 95.4606 0.122345 76.5 0.122345ZM38.25 46C17.8502 46 5.0998 56.1952 0 76.5851C7.65 66.3899 16.5748 62.5667 26.775 65.1157C32.5944 66.5697 36.7541 70.7901 41.3584 75.4609C48.859 83.0707 57.5394 91.8777 76.5 91.8777C96.8998 91.8777 109.65 81.6824 114.75 61.2926C107.1 71.4878 98.1752 75.3109 87.975 72.762C82.1556 71.308 77.9959 67.0876 73.3916 62.4168C65.891 54.807 57.2106 46 38.25 46Z"
-                fill="currentColor"></path>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-    <svg aria-hidden="true" class="relative z-[11] fill-cyan-900/50 dark:fill-white/60"
-      xmlns="http://www.w3.org/2000/svg" height="42px" viewBox="0 0 448 512">
-      <path
-        d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z" />
-    </svg>
-  </div>
+
+<div class="mx-auto relative max-w-7xl px-6 md:px-12 xl:px-6 ">
+  <!-- <ContactFormAnimation /> -->
   <div class="pt-32 relative text-center reveal-element">
-    <h2 class="text-[2.5rem] leading-9 font-black text-blue-950 dark:text-white md:text-6xl lg:text-7xl"> Let's build a
-      unique <span
-        class="relative text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-violet-300">Experience.</span>
+    <h2
+      class="text-[2.5rem] leading-9 font-black text-blue-950 dark:text-white md:text-6xl lg:text-7xl"
+    >
+      Let's build a unique <span
+        class="relative text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-violet-300"
+        >Experience.</span
+      >
     </h2>
-    <p class="relative z-[11] mt-14 text-gray-600 dark:text-gray-300  gotham"> Having a custom user interface is a
-      crucial thing for your website or web application, Designing ans Createing one is not an easy task at all. Don't
-      do it alone, Let me help you make a lasting impression! </p>
+    <p class="relative z-[11] mt-14 text-gray-600 dark:text-gray-300 gotham">
+      Having a custom user interface is a crucial thing for your website or web
+      application, Designing ans Createing one is not an easy task at all. Don't
+      do it alone, Let me help you make a lasting impression!
+    </p>
   </div>
-  <section id="contact" class=" relative ">
+  <section id="contact" class="relative">
     <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
       <div class="pb-20 md:pb-20 reveal-element">
-        <h2 class=" text-center text-2xl font-bold text-gray-800 dark:text-gray-100 -mb-10 lg:text-3xl">Get in touch
+        <h2
+          class="text-center text-2xl font-bold text-gray-800 dark:text-gray-100 -mb-10 lg:text-3xl"
+        >
+          Get in touch
         </h2>
       </div>
-      <form id="contact-form" class="space-y-8">
-        <div class="reveal-element">
-          <label for="email" class="block mb-2 text-base md:text-xl font-medium text-gray-900 dark:text-gray-300">Your
-            email <span class=" text-red-600">*</span> </label>
-          <input type="email" id="email" name="email" placeholder="mail@example.com"
-            class="shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2 rounded-lg text-sm dark:bg-gray-600 dark:text-white gotham ring-1"
-            required aria-required="true" aria-label="Email Address">
-        </div>
-        <div class="reveal-element">
-          <label for="subject"
-            class="block mb-2 text-base md:text-xl font-medium text-gray-900 dark:text-gray-300">Subject <span
-              class=" text-red-600">*</span></label>
-          <input type="text" id="subject" name="subject"
-            class="shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2 rounded-lg text-sm dark:bg-gray-600 dark:text-white gotham ring-1"
-            placeholder="Let me know how we can help you" required aria-required="true" aria-label="Subject">
-        </div>
-        <div class="sm:col-span-2 reveal-element">
-          <label for="message" class="block mb-2 text-base md:text-xl font-medium text-gray-900 dark:text-gray-400">Your
-            message <span class=" text-red-600">*</span></label>
-          <textarea id="message" name="message" rows="7" style="resize: none;"
-            class="shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2 rounded-lg text-sm dark:bg-gray-600 dark:text-white gotham ring-1"
-            placeholder="Write Your Message" required aria-required="true" aria-label="Message"></textarea>
-        </div>
-        <button type="submit"
-          class="w-full rounded-full h-11 flex items-center justify-center px-6 py-3 transition text-base font-semibold  hover:bg-sky-200 focus:bg-sky-200 border-2 border-sky-200 dark:border-sky-500 hover:dark:bg-sky-500 focus:dark:bg-sky-500 text-sky-800 dark:text-white g-gradient-to-b    duration-300  ">
-          Send Message
-        </button>
-
-
-      </form>
+      <ContactForm />
     </div>
   </section>
 </div>
-
-<script is:inline>
-  // Function to sanitize user input
-  function sanitizeInput(input) {
-    // Use a regular expression to remove any potentially harmful characters
-    const sanitizedInput = input.replace(/[<>&]/g, '');
-    return sanitizedInput;
-  }
-
-  // Listen for the form submit
-  const contactForm = document.getElementById('contact-form');
-  const submitButton = contactForm.querySelector('button[type="submit"]');
-  contactForm.addEventListener('submit', function (e) {
-    e.preventDefault(); // Prevent the default form submission
-
-    // Get form data and sanitize it
-    const email = sanitizeInput(document.getElementById('email').value);
-    const subject = sanitizeInput(document.getElementById('subject').value);
-    const message = sanitizeInput(document.getElementById('message').value);
-
-    // Create a data object to send to the server
-    const data = {
-      email: email,
-      subject: subject,
-      message: message,
-    };
-
-    // Disable the submit button and show a loading indicator
-    submitButton.setAttribute('disabled', 'true');
-    submitButton.innerHTML = `
-    <div class="flex items-center justify-center gap-x-2">
-    <div class="animate-spin inline-block w-6 h-6 border-[3px] border-current border-t-transparent text-sky-950 dark:text-white rounded-full" role="status" aria-label="Sending">
-     
-    </div>
-    <span >Sending...</span>
-    </div>
-  `;
-    submitButton.classList.add('bg-sky-200', 'dark:bg-sky-500');
-    // Make a POST request to the server
-    fetch('https://express-mail-server.vercel.app/send-email', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error('Error - Please try again later.');
-        }
-      })
-      .then((data) => {
-        if (data.success) {
-          submitButton.textContent = 'Thank you!';
-
-          // Reset the form and re-enable the submit button after 3 seconds (3000 milliseconds)
-          setTimeout(() => {
-            contactForm.reset();
-            submitButton.removeAttribute('disabled');
-            submitButton.textContent = 'Send message';
-            submitButton.classList.remove('bg-sky-200', 'dark:bg-sky-500');
-          }, 3000);
-        } else {
-          submitButton.textContent = 'Error Sending Message';
-          throw new Error('Server error: ' + data.error);
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-        submitButton.textContent = 'Error Sending Message: ' + error.message;
-        submitButton.removeAttribute('disabled'); // Re-enable the button on error
-      });
-  });
-
-</script>
