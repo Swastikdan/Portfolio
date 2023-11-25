@@ -6,6 +6,6 @@
     <linearGradient id="icon-gradient-7ajsi4vx" x1="23" x2="235" y1="43" y2="202" gradientUnits="userSpaceOnUse" data-astro-cid-patnjmll="">
         <stop stop-color="#007BFF" data-astro-cid-patnjmll=""></stop> <!-- Light Blue -->
         <stop offset=".5" stop-color="#0056b3" data-astro-cid-patnjmll=""></stop> <!-- Medium Blue -->
-        <stop offset="1" stop-color="#ae5dd9" data-astro-cid-patnjmll=""></stop> <!-- Dark Blue -->
+        <stop offset="1" stop-color="#00008B" data-astro-cid-patnjmll=""></stop> <!-- Dark Blue -->
     </linearGradient>
 </svg>
