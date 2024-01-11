@@ -1,5 +1,7 @@
 import Image from "next/image";
 import NavBar from "@/components/navbar/NavBar";
+import HeroSection from "@/components/herosction/HeroSection";
+import Footer from "@/components/footer/Footer";
 export default function Home() {
   return (
     <>
@@ -8,6 +10,24 @@ export default function Home() {
         <div className="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 "></div>
       </div>
       <NavBar />
+      <main className="pt-20 max-w-7xl mx-auto py-4 px-5 md:px-0 ">
+     
+
+      <HeroSection />
+      
+  
+ 
+      
+      
+      
+      
+      
+      </main>
+      
+     
+      
+      
+      <Footer />
     </>
   );
 }

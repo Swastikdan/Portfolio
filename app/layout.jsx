@@ -54,7 +54,7 @@ export default function RootLayout({ children }) {
         <meta name="twitter:image:type" content="image/png" />
         <meta name="twitter:image:alt" content="Explore the portfolio site of Swastik Dan with a range of creative skills and experiences, including problem solving, research, and proficiency in Full Stack Web Development" />
       </head>
-      <body  className='mx-auto select-none md:select-auto' >
+      <body  className='mx-auto select-none ' >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

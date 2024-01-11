@@ -23,7 +23,7 @@ export default function NavBar() {
       }
 
       if (scrollY >= scrollDistance) {
-        setBgClass("bg-white dark:bg-gray-900");
+        setBgClass("bg-white dark:bg-black");
       } else {
         setBgClass("");
       }
@@ -40,13 +40,13 @@ export default function NavBar() {
       <nav
         className={`fixed inset-x-0 top-0 z-50 duration-200  ${navClass} ${bgClass}`}
       >
-        <div className="items-center flex justify-between max-w-7xl mx-auto py-4 px-5 md:px-10 ">
+        <div className="items-center flex justify-between max-w-7xl mx-auto py-4 px-5 xl:px-0 ">
           <Link
             href="/"
             className="flex space-x-2 items-center text-2xl font-heading font-semibold "
           >
-            <Logo width={50} height={50} className="w-10 h-7 md:h-10 hover:scale-105 hover:-rotate-6 transition-all duration-200 " />
-            <span className="hidden sm:flex">Swastik Dan</span>
+            <Logo width={50} height={50} className="w-10 h-10 md:w-12 hover:scale-105 hover:-rotate-6 transition-all duration-200 " />
+            {/* <span className="hidden sm:flex">Swastik Dan</span> */}
           </Link>
           <NavMenu />
         </div>

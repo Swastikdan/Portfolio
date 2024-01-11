@@ -1,0 +1,170 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import AppHeader from "../../../components/AppHeader.astro";
+import Footer from "../../../components/Footer.astro";
+---
+<Layout title="Joke API Quary Builder">
+<AppHeader />
+<div aria-hidden="true" class="fixed bg-fixed inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20">
+    <div class="blur-[106px] h-56 bg-gradient-to-br from-[#9333EA]/10 to-purple-400 "></div>
+    <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 "></div>
+  </div>
+<main class="p-10 pt-20 relative ">
+    <div class="container mx-auto p-4 text-black dark:text-white">
+
+        <h1 class="text-3xl font-bold mb-4">Welcome to the Joke API!</h1>
+        
+        <h2 class="text-2xl mb-2">Base URL</h2>
+        
+        <p>The base URL for the API is <code>http://localhost:3000</code>. Make sure to prefix all endpoint paths with this base URL.</p>
+        
+        <h2 class="text-2xl mb-2">Authentication</h2>
+        
+        <p>To access certain features of the API, you need to provide a password in the request. This password is set as an environment variable and is required for security. Make sure to include it as a query parameter when necessary.</p>
+        
+        <h2 class="text-2xl mb-2">Endpoints</h2>
+        
+        <h3 class="text-xl mb-1">1. Get Random Singleliner Joke</h3>
+        
+        <ul class="list-disc pl-5 mb-3">
+            <li><strong>Endpoint:</strong> <code>/api/singleliner</code></li>
+            <li><strong>Method:</strong> <code>GET</code></li>
+            <li><strong>Parameters:</strong>
+                <ul>
+                    <li><code>result</code> (optional): Number of jokes to retrieve (default is 1).</li>
+                    <li><code>id</code> (optional): Retrieve a specific joke by ID.</li>
+                    <li><code>password</code> (optional but required for <code>result</code> &gt; <code>MAX_RESULTS</code>): Password for secure access.</li>
+                </ul>
+            </li>
+            <li><strong>Response:</strong>
+                <ul>
+                    <li>Success: Returns an array of single-liner jokes.</li>
+                    <li>Failure: Returns an error message.</li>
+                </ul>
+            </li>
+        </ul>
+        
+        <h3 class="text-xl mb-1">2. Get Random Joke</h3>
+        
+        <ul class="list-disc pl-5 mb-3">
+            <li><strong>Endpoint:</strong> <code>/api/jokes</code></li>
+            <li><strong>Method:</strong> <code>GET</code></li>
+            <li><strong>Parameters:</strong>
+                <ul>
+                    <li><code>result</code> (optional): Number of jokes to retrieve (default is 1).</li>
+                    <li><code>id</code> (optional): Retrieve a specific joke by ID.</li>
+                    <li><code>password</code> (optional but required for <code>result</code> &gt; <code>MAX_RESULTS</code>): Password for secure access.</li>
+                </ul>
+            </li>
+            <li><strong>Response:</strong>
+                <ul>
+                    <li>Success: Returns an array of jokes.</li>
+                    <li>Failure: Returns an error message.</li>
+                </ul>
+            </li>
+        </ul>
+        
+        <h3 class="text-xl mb-1">3. Get Random Joke from Either Database</h3>
+        
+        <ul class="list-disc pl-5 mb-3">
+            <li><strong>Endpoint:</strong> <code>/api/random</code></li>
+            <li><strong>Method:</strong> <code>GET</code></li>
+            <li><strong>Response:</strong>
+                <ul>
+                    <li>Success: Returns a single joke object.</li>
+                    <li>Failure: Returns an error message.</li>
+                </ul>
+            </li>
+        </ul>
+        
+        <h2 class="text-2xl mb-2">Example Usage</h2>
+        
+        <h3 class="text-xl mb-1">Fetch a Random Singleliner Joke</h3>
+        <pre class="bg-gray-800 p-4 rounded overflow-x-auto"><code class="text-green-400 code">curl http://localhost:3000/api/singleliner</code></pre>
+
+        <h3 class="text-xl mb-1">Fetch 3 Random Jokes</h3>
+        <pre class="bg-gray-800 p-4 rounded overflow-x-auto"><code class="text-green-400 code">curl http://localhost:3000/api/jokes?result=3</code></pre>
+
+        <h3 class="text-xl mb-1">Fetch a Random Joke Without Authentication</h3>
+        <pre class="bg-gray-800 p-4 rounded overflow-x-auto"><code class="text-green-400 code">curl http://localhost:3000/api/random</code></pre>
+
+        <h3 class="text-xl mb-1">Fetch a Joke by ID</h3>
+        <pre class="bg-gray-800 p-4 rounded overflow-x-auto"><code class="text-green-400 code">curl http://localhost:3000/api/jokes?id=jokes_id</Joke></code></pre>
+        
+        <h2 class="text-2xl mb-2">Error Handling</h2>
+        
+        <p>In case of an error, the API will return a JSON response with a <code>success</code> field set to <code>false</code> and an <code>error</code> field providing a descriptive error message.</p>
+        
+        </div>
+    </div>
+    <div class="container mx-auto  text-black dark:text-white">
+    <div class="ring-2 ring-black p-4 rounded  mx-auto  dark:bg-gray-800 dark:text-white">
+        <h2 class="text-2xl mb-4">Joke API Quary Builder </h2>
+        <select id="endpoint" class="w-full p-2 mb-4  ring-gray-300 rounded dark:bg-gray-700 dark:ring-gray-600 gotham ring-2">
+            <option value="/api/singleliner">Singleliner Joke</option>
+            <option value="/api/jokes">Jokes</option>
+            <option value="/api/random">Random Joke</option>
+        </select>
+        <label for="result">Result</label>
+        <input id="result" type="number" placeholder="Result" class="w-full p-2 mb-4 mt-2 ring-gray-300 rounded dark:bg-gray-700 dark:ring-gray-600 gotham ring-2 ">
+        <label for="id">Id</label>
+        <input id="id" type="text" placeholder="ID" class="w-full p-2 mb-4 mt-2 ring-gray-300 rounded dark:bg-gray-700 dark:ring-gray-600 gotham ring-2">
+      
+        <button id="fetch" class="w-full p-2 mt-4 bg-blue-500 text-white rounded dark:bg-blue-400  ">Fetch</button>
+        <div id="response" class=" ring-gray-300 p-2 rounded overflow-auto h-64 dark:ring-gray-600 code text-green-600  ring-2 mt-10" >
+           
+        </div>
+    </div>
+    </div>
+    <div class="container mx-auto p-4 text-black dark:text-white">
+
+  
+        
+        <h2 class="text-2xl mb-2">Error Handling</h2>
+        
+        <p>In case of an error, the API will return a JSON response with a <code>success</code> field set to <code>false</code> and an <code>error</code> field providing a descriptive error message.</p>
+        
+        <h2 class="text-2xl mb-2">Important Notes</h2>
+        <p>Feel free to experiment with the API and integrate it into your projects. If you encounter any issues or have questions, please refer to the <a href="https://github.com/your-username/joke-api">GitHub repository</a> or open an <a href="https://github.com/your-username/joke-api/issues">issue</a>. Happy joking!</p>
+
+        <div class="mt-5 text-right text-gray-500">
+            This site is open source , <a class="text-black dark:text-white" href="https://github.com/Swastikdan/Random-Jokes-Api/edit/main/README.md">Improve this page</a>.
+        </div>
+    </div>
+
+</main>
+    <Footer />
+</Layout>
+<script>
+    document.getElementById('fetch').addEventListener('click', function() {
+        var endpoint = (document.getElementById('endpoint') as HTMLSelectElement).value;
+        var result = (document.getElementById('result') as HTMLInputElement).value;
+        var id = (document.getElementById('id') as HTMLInputElement).value;
+
+        var responseDiv = document.getElementById('response');
+        responseDiv.innerHTML = ` <div class="flex justify-center items-center h-32">
+    <span class="text-gray-500 text-2xl md:text-4xl animate-ping">...</span>
+</div>`
+
+        if (result && id) {
+            responseDiv.innerHTML = '<span class="text-red-500">Please provide either a result or an id, not both. If both are provided, only one result will be returned.</span>';
+            return;
+        }
+
+        var url = 'https://jokeapi.swastikdan.in' + endpoint;
+        if (result || id) {
+            url += '?';
+            if (result) url += 'result=' + result;
+            if (id) {
+                if (result) url += '&';
+                url += 'id=' + id;
+            }
+        }
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                responseDiv.innerText = JSON.stringify(data, null, 2);
+            });
+    });
+</script>

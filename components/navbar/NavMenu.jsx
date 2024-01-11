@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import navLinks from "./NavLinks";
+import navLinks from "../NavLinks";
 import ThemeSwitch from "../ThemeSwitch";
 export default function NavMenu() {
   return (

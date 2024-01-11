@@ -1,0 +1,300 @@
+---
+const { title ="Swastik Dan | Personal Portfolio" } = Astro.props;
+const { description = "Explore the portfolio site of Swastik Dan with a range of creative skills and experiences, including problem solving, research, and proficiency in Full Stack Web Development" } = Astro.props;
+const { ogImage ="https://ik.imagekit.io/swastikmain/tr:f-auto,q-50/public/Og_Image_Main.png" } = Astro.props;
+const { ogUrl ="https://swastik.vercel.app/" } = Astro.props;
+const { keywords = "web developer, web design, website design, web development services, front-end web development" } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta content={description} name="Description" />
+		<meta content= {keywords} name="keywords" />
+		<meta property="og:title" content={title}>
+		<meta property="og:type" content="website">
+		<meta property="og:url" content={ogUrl}>
+		<meta property="og:image" content={ogImage}>
+    <meta property="description" content={description} />
+    <meta property="og:description" content={description} />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content={title}>
+    <meta name="twitter:description" content={description}>
+    <meta name="twitter:image" content={ogImage}>
+		<meta name="robots" content="index, follow">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="language" content="en">
+		<meta name="author" content="Swastik Dan">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://swastik.vercel.app/">
+		<meta name="robots" content="noodp ">
+		<link rel="manifest" href="/site.webmanifest" crossorigin="use-credentials">
+		<link rel="shortcut icon" href="https://ik.imagekit.io/swastikmain/tr:f-auto,q-80/public/apple-touch-icon.png" type="image/x-icon">
+		<link rel="apple-touch-icon" sizes="180x180" href="https://ik.imagekit.io/swastikmain/tr:f-auto,q-80/public/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="https://ik.imagekit.io/swastikmain/tr:f-auto,q-80/public/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="https://ik.imagekit.io/swastikmain/tr:f-auto,q-80/public/favicon-16x16.png">
+		<meta name="theme-color" content="#000000">
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<title>{title}</title>
+      <script type="application/ld+json">
+        {
+          "@context": "http://schema.org",
+          "@type": "WebPage",
+          "name": "Personal Portfolio of Swastik Dan",
+          "author": {
+            "@type": "Person",
+            "name": "Swastik Dan"
+          },
+          "description": "Explore the portfolio site of Swastik Dan showcasing creative skills and experiences, including problem solving, research, and proficiency in Full Stack Web Development."
+        }
+        </script>
+        <script>
+          window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+        </script>
+        <script defer src="/_vercel/insights/script.js"></script>
+        <style>
+              body {
+                   margin: 0;             
+                   padding: 0;            
+                  box-sizing: border-box; 
+                  scroll-behavior: smooth; 
+                                            }
+        </style>
+	</head>
+	<body class="	space-grotesk bg-white dark:bg-gray-900  mx-auto ">
+    <div id="preloader" style="position:fixed;overflow:hidden;width:100%;z-index:999" class="overflow-hidden">
+      <div
+        class="min-h-[100vh] flex flex-col bg-white dark:bg-gray-900 border-gray-700 shadow-slate-700/[.7] z-50 fi">
+        <div class="flex flex-auto flex-col justify-center items-center p-4 md:p-5">
+          <div class="flex justify-center">
+            <div
+              class="animate-spin inline-block w-14 h-14 md:w-20 md:h-20 border-[3.5px] border-current border-t-transparent text-blue-600 rounded-full"
+              role="status" aria-label="loading">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>var loader = document.getElementById("preloader"); window.addEventListener("load", function () { loader.style.display = "none"; });</script>
+    <!-- Pages Will be injected here  -->
+		<slot />
+
+	</body>
+</html>
+<style is:global>
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("../fonts/space-grotesk-latin-700.woff2") format("woff2"),
+    url("../fonts/space-grotesk-latin-700.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gotham";
+  src: url("../fonts/Gotham-Book.woff2") format("woff2"),
+    url("../fonts/Gotham-Book.woff") format("woff");
+  font-display: swap;
+}
+.space-grotesk {
+  font-family: "Space Grotesk";
+}
+.gotham {
+  font-family: "Gotham";
+}
+.code {
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+}
+.slide-down {
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out;
+}
+.slide-up {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+#navbar {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+/* Styles for the open navigation bar */
+#navbar.nav-open {
+  transform: translateY(0);
+}
+
+.reveal-element {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-element {
+    transition-duration: 0.2s; 
+    transform: none; /* Remove transform effect */  
+  }
+}
+
+.reveal-element.reveal {
+  opacity: 1;
+  transform: translateY(0);
+   transition: opacity 1s ease, transform 1.5s ease; 
+}
+
+
+
+
+	</style>
+
+<script  is:inline src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.0/dist/smooth-scroll.min.js"></script>
+	<script is:inline>	
+// JavaScript to toggle the navigation bar open/close
+document.addEventListener('DOMContentLoaded', function() {
+  const toggleButton = document.querySelector('#toggle_nav');
+  const navbar = document.querySelector('#navbar');
+
+  // Function to toggle the navigation bar
+  function toggleNavbar() {
+    navbar.classList.toggle('nav-open');
+  }
+
+  // Add an event listener to the toggle button
+  toggleButton.addEventListener('change', toggleNavbar);
+
+  // Add event listeners to the navigation links to close the navigation bar when a link is clicked
+  const navLinks = document.querySelectorAll('ul li a');
+  navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      if (toggleButton.checked) {
+        toggleButton.checked = false; // Uncheck the toggle button to close the navbar
+        toggleNavbar(); // Close the navbar immediately
+      }
+    });
+  });
+});
+
+// Function to handle the intersection observer callback
+function handleIntersection(entries, observer) {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            // Add the 'reveal' class to elements that are in the viewport
+            entry.target.classList.add('reveal');
+        } 
+        // else {
+        //     // Remove the 'reveal' class when the element is not in the viewport
+        //     entry.target.classList.remove('reveal');
+        // }
+    });
+}
+
+// Create an Intersection Observer
+const observer = new IntersectionObserver(handleIntersection, {
+    root: null, // Use the viewport as the root
+     rootMargin: '0px', // No margin
+    threshold: 0.20, // Trigger the callback when 20% of the element is visible
+});
+
+// Observe all elements with the 'reveal-element' class
+const revealElements = document.querySelectorAll('.reveal-element');
+revealElements.forEach((element) => {
+    observer.observe(element);
+});
+
+		const navBar = document.getElementById("nav-bar");
+        const scrollDistance = 80;
+        let lastScrollTop = 0;
+
+        window.addEventListener("scroll", () => {
+            const scrollY = window.scrollY || window.pageYOffset;
+            
+            if (scrollY > lastScrollTop) {
+                // Scrolling down
+                navBar.classList.add("slide-up");
+                navBar.classList.remove("slide-down");
+            } else {
+                // Scrolling up
+                navBar.classList.add("slide-down");
+                navBar.classList.remove("slide-up");
+            }
+
+            if (scrollY >= scrollDistance) {
+                navBar.classList.add("bg-white", "dark:bg-gray-900");
+            } else {
+                navBar.classList.remove("bg-white", "dark:bg-gray-900");
+            }
+
+            lastScrollTop = scrollY;
+        });
+		const sections = document.querySelectorAll('.section');
+			const navLinks = document.querySelectorAll('ul a');
+	
+			window.addEventListener('scroll', () => {
+				let current = '';
+				sections.forEach(section => {
+					const sectionTop = section.offsetTop;
+					const sectionHeight = section.clientHeight;
+					if (pageYOffset >= sectionTop - sectionHeight / 2) {
+						current = section.getAttribute('id');
+					}
+				});
+	
+				navLinks.forEach(link => {
+					link.classList.remove('active');
+					if (link.getAttribute('href').slice(1) === current) {
+						link.classList.add('active');
+					}
+				});
+			});
+
+const scroll = new SmoothScroll('a[href*="#"]', {
+    speed: 500, // Adjust the scroll speed as needed
+    offset: 5, // Adjust the scroll offset if you have a fixed header
+  });
+
+// Function to add the active class to the appropriate navigation link
+function setActiveNavLink() {
+  const sections = ['home', 'projects', 'about', 'skills', 'contact'];
+  const navLinks = document.querySelectorAll('ul li a');
+
+  let currentActiveSection = null; // Store the currently active section
+
+  sections.forEach((section) => {
+    const target = document.getElementById(section);
+    const link = document.querySelector(`a[href="/#${section}"]`);
+
+    if (target && link) {
+      const rect = target.getBoundingClientRect();
+      if (rect.top <= 100 && rect.bottom >= 100) {
+        currentActiveSection = section; // Update the currently active section
+      }
+    } else {
+      console.error(`Section with ID "${section}" or matching link not found.`);
+    }
+  });
+  // Remove the 'text-blue-600' class from all navigation links
+  navLinks.forEach((link) => {
+    link.classList.remove('text-blue-600');
+  });
+  // Add the 'text-blue-600' class to the currently active navigation link
+  if (currentActiveSection) {
+    const activeLink = document.querySelector(`a[href="/#${currentActiveSection}"]`);
+    if (activeLink) {
+      activeLink.classList.add('text-blue-600');
+    }
+  }
+}
+// Call the setActiveNavLink function after the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', setActiveNavLink);
+
+// Call the setActiveNavLink function on scroll
+window.addEventListener('scroll', setActiveNavLink);
+
+	</script>
+
+
+ 
