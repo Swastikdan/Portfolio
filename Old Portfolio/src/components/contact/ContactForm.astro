@@ -1,0 +1,119 @@
+<form id="contact-form" class="space-y-8 reveal-element">
+  <div class="">
+      <label for="name" class="block mb-2 text-base md:text-xl font-medium text-gray-900 dark:text-gray-300">
+          Name </label>
+      <input type="text" id="name" name="name" placeholder="John Doe"
+          class="shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2 rounded text-sm dark:bg-gray-600 dark:text-white gotham ring-1"
+           aria-required="true" aria-label="Name">
+  </div>
+  <div class="">
+      <label for="email" class="block mb-2 text-base md:text-xl font-medium text-gray-900 dark:text-gray-300">Email <span class="text-red-600">*</span></label>
+      <input type="email" id="email" name="email" placeholder="mail@example.com"
+          class="shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2 rounded text-sm dark:bg-gray-600 dark:text-white gotham ring-1"
+          required aria-required="true" aria-label="Email Address">
+  </div>
+  <div class="">
+      <label for="subject"
+          class="block mb-2 text-base md:text-xl font-medium text-gray-900 dark:text-gray-300">Subject <span
+              class="text-red-600">*</span></label>
+      <input type="text" id="subject" name="subject"
+          class="shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2 rounded text-sm dark:bg-gray-600 dark:text-white gotham ring-1"
+          placeholder="Let me know how we can help you" required aria-required="true" aria-label="Subject">
+  </div>
+  <div class="sm:col-span-2 ">
+      <label for="message" class="block mb-2 text-base md:text-xl font-medium text-gray-900 dark:text-gray-400">Message <span class="text-red-600">*</span></label>
+      <textarea id="message" name="message" rows="7" style="resize: none;"
+          class="shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block w-full p-2 rounded text-sm dark:bg-gray-600 dark:text-white gotham ring-1"
+          placeholder="Write Your Message" required aria-required="true" aria-label="Message"></textarea>
+  </div>
+  <div class="rounded-full overflow-hidden">
+  <button type="submit"
+  class="w-full relative flex h-12  items-center justify-center px-8 before:absolute before:inset-0 before:rounded-full before:bg-sky-200 before:bg-gradient-to-b before:transition before:duration-300  dark:before:border-gray-700 dark:before:bg-sky-500 ">
+  <span class="relative text-base font-semibold text-sky-800 dark:text-white">Send Message
+  </span>
+</a>
+</button>
+</div>
+</form>
+
+<script is:inline>
+   // Function to sanitize user input
+   function sanitizeInput(input) {
+      // Use a regular expression to remove any potentially harmful characters
+      const sanitizedInput = input.replace(/[<>&]/g, '');
+      return sanitizedInput;
+  }
+
+  // Listen for the form submit
+  const contactForm = document.getElementById('contact-form');
+  const submitButton = contactForm.querySelector('button[type="submit"]');
+  const submitButtonText = submitButton.querySelector('span');
+  
+  contactForm.addEventListener('submit', function (e) {
+      e.preventDefault(); // Prevent the default form submission
+
+      // Get form data and sanitize it
+      const name = sanitizeInput(document.getElementById('name').value);
+      const email = sanitizeInput(document.getElementById('email').value);
+      const subject = sanitizeInput(document.getElementById('subject').value);
+      const message = sanitizeInput(document.getElementById('message').value);
+
+      // Create a data object to send to the server
+      const data = {
+          name: name,
+          email: email,
+          subject: subject,
+          message: message,
+      };
+
+      // Disable the submit button and show a loading indicator
+      submitButton.setAttribute('disabled', 'true');
+      submitButtonText.innerHTML = `
+    <div class="flex items-center justify-center gap-x-2 rounded-full">
+    <div class="rounded-full animate-spin inline-block w-6 h-6 border-[3px] border-current border-t-transparent text-sky-950 dark:text-white rounded-full" role="status" aria-label="Sending">
+     
+    </div>
+    <span >Sending...</span>
+    </div>
+  `;
+      submitButton.classList.add('bg-sky-200', 'dark:bg-sky-500');
+
+      // Make a POST request to the server
+      fetch('https://express-mail-server.onrender.com/send-email', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+      })
+          .then((response) => {
+              if (response.ok) {
+                  return response.json();
+              } else {
+                  throw new Error('Error - Please try again later.');
+              }
+          })
+          .then((data) => {
+              if (data.success) {
+                  submitButtonText.textContent = 'Thank you!';
+
+                  // Reset the form and re-enable the submit button after 3 seconds (3000 milliseconds)
+                  setTimeout(() => {
+                      contactForm.reset();
+                      submitButton.removeAttribute('disabled');
+                      submitButtonText.textContent = 'Let\'s chat';
+                      submitButton.classList.remove('bg-sky-200', 'dark:bg-sky-500');
+                  }, 3000);
+              } else {
+                  submitButtonText.textContent = 'Error Sending Message';
+                  throw new Error('Server error: ' + data.error);
+              }
+          })
+          .catch((error) => {
+              console.error(error);
+              submitButtonText.textContent = 'Error Sending Message: ' + error.message;
+              submitButton.removeAttribute('disabled'); // Re-enable the button on error
+          });
+  });
+
+</script>
