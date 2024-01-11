@@ -1,9 +1,6 @@
-import Image from "next/image";
 import NavBar from "@/components/navbar/NavBar";
-import HeroSection from "@/components/herosction/HeroSection";
-import ProjectsPreview from "@/components/projects/ProjectsPreview";
 import Footer from "@/components/footer/Footer";
-export default function Home() {
+export default function NotFound() {
   return (
     <>
       <div
@@ -13,12 +10,13 @@ export default function Home() {
         <div className="blur-[106px] h-56 bg-gradient-to-br from-orange-300/10 to-purple-400 "></div>
         <div className="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 "></div>
       </div>
-      <NavBar />
-      <main className="pt-20 max-w-7xl mx-auto py-4 px-5 md:px-0 ">
-        <HeroSection />
 
-        <ProjectsPreview />
-      </main>
+      <NavBar />
+      <div className="relative grid h-screen place-content-center  px-4 ">
+        <h1 className="uppercase tracking-widest text-gray-500 dark:text-gray-400">
+          404 | Not Found
+        </h1>
+      </div>
 
       <Footer />
     </>

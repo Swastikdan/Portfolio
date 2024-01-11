@@ -3,10 +3,10 @@ export default function HeroSection() {
   return (
     <>
       <section className="relative">
-        <h1 className="text-[42px] md:text-7xl lg:text-8xl xl:text-9xl font-heading font-black flex flex-col text-center py-6 group text-gray-800 dark:text-gray-200">
+        <h1 className="text-[42px] md:text-7xl lg:text-8xl xl:text-9xl font-heading font-black flex flex-col text-center py-6 group text-gray-800 dark:text-gray-200 tracking-wide">
           <span className="z-10 -rotate-1">Hay , I'm</span>
           <span>
-            <span className="bg-gradient-to-r from-blue-500 to-cyan-400/80 text-white   ">
+            <span className="bg-gradient-to-r from-blue-500 to-cyan-400/80 text-white px-2 ">
               Swastik Dan ,
             </span>
             <span className="">I </span>
@@ -43,7 +43,7 @@ export default function HeroSection() {
             </svg>
           </Link>
 
-          <Link href="" className="text-lg lg:text-xl tracking-normal gap-2.5 px-3 py-1 rounded-md  hover:bg-gray-300/80  dark:hover:bg-gray-800 transition duration-300"> 
+          <Link href="/about" className="text-lg lg:text-xl tracking-normal gap-2.5 px-3 py-1 rounded-md  hover:bg-gray-300/80  dark:hover:bg-gray-800 transition duration-300"> 
             About Me
           </Link>
         </div>
