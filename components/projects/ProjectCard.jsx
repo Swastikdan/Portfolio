@@ -37,10 +37,10 @@ blank" rel=" noopener noreferrer"
                 {description.split(" ").slice(0, 30).join(" ")}
               </p>
             </div>
-            <div class="flex flex-wrap gap-2 px-4 py-2">
+            <div class="flex flex-wrap gap-2 px-4 pt-2 pb-4">
             {tags.map((tag) => (
                 
-              <span key={tag} class="whitespace-nowrap rounded-full bg-blue-100 px-2.5 py-0.5 text-xs text-blue-600">
+              <span key={tag} class="whitespace-nowrap rounded-full bg-blue-100 px-2.5 py-0.5 text-xs text-blue-600 border border-blue-600">
                 {tag}
               </span> ))}  
             </div>
