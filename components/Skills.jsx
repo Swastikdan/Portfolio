@@ -26,19 +26,19 @@ export default function Skills() {
   return (
     <section className="max-w-7xl">
       <div className="py-10 md:py-20 md:px-10">
-        <div class="relative grid overflow-hidden rounded-[1.25rem] bg-gray-200/50 p-1 dark:bg-gray-800/50 md:grid-cols-3 border-[2px] border-gray-300 dark:border-gray-800">
+        <div className="relative grid overflow-hidden rounded-[1.25rem] bg-gray-200/50 p-1 dark:bg-gray-800/50 md:grid-cols-3 border-[2px] border-gray-300 dark:border-gray-800">
           {skills.map((skill) => (
             <div
               key={skill.id}
-              class="flex flex-col gap-6 rounded-2xl p-8 transition duration-300 hover:bg-white hover:shadow-2xl hover:shadow-gray-600/10 dark:hover:bg-gray-700/60 dark:hover:shadow-none"
+              className="flex flex-col gap-6 rounded-2xl p-8 transition duration-300 hover:bg-white hover:shadow-2xl hover:shadow-gray-600/10 dark:hover:bg-gray-700/60 dark:hover:shadow-none"
             >
               {skill.icon}
 
               <div>
-                <h2 class="text-xl font-semibold text-gray-900 dark:text-white">
+                <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
                   {skill.title}
                 </h2>
-                <p class="mt-3 text-gray-600 dark:text-gray-400">
+                <p className="mt-3 text-gray-600 dark:text-gray-400">
                   {skill.description}
                 </p>
               </div>

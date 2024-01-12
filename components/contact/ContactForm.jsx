@@ -59,83 +59,89 @@ export default function ContactForm() {
   return (
     <>
       
-      <form onSubmit={handleSubmit} class="space-y-4 md:space-y-8 w-full  justify-center">
+      <form onSubmit={handleSubmit} className="space-y-4 md:space-y-8 w-full  justify-center">
         <div>
           <label
-            for="name"
-            class="block mb-2 text-base font-semibold font-heading text-gray-900 dark:text-gray-300"
+            htmlFor="name"
+            className="block mb-2 text-base font-semibold  text-gray-900 dark:text-gray-300"
           >
             Your Name
           </label>
           <input
             type="text"
+            id="name"
             name="name"
             value={formData.name}
             onChange={handleChange}
-            class="shadow-sm bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+            className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 placeholder-gray-600 font-medium  dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
             placeholder="your Name"
+            autoComplete="on"
             required
           />
         </div>
         <div>
           <label
-            for="email"
-            class="block mb-2 text-base font-semibold font-heading text-gray-900 dark:text-gray-300"
+            htmlFor="email"
+            className="block mb-2 text-base font-semibold  text-gray-900 dark:text-gray-300"
           >
             Your email
           </label>
           <input
             type="email"
+            id="email"
             name="email"
             value={formData.email}
             onChange={handleChange}
-            class="shadow-sm bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+            className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 placeholder-gray-600 font-medium  dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
             placeholder="name@example.com"
+            autoComplete="on"
             required
           />
         </div>
         <div>
           <label
-            for="subject"
-            class="block mb-2 text-base font-semibold font-heading text-gray-900 dark:text-gray-300"
+            htmlFor="subject"
+            className="block mb-2 text-base font-semibold  text-gray-900 dark:text-gray-300"
           >
             Subject
           </label>
           <input
             type="text"
+            id="subject"
             name="subject"
             value={formData.subject}
             onChange={handleChange}
-            class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+            className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 placeholder-gray-600 font-medium  dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
             placeholder="Let me know how I can help you"
             required
           />
         </div>
-        <div class="sm:col-span-2">
+        <div className="sm:col-span-2">
           <label
-            for="message"
-            class="block mb-2 text-base font-semibold font-heading text-gray-900 dark:text-gray-400"
+            htmlFor="message"
+            className="block mb-2 text-base font-semibold  text-gray-900 dark:text-gray-400"
           >
             Your message
           </label>
           <textarea
             name="message"
+            id="message"
             value={formData.message}
             onChange={handleChange}
             rows="6"
-            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+            className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 placeholder-gray-600 font-medium  dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
             placeholder="Leave a comment..."
           ></textarea>
         </div>
         <button
         type="submit"
-        class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary w-full hover:bg-primary- focus:ring-4 focus:outline-none focus:ring-primary dark:bg-primary dark:hover:bg-primary dark:focus:ring-primary"
+        className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary w-full hover:bg-primary- focus:ring-4 focus:outline-none focus:ring-primary dark:bg-primary dark:hover:bg-primary dark:focus:ring-primary"
         disabled={isLoading}
       >
         {isLoading ? (
-          <div class="flex items-center justify-center gap-x-2 rounded-full">
+          <div className="flex items-center justify-center gap-x-2 rounded-full">
             <div
-              class="animate-spin inline-block w-6 h-6 border-[3px] border-current border-t-transparent text-sky-950 dark:text-white rounded-full"
+              className="animate-spin inline-block w-6 h-6 border-[3px] border-current border-t-transparent text-sky-950 dark:text-white rounded-full"
               role="status"
               aria-label="Sending"
             ></div>
@@ -225,11 +231,11 @@ export default function ContactForm() {
 //   return (
 //     <>
       
-//       <form onSubmit={handleSubmit} class="space-y-8 w-full  justify-center">
+//       <form onSubmit={handleSubmit} className="space-y-8 w-full  justify-center">
 //         <div>
 //           <label
-//             for="name"
-//             class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+//             htmlFor="name"
+//             className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
 //           >
 //             Your Name
 //           </label>
@@ -238,15 +244,15 @@ export default function ContactForm() {
 //             name="name"
 //             value={formData.name}
 //             onChange={handleChange}
-//             class="shadow-sm bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+//             className="shadow-sm bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
 //             placeholder="your Name"
 //             required
 //           />
 //         </div>
 //         <div>
 //           <label
-//             for="email"
-//             class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+//             htmlFor="email"
+//             className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
 //           >
 //             Your email
 //           </label>
@@ -255,15 +261,15 @@ export default function ContactForm() {
 //             name="email"
 //             value={formData.email}
 //             onChange={handleChange}
-//             class="shadow-sm bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+//             className="shadow-sm bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
 //             placeholder="name@example.com"
 //             required
 //           />
 //         </div>
 //         <div>
 //           <label
-//             for="subject"
-//             class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+//             htmlFor="subject"
+//             className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
 //           >
 //             Subject
 //           </label>
@@ -272,15 +278,15 @@ export default function ContactForm() {
 //             name="subject"
 //             value={formData.subject}
 //             onChange={handleChange}
-//             class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+//             className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
 //             placeholder="Let me know how I can help you"
 //             required
 //           />
 //         </div>
-//         <div class="sm:col-span-2">
+//         <div className="sm:col-span-2">
 //           <label
-//             for="message"
-//             class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+//             htmlFor="message"
+//             className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
 //           >
 //             Your message
 //           </label>
@@ -289,19 +295,19 @@ export default function ContactForm() {
 //             value={formData.message}
 //             onChange={handleChange}
 //             rows="6"
-//             class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+//             className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
 //             placeholder="Leave a comment..."
 //           ></textarea>
 //         </div>
 //         <button
 //           type="submit"
-//           class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary w-full hover:bg-primary- focus:ring-4 focus:outline-none focus:ring-primary dark:bg-primary dark:hover:bg-primary dark:focus:ring-primary"
+//           className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary w-full hover:bg-primary- focus:ring-4 focus:outline-none focus:ring-primary dark:bg-primary dark:hover:bg-primary dark:focus:ring-primary"
 //           disabled={isLoading}
 //         >
 //           {isLoading ? (
-//             <div class="flex items-center justify-center gap-x-2 rounded-full">
+//             <div className="flex items-center justify-center gap-x-2 rounded-full">
 //               <div
-//                 class="animate-spin inline-block w-6 h-6 border-[3px] border-current border-t-transparent text-sky-950 dark:text-white rounded-full"
+//                 className="animate-spin inline-block w-6 h-6 border-[3px] border-current border-t-transparent text-sky-950 dark:text-white rounded-full"
 //                 role="status"
 //                 aria-label="Sending"
 //               ></div>

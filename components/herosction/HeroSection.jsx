@@ -1,13 +1,13 @@
 import Link from "next/link";
 export default function HeroSection() {
   return (
-    <><div aria-hidden="true" class="absolute inset-0 top-0 grid grid-cols-2 space-x-52 opacity-30 dark:opacity-20">
-                <div class="h-60 bg-gradient-to-br from-primary to-purple-400 blur-[106px] dark:from-blue-700"></div>
-                <div class="h-40 bg-gradient-to-r from-cyan-400 to-sky-300 blur-[106px] dark:to-indigo-600"></div>
+    <><div aria-hidden="true" className="absolute inset-0 top-0 grid grid-cols-2 space-x-52 opacity-30 dark:opacity-20">
+                <div className="h-60 bg-gradient-to-br from-primary to-purple-400 blur-[106px] dark:from-blue-700"></div>
+                <div className="h-40 bg-gradient-to-r from-cyan-400 to-sky-300 blur-[106px] dark:to-indigo-600"></div>
             </div>
       <section className="relative">
       
-        <h1 className="text-[42px] md:text-7xl lg:text-8xl xl:text-9xl font-heading font-black flex flex-col text-center py-6 group text-gray-800 dark:text-gray-200 tracking-wide">
+        <h1 className="text-[42px] md:text-7xl lg:text-8xl xl:text-9xl  font-black flex flex-col text-center py-6 group text-gray-800 dark:text-gray-200 tracking-wide">
           <span className="z-10 -rotate-1">Hay , I'm</span>
           <span>
             <span className="bg-gradient-to-r from-blue-500 to-cyan-400/80 text-white px-2 ">
@@ -27,13 +27,13 @@ export default function HeroSection() {
           both beautiful and intuitive.
         </h2>
 
-        <div className="flex items-center justify-start text-lg md:text-xl font-heading gap-4 pt-5 ">
+        <div className="flex items-center justify-start text-lg md:text-xl  gap-4 pt-5 ">
           <Link
             href="#contact"
             aria-label="Contact Me"
             className="group inline-flex py-1 items-center gap-2.5 rounded-md bg-gray-300/80 hover:bg-gray-200 px-3 transition-all duration-500 dark:bg-gray-800 dark:hover:bg-gray-700"
           >
-            <span className="text-lg lg:text-xl tracking-normal ">Let's talk</span>
+            <span className="text-lg  lg:text-xl font-medium tracking-normal ">Let's talk</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -48,10 +48,12 @@ export default function HeroSection() {
             </svg>
           </Link>
 
-          <Link href="/about" aria-label="About Me " className="text-lg lg:text-xl tracking-normal gap-2.5 px-3 py-1 rounded-md  hover:bg-gray-300/80  dark:hover:bg-gray-800 transition duration-300"> 
+          <Link href="/about" aria-label="About Me " className="text-lg lg:text-xl font-medium tracking-normal gap-2.5 px-3 py-1 rounded-md  hover:bg-gray-200  dark:hover:bg-gray-700 transition duration-300"> 
             About Me
           </Link>
         </div>
+
+        
       </section>
     </>
   );

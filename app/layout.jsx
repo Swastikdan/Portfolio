@@ -1,9 +1,7 @@
-import { GeistSans } from 'geist/font/sans'
-import { GeistMono } from 'geist/font/mono'
+import { Space_Grotesk } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from "@/components/theme-provider"
-
-
+const inter = Space_Grotesk({ subsets: ['latin'] })
 export const metadata = {
   title: "Portfolio | Swastik Dan",
   description:
@@ -13,7 +11,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
+    <html lang="en" className={inter.className} suppressHydrationWarning>
       <head>
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="en" />
@@ -54,10 +52,10 @@ export default function RootLayout({ children }) {
         <meta name="twitter:image:type" content="image/png" />
         <meta name="twitter:image:alt" content="Explore the portfolio site of Swastik Dan with a range of creative skills and experiences, including problem solving, research, and proficiency in Full Stack Web Development" />
       </head>
-      <body  className='mx-auto select-none md:select-auto ' >
+      <body  className='mx-auto select-none md:select-auto bg-gray-100 dark:bg-gray-900 ' >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange>
           {children}

@@ -9,14 +9,6 @@ module.exports = {
   ],
   prefix: "",
   theme: {
-
-    fontFamily: {
-      sans: ['var(--font-geist-sans)'],
-      mono: ['var(--font-geist-mono)'],
-      heading: ['"Space Grotesk"', 'sans-serif'],
-    },
-
-
     container: {
       center: true,
       padding: "2rem",

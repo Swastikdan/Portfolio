@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <>
       
-      <footer className=" py-6 font-heading relative border-t">
+      <footer className=" py-6  relative border-t">
         <div className="flex flex-col flex-wrap items-center justify-between gap-4 py-6 text-sm  sm:flex-row sm:gap-6 mx-auto max-w-7xl">
           <span className="order-last sm:order-first">
             Copyright © {year} | All rights reserved

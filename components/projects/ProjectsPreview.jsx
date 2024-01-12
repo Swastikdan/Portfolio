@@ -6,13 +6,13 @@ export default function ProjectsPreview() {
     <>
       <section className="relative py-10 space-y-4 ">
         <div className="flex items-center justify-between">
-          <span className=" font-heading text-xl md:text-2xl lg:text-4xl font-bold">
+          <span className="  text-xl md:text-2xl lg:text-4xl font-bold">
             Selected Projects
           </span>
           <Link
             href="/projects"
             aria-label="View All Projects"
-            className="inline-flex items-center md:text-lg lg:text-xl font-heading tracking-normal gap-2.5  px-3 py-1 rounded-md  hover:bg-gray-300/80  dark:hover:bg-gray-800 transition duration-300"
+            className="inline-flex items-center md:text-lg lg:text-xl font-medium tracking-normal gap-2.5  px-3 py-1 rounded-md  hover:bg-gray-200  dark:hover:bg-gray-700/80 transition duration-300"
           >
             View All
             <svg
