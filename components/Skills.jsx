@@ -26,7 +26,7 @@ export default function Skills() {
   return (
     <section className="max-w-7xl">
       <div className="py-10 md:py-20 md:px-10">
-        <div class="relative grid overflow-hidden rounded-[1.25rem] bg-gray-200/50 p-1 dark:bg-gray-800/50 sm:grid-cols-3 border-[2px] border-gray-300 dark:border-gray-800">
+        <div class="relative grid overflow-hidden rounded-[1.25rem] bg-gray-200/50 p-1 dark:bg-gray-800/50 md:grid-cols-3 border-[2px] border-gray-300 dark:border-gray-800">
           {skills.map((skill) => (
             <div
               key={skill.id}
