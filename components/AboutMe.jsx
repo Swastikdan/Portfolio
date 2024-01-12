@@ -9,12 +9,13 @@ export default function AboutMe() {
               <div class="card rounded-3xl" data-color="brown">
                 <Image
                   tabindex="0"
-                  class="card-front-image card-image rounded-3xl border border-black dark:border-white "
+                  class="card-front-image h-80 md:h-96 card-image rounded-3xl border border-black dark:border-white "
                   alt="profile Image"
-                  loading="lazy"
+                  priority={true}
                   width="300"
                   height="300"
                   src="/profile-pic-final.jpg"
+                  quality={25}
                 />
               </div>
             </div>
