@@ -12,7 +12,7 @@ export default function Contact() {
             </span>
           </h2>
           <span className="text-sm md:text-base ">
-            I'm always open to discussing newwork or opportunities.
+            I'm always open to discussing new work or opportunities.
           </span>
         </div>
         <div className="max-w-2xl mx-auto md:p-5 rounded-md">

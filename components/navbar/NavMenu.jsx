@@ -11,7 +11,7 @@ export default function NavMenu() {
             href={link.href}
             key={link.label}
             aria-label={link.label}
-            className="text-lg font-medium  md:px-2 bg-gray-400/50  dark:bg-gray-400/50 hover:bg-gray-300/80 dark:hover:bg-gray-400/80 rounded-md ring-1 ring-black dark:ring-gray-200 md:transition-all md:duration-200 "
+            className="  md:text-lg text-base font-medium  px-2 bg-gray-400/50  dark:bg-gray-400/50 hover:bg-gray-300/80 dark:hover:bg-gray-400/80 rounded-md ring-1 ring-black dark:ring-gray-200 md:transition-all md:duration-200 "
           >
             {link.label}
           </Link>

@@ -4,7 +4,7 @@ import SelectedProjectData from "./ProjectData";
 export default function ProjectsPreview() {
   return (
     <>
-      <section className="relative py-10 space-y-4 ">
+      <section className="relative py-10 space-y-4  ">
         <div className="flex items-center justify-between">
           <span className="  text-xl md:text-2xl lg:text-4xl font-bold">
             Selected Projects

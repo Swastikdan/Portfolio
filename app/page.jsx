@@ -17,7 +17,7 @@ export default function Home() {
         <div className="blur-[106px] h-96 bg-gradient-to-r from-cyan-600 to-sky-500 "></div>
       </div> */}
       <NavBar />
-      <main className="pt-20 max-w-7xl mx-auto py-4 px-5 xl:px-0 ">
+      <main className="pt-20 max-w-7xl mx-auto py-4 px-5 ">
         <HeroSection />
         <Skills />
         <ProjectsPreview />

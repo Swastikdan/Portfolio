@@ -58,8 +58,10 @@ export default function ContactForm() {
   };
   return (
     <>
-      
-      <form onSubmit={handleSubmit} className="space-y-4 md:space-y-8 w-full  justify-center">
+      <form
+        onSubmit={handleSubmit}
+        className="space-y-4 md:space-y-8 w-full  justify-center"
+      >
         <div>
           <label
             htmlFor="name"
@@ -74,7 +76,7 @@ export default function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 placeholder-gray-600 font-medium  dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-            placeholder="your Name"
+            placeholder="Your Name"
             autoComplete="on"
             required
           />
@@ -134,43 +136,31 @@ export default function ContactForm() {
           ></textarea>
         </div>
         <button
-        type="submit"
-        className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary w-full hover:bg-primary- focus:ring-4 focus:outline-none focus:ring-primary dark:bg-primary dark:hover:bg-primary dark:focus:ring-primary"
-        disabled={isLoading}
-      >
-        {isLoading ? (
-          <div className="flex items-center justify-center gap-x-2 rounded-full">
-            <div
-              className="animate-spin inline-block w-6 h-6 border-[3px] border-current border-t-transparent text-sky-950 dark:text-white rounded-full"
-              role="status"
-              aria-label="Sending"
-            ></div>
-            <span>Sending...</span>
-          </div>
-        ) : isError ? (
-          "Something went wrong"
-        ) : isSuccess ? (
-          "Thank You"
-        ) : (
-          "Send Message"
-        )}
-      </button>
+          type="submit"
+          className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary w-full hover:bg-primary- focus:ring-4 focus:outline-none focus:ring-primary dark:bg-primary dark:hover:bg-primary dark:focus:ring-primary"
+          disabled={isLoading}
+        >
+          {isLoading ? (
+            <div className="flex items-center justify-center gap-x-2 rounded-full">
+              <div
+                className="animate-spin inline-block w-6 h-6 border-[3px] border-current border-t-transparent text-sky-950 dark:text-white rounded-full"
+                role="status"
+                aria-label="Sending"
+              ></div>
+              <span>Sending...</span>
+            </div>
+          ) : isError ? (
+            "Something went wrong"
+          ) : isSuccess ? (
+            "Thank You"
+          ) : (
+            "Send Message"
+          )}
+        </button>
       </form>
     </>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import React, { useState } from "react";
 
@@ -230,7 +220,7 @@ export default function ContactForm() {
 
 //   return (
 //     <>
-      
+
 //       <form onSubmit={handleSubmit} className="space-y-8 w-full  justify-center">
 //         <div>
 //           <label
@@ -323,4 +313,3 @@ export default function ContactForm() {
 //     </>
 //   );
 // }
-

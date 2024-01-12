@@ -40,7 +40,7 @@ export default function NavBar() {
       <nav
         className={`fixed inset-x-0 top-0 z-50 duration-200  ${navClass} ${bgClass}`}
       >
-        <div className="items-center flex justify-between max-w-7xl mx-auto py-4 px-5 xl:px-0 ">
+        <div className="items-center flex justify-between max-w-7xl mx-auto py-5 px-5">
           <Link
             href="/"
             aria-label="Home"
