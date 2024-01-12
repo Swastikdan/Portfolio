@@ -1,15 +1,19 @@
 import Link from "next/link";
 export default function HeroSection() {
   return (
-    <>
+    <><div aria-hidden="true" class="absolute inset-0 top-0 grid grid-cols-2 space-x-52 opacity-30 dark:opacity-20">
+                <div class="h-60 bg-gradient-to-br from-primary to-purple-400 blur-[106px] dark:from-blue-700"></div>
+                <div class="h-40 bg-gradient-to-r from-cyan-400 to-sky-300 blur-[106px] dark:to-indigo-600"></div>
+            </div>
       <section className="relative">
+      
         <h1 className="text-[42px] md:text-7xl lg:text-8xl xl:text-9xl font-heading font-black flex flex-col text-center py-6 group text-gray-800 dark:text-gray-200 tracking-wide">
           <span className="z-10 -rotate-1">Hay , I'm</span>
           <span>
             <span className="bg-gradient-to-r from-blue-500 to-cyan-400/80 text-white px-2 ">
-              Swastik Dan ,
+              Swastik Dan
             </span>
-            <span className="">I </span>
+            <span className=""> , I </span>
           </span>
           <span className="z-10 rotate-1">Develop Stuff </span>
         </h1>

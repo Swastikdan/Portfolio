@@ -23,7 +23,7 @@ export default function NavBar() {
       }
 
       if (scrollY >= scrollDistance) {
-        setBgClass("bg-white dark:bg-black");
+        setBgClass("bg-white dark:bg-black border-b border-gray-200 dark:border-gray-800 shadow-md");
       } else {
         setBgClass("");
       }
