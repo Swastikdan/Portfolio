@@ -63,6 +63,31 @@
   }
 }
 
+#cards {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  transition: scale 100ms;
+}
+
+.card .card-front-image {
+  position: relative;
+  z-index: 2;
+}
+
+.card .card-image {
+  width: clamp(250px, 20vw, 450px);
+  aspect-ratio: auto 1 / 1;
+  border-radius: clamp(2.5rem, 0.75vw, 3rem);
+}
 
 
 .slide-down {
