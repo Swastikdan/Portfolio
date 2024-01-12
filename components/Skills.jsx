@@ -30,7 +30,7 @@ export default function Skills() {
           {skills.map((skill) => (
             <div
               key={skill.id}
-              className="flex flex-col gap-6 rounded-2xl p-8 transition duration-300 hover:bg-white hover:shadow-2xl hover:shadow-gray-600/10 dark:hover:bg-gray-700/60 dark:hover:shadow-none"
+              className="flex flex-col gap-6 rounded-2xl p-8 m-2 transition duration-300 bg-white hover:shadow-2xl shadow-gray-600/10 dark:bg-gray-700/60 dark:shadow-none"
             >
               {skill.icon}
 
