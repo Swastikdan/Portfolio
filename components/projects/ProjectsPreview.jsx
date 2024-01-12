@@ -11,6 +11,7 @@ export default function ProjectsPreview() {
           </span>
           <Link
             href="/projects"
+            aria-label="View All Projects"
             className="inline-flex items-center md:text-lg lg:text-xl font-heading tracking-normal gap-2.5  px-3 py-1 rounded-md  hover:bg-gray-300/80  dark:hover:bg-gray-800 transition duration-300"
           >
             View All

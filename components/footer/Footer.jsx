@@ -11,18 +11,19 @@ export default function Footer() {
           <span className="order-last sm:order-first">
             Copyright © {year} | All rights reserved
           </span>
-          <ul className="order-first flex gap-6 sm:order-2">
+          <div className="order-first flex gap-6 sm:order-2">
             {socialLinks.map((link) => (
-              <Link key={link.label} href={link.href} target="_blank" className=" hover:underline underline-offset-2" >
+              <Link key={link.label} aria-label={link.label} href={link.href} target="_blank" className=" hover:underline underline-offset-2" >
                 {link.label}
               </Link>
             ))}
-          </ul>
+          </div>
           <div className="flex">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
+                aria-label={link.label}
                 className="block py-1 px-3 hover:underline underline-offset-2"
               >
                 {link.label}

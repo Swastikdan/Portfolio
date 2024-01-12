@@ -6,6 +6,7 @@ export default function ProjectCard( {keys ,title, description, url,imageSrc,tag
       <Link
         key={keys}
         href={url}
+        aria-label={title}
         target="
 blank" rel=" noopener noreferrer"
         class="overflow-hidden rounded-2xl bg-gradient-to-b from-gray-300 to-gray-200/50 p-px dark:from-gray-700 dark:via-gray-800 dark:to-darker  sshadow-sm transition hover:shadow-lg  dark:shadow-gray-700/25  group "
@@ -17,6 +18,7 @@ blank" rel=" noopener noreferrer"
               src={imageSrc}
               width={1170}
               height={500}
+              quality={50}
               
               className="h-56 w-full rounded-xl object-cover shadow-xl transition  group-hover:scale-[1.01] "
             />

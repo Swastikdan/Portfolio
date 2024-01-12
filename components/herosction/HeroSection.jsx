@@ -26,6 +26,7 @@ export default function HeroSection() {
         <div className="flex items-center justify-start text-lg md:text-xl font-heading gap-4 pt-5 ">
           <Link
             href="#contact"
+            aria-label="Contact Me"
             className="group inline-flex py-1 items-center gap-2.5 rounded-md bg-gray-300/80 hover:bg-gray-200 px-3 transition-all duration-500 dark:bg-gray-800 dark:hover:bg-gray-700"
           >
             <span className="text-lg lg:text-xl tracking-normal ">Let's talk</span>
@@ -43,7 +44,7 @@ export default function HeroSection() {
             </svg>
           </Link>
 
-          <Link href="/about" className="text-lg lg:text-xl tracking-normal gap-2.5 px-3 py-1 rounded-md  hover:bg-gray-300/80  dark:hover:bg-gray-800 transition duration-300"> 
+          <Link href="/about" aria-label="About Me " className="text-lg lg:text-xl tracking-normal gap-2.5 px-3 py-1 rounded-md  hover:bg-gray-300/80  dark:hover:bg-gray-800 transition duration-300"> 
             About Me
           </Link>
         </div>

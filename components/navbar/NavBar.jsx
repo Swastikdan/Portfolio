@@ -43,6 +43,7 @@ export default function NavBar() {
         <div className="items-center flex justify-between max-w-7xl mx-auto py-4 px-5 xl:px-0 ">
           <Link
             href="/"
+            aria-label="Home"
             className="flex space-x-2 items-center text-2xl font-heading font-semibold "
           >
             <Logo width={50} height={50} className="w-10 h-10 md:w-12 hover:scale-105 hover:-rotate-6 transition-all duration-200 " />

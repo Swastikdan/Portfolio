@@ -10,6 +10,7 @@ export default function NavMenu() {
           <Link
             href={link.href}
             key={link.label}
+            aria-label={link.label}
             className="text-lg md:px-2  font-heading hover:text-sky-500 md:transition-all md:duration-200 "
           >
             {link.label}
