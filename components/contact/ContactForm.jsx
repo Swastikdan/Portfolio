@@ -137,7 +137,7 @@ export default function ContactForm() {
         </div>
         <button
           type="submit"
-          className="py-3 px-5  font-medium text-center text-white rounded-lg bg-blue-600 dark:bg-blue-500 w-full hover:bg-blue-600/90 hover:dark:bg-blue-500/80 focus:ring-1 focus:ring-black dark:focus:ring-white focus:outline-none"
+          className="py-3 px-5  font-medium text-center text-white dark:text-black rounded-lg bg-blue-600 dark:bg-gray-200 w-full hover:bg-blue-600/90 hover:dark:bg-gray-100 focus:ring-1 focus:ring-black dark:focus:ring-white focus:outline-none"
           disabled={isLoading}
         >
           {isLoading ? (
