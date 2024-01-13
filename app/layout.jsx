@@ -46,12 +46,18 @@ export default function RootLayout({ children }) {
         <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
         <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
         <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
-        <meta property="og:image" content="/opengraph-image.png" />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:alt" content="Explore the portfolio site of Swastik Dan with a range of creative skills and experiences, including problem solving, research, and proficiency in Full Stack Web Development" />
-        <meta name="twitter:image" content="/twitter-image.png" />
-        <meta name="twitter:image:type" content="image/png" />
-        <meta name="twitter:image:alt" content="Explore the portfolio site of Swastik Dan with a range of creative skills and experiences, including problem solving, research, and proficiency in Full Stack Web Development" />
+        <meta property="og:url" content="https://www.swastikdan.in/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Portfolio | Swastik Dan" />
+        <meta property="og:description" content="Explore the portfolio site of Swastik Dan with a range of creative skills and experiences..." />
+        <meta property="og:image" content="https://swastikdan.in/opengraph-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="swastikdan.in" />
+        <meta property="twitter:url" content="https://www.swastikdan.in/" />
+        <meta name="twitter:title" content="Portfolio | Swastik Dan" />
+        <meta name="twitter:description" content="Explore the portfolio site of Swastik Dan with a range of creative skills and experiences..." />
+        <meta name="twitter:image" content="https://swastikdan.in/opengraph-image.png" />
+
       </head>
       <body className='mx-auto select-none md:select-auto bg-gray-50 dark:bg-gray-900 ' >
         <ThemeProvider
