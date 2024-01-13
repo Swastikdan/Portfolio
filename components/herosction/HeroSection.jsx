@@ -48,7 +48,7 @@ export default function HeroSection() {
             </svg>
           </Link>
 
-          <Link href="/about" aria-label="About Me " className="text-lg lg:text-xl font-medium tracking-normal gap-2.5 px-3 py-1 rounded-md  hover:bg-gray-200  dark:hover:bg-gray-700 transition duration-300"> 
+          <Link href="/about" aria-label="About Me" className="text-lg lg:text-xl font-medium tracking-normal gap-2.5 px-3 py-1 rounded-md  hover:bg-gray-200  dark:hover:bg-gray-700 transition duration-300"> 
             About Me
           </Link>
         </div>

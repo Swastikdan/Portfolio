@@ -143,11 +143,11 @@ export default function ContactForm() {
           {isLoading ? (
             <div className="flex items-center justify-center gap-x-2 rounded-full">
               <div
-                className="animate-spin inline-block w-6 h-6 border-[3px] border-current border-t-transparent text-sky-950 dark:text-white rounded-full"
+                className="animate-spin inline-block w-6 h-6 border-[3px] border-current border-t-transparent text-sky-950 dark:text-black rounded-full"
                 role="status"
                 aria-label="Sending"
               ></div>
-              <span>Sending...</span>
+              {/* <span>Sending...</span> */}
             </div>
           ) : isError ? (
             "Something went wrong"
