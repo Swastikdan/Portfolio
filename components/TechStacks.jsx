@@ -4,10 +4,10 @@ export default function TechStacks() {
   return (
     <>
     
-    <h2 class="text-2xl font-bold text-sky-800 dark:text-white lg:mb-0 lg:text-3xl pt-10 underline-offset-8 underline">
+    <h2 className="text-2xl font-bold text-sky-800 dark:text-white lg:mb-0 lg:text-3xl pt-10 underline-offset-8 underline">
           Skills
         </h2>
-        <p class=" pt-5 text-base text-gray-600">Tools and Frameworks I use</p>
+        <p className=" pt-5 text-base text-gray-600">Tools and Frameworks I use</p>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 lg:gap-10 py-5 pb-20">
           {TechStack.map((tech, index) => (

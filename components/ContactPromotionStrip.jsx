@@ -8,7 +8,7 @@ export default function ContactPromotionStrip() {
           Interested in working together?
         </span>
         <a
-          href="mailto:contact@swastikdan.in "
+          href="mailto:contact@swastikdan.in"
           aria-label="Contact Me"
           className="group inline-flex py-2 items-center gap-2.5 rounded-md bg-gray-300 hover:bg-gray-300/70 px-4 transition-all duration-500 dark:bg-gray-600 dark:hover:bg-gray-700 max-w-fit"
         >

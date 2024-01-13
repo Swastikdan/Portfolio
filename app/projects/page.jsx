@@ -2,7 +2,7 @@ import NavBar from "@/components/navbar/NavBar";
 import Footer from "@/components/footer/Footer";
 import ProjectPageCard from "@/components/projects/ProjectPageCard";
 import AllProjectData from "@/components/projects/AllProjectData";
-
+import ContactPromotionStrip from "@/components/ContactPromotionStrip";
 export default function page() {
   return (
     <>
@@ -30,6 +30,7 @@ export default function page() {
           <span className="text-sm md:text-base ">More coming soon .. </span>
         </div>
       </main>
+      <ContactPromotionStrip />
       <Footer />
     </>
   );
