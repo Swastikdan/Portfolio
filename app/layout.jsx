@@ -5,7 +5,7 @@ const inter = Space_Grotesk({ subsets: ['latin'] })
 export const metadata = {
   title: "Portfolio | Swastik Dan",
   description:
-    "Stayz is a web application that helps users find the best home deals in their desired location. We offer a wide range of homes to choose from, with competitive prices and excellent customer service.",
+    "Explore the portfolio site of Swastik Dan with a range of creative skills and experiences...",
   ogUrl: "https://swastikdan.in/",
 };
 
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
         <link rel="canonical" href={metadata.ogUrl} />
         <meta name="description" content={metadata.description} />
         <meta property="og:title" content="Portfolio | Swastik Dan" />
-        <meta property="og:description" content="Stayz is a web application that helps users find the best home deals in their desired location. We offer a wide range of homes to choose from, with competitive prices and excellent customer service." />
+        <meta property="og:description" content="Explore the portfolio site of Swastik Dan with a range of creative skills and experiences..." />
         <meta property="og:url" content={metadata.ogUrl} />
         <link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
@@ -46,10 +46,10 @@ export default function RootLayout({ children }) {
         <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
         <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
         <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
-        <meta property="og:image" content="opengraph-image.png" />
+        <meta property="og:image" content="/opengraph-image.png" />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:alt" content="Explore the portfolio site of Swastik Dan with a range of creative skills and experiences, including problem solving, research, and proficiency in Full Stack Web Development" />
-        <meta name="twitter:image" content="twitter-image.png" />
+        <meta name="twitter:image" content="/twitter-image.png" />
         <meta name="twitter:image:type" content="image/png" />
         <meta name="twitter:image:alt" content="Explore the portfolio site of Swastik Dan with a range of creative skills and experiences, including problem solving, research, and proficiency in Full Stack Web Development" />
       </head>

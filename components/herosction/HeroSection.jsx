@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 export default function HeroSection() {
   return (
     <><div aria-hidden="true" className="absolute inset-0 top-0 grid grid-cols-2 space-x-52 opacity-30 dark:opacity-20">
@@ -27,11 +28,12 @@ export default function HeroSection() {
           both beautiful and intuitive.
         </h2>
 
-        <div className="flex items-center justify-start text-lg md:text-xl  gap-4 pt-5 py-5 px-5  ">
+        <div className="flex flex-col md:flex-row items-center justify-between  gap-4 pt-5 py-5 px-5  ">
+         <div className="flex items-center gap-4">
           <Link
             href="#contact"
             aria-label="Contact Me"
-            className="group inline-flex py-1 items-center gap-2.5 rounded-md bg-gray-300/80 hover:bg-gray-200 px-3 transition-colors duration-500 dark:bg-gray-800 dark:hover:bg-gray-700 active:scale-95"
+            className="group text-lg md:text-xl  inline-flex py-1 items-center gap-2.5 rounded-md bg-gray-300/80 hover:bg-gray-200 px-3 transition-colors duration-500 dark:bg-gray-800 dark:hover:bg-gray-700 active:scale-95"
           >
             <span className="text-lg  lg:text-xl font-medium tracking-normal ">Let's talk</span>
             <svg
@@ -50,7 +52,23 @@ export default function HeroSection() {
 
           <Link href="/about" aria-label="About Me" className="text-lg lg:text-xl font-medium tracking-normal gap-2.5 px-3 py-1 rounded-md  hover:bg-gray-200  dark:hover:bg-gray-700 transition-colors duration-300 active:scale-95"> 
             About Me
-          </Link>
+          </Link></div>
+          
+          <div className="flex items-center gap-4 text-sm md:text-base py-5">
+            <Link href="/" className="flex items-center gap-2 px-2 py-1 ring-1 ring-black dark:ring-white rounded-md hover:bg-gray-200/80 hover:dark:bg-gray-800 active:scale-95 " >
+              <Image src="/images/icons/github-social.svg" className="p-[2px] -mt-[1px]" width={20} height={20} alt="github" />
+              Github
+            </Link>
+            <Link href="/" className="flex items-center gap-2 px-2 py-1 ring-1 ring-black dark:ring-white rounded-md hover:bg-gray-200/80 hover:dark:bg-gray-800 active:scale-95 " >
+              <Image src="/images/icons/linkedin-social.svg" className="p-[2px] -mt-1" width={20} height={20} alt="linkedin" />
+Linkdin
+            </Link>
+            <Link href="/" className="flex items-center gap-2 px-2 py-1 ring-1 ring-black dark:ring-white rounded-md hover:bg-gray-200/80 hover:dark:bg-gray-800 active:scale-95 " >
+              <Image src="/images/icons/mail-icon.svg" className="p-[2px] -mt-[1px]" width={20} height={20} alt="mail" />
+Mail
+            </Link>
+
+          </div>
         </div>
 
         
