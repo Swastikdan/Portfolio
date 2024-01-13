@@ -2,7 +2,7 @@ const AllProjectData = [
     {
         id: 8765349,
         title: "Stayz | A Booking Website",
-        Description: "Find, compare, and reserve your ideal hotel.",
+        description: "Find, compare, and reserve your ideal hotel.",
         features: [
             "Developing a travel app enabling users to search for hotels and save favorite destinations.",
             "Enhanced the app's user experience with a responsive interface using Tailwind CSS.",
@@ -29,7 +29,7 @@ const AllProjectData = [
     {
         id: 3931151,
         title: "E-Commerce Website",
-        Description: "E-Commerce Web app built using Django",
+        description: "E-Commerce Web app built using Django",
         features: [
             "Crafted a fully functional e-commerce web application using Django.",
             "Provided a user-friendly shopping experience with product browsing, cart management.",
@@ -46,7 +46,7 @@ const AllProjectData = [
     {
         id: 4677491,
         title: "Recipe Seeker Webapp",
-        Description: "A web app where users can search for recipes.",
+        description: "A web app where users can search for recipes.",
         features: [
             "Developed an Express web application backed by MongoDB for effortless recipe discovery.",
             "Added features for searching recipes by name or ingredients, applying filters based on time and difficulty, and accommodating dietary restrictions.",
@@ -63,7 +63,7 @@ const AllProjectData = [
     {
         id: 6477128,
         title: "Random Jokes API",
-        Description:
+        description:
             "A RESTful API offering access to a vast collection of 400,000+ jokes.",
         features: [
             "Created a RESTful API using Flask, offering access to a vast collection of 400,000+ jokes.",
@@ -79,7 +79,7 @@ const AllProjectData = [
     {
         id: 750369,
         title: "Film Fanatic Website",
-        Description: "A movie data display website with TMDB api.",
+        description: "A movie data display website with TMDB api.",
         features: [
             "Built a movie website using TMDb API for users to search, view, and discover movies.",
             "Currently developing a movie and series data display website utilizing the TMDB API.",
@@ -95,7 +95,7 @@ const AllProjectData = [
     {
         id: 8958100,
         title: "Random Password Generator",
-        Description: "Generate strong & secure passwords online.",
+        description: "Generate strong & secure passwords online.",
         features: [
             "Generates random passwords",
             "Allows customization of password length and complexity",
@@ -111,7 +111,7 @@ const AllProjectData = [
     {
         id: 9290167,
         title: "Netflix Clone (Front End)",
-        Description: "A clone of the Netflix website.",
+        description: "A clone of the Netflix website.",
         features: [
             "Replicates Netflix's user interface",
             "Features popular Netflix shows on homepage",

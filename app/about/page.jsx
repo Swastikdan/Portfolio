@@ -19,10 +19,10 @@ export default function page() {
         <h1 className="text-3xl md:text-6xl font-black text-center md:pt-20 py-5 ">
           About
         </h1>
-        <h3 className="text-sm md:text-base lg:text-xl font-normal text-gray-600 dark:text-gray-400  text-center items-center mx-auto max-w-[37ch] pb-5">
+        <h2 className="text-sm md:text-base lg:text-xl font-normal text-gray-600 dark:text-gray-400  text-center items-center mx-auto max-w-[37ch] pb-5">
           Thanks for stopping by. Read below to learn more about myself and my
           background.
-        </h3>
+        </h2>
         <AboutMe />
         <Education />
         <TechStacks />
