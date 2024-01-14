@@ -6,10 +6,10 @@ export default function AboutMe() {
       <div className="lg:bg-gray-200/50 dark:lg:bg-gray-800 lg:p-10 rounded-[4rem] space-y-6 md:flex md:gap-6 justify-center md:space-y-0 lg:items-center mt-20">
         <div className="md:w-5/12 lg:w-1/3">
           <div id="cards" className="rounded-3xl md:-mx-5">
-            <div className="card rounded-3xl" data-color="brown">
+            <div className="card rounded-3xl h-80 xl:h-96">
               <Image
                 tabIndex="0"
-                className="card-front-image h-80 md:h-96 card-image rounded-3xl border border-black dark:border-white "
+                className="card-front-image h-full w-full  card-image rounded-3xl border border-black dark:border-white "
                 alt="profile Image"
                 priority={true}
                 width={300}

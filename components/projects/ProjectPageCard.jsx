@@ -6,7 +6,7 @@ export default function ProjectPageCard({ AllProjectData }) {
     <>
       <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 md:gap-6 xl:gap-8">
         {AllProjectData.map((project) => (
-          <div key={project.id} className="flex flex-col items-center overflow-hidden rounded-lg border-2 border-gray-400 dark:border-gray-600  md:flex-row bg-gray-100 dark:bg-gray-950">
+          <div key={project.id} className="flex flex-col items-center overflow-hidden rounded-lg border-2 border-gray-400 dark:border-gray-600  md:flex-row bg-gray-200 dark:bg-gray-800">
             <div
               className="group relative block h-48 w-full shrink-0 self-start overflow-hidden bg-gray-100 md:h-full md:w-56"
             >

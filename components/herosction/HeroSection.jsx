@@ -56,16 +56,16 @@ export default function HeroSection() {
           
           <div className="flex items-center gap-4 text-sm md:text-base py-5">
             <Link href="/" className="flex items-center gap-2 px-2 py-1 ring-1 ring-black dark:ring-white rounded-md hover:bg-gray-200/80 hover:dark:bg-gray-800 active:scale-95 " >
-              <Image src="/images/icons/github-social.svg" className="p-[2px] -mt-[1px]" width={20} height={20} alt="github" />
+              <Image src="/images/icons/github-social.svg" className="p-[2px] -mt-[1px]" width={20} height={20} alt="Github logo" />
               Github
             </Link>
             <Link href="/" className="flex items-center gap-2 px-2 py-1 ring-1 ring-black dark:ring-white rounded-md hover:bg-gray-200/80 hover:dark:bg-gray-800 active:scale-95 " >
-              <Image src="/images/icons/linkedin-social.svg" className="p-[2px] -mt-1" width={20} height={20} alt="linkedin" />
-Linkdin
+              <Image src="/images/icons/linkedin-social.svg" className="p-[2px] -mt-1" width={20} height={20} alt="LinkedIn logo" />
+              LinkedIn
             </Link>
             <Link href="/" className="flex items-center gap-2 px-2 py-1 ring-1 ring-black dark:ring-white rounded-md hover:bg-gray-200/80 hover:dark:bg-gray-800 active:scale-95 " >
-              <Image src="/images/icons/mail-icon.svg" className="p-[2px] -mt-[1px]" width={20} height={20} alt="mail" />
-Mail
+              <Image src="/images/icons/mail-icon.svg" className="p-[2px] -mt-[1px]" width={20} height={20} alt="Mail icon" />
+              Mail
             </Link>
 
           </div>
