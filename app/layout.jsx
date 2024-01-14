@@ -59,7 +59,7 @@ export default function RootLayout({ children }) {
         <meta name="twitter:image" content="https://swastikdan.in/opengraph-image.png" />
 
       </head>
-      <body className='mx-auto select-none md:select-auto bg-gray-50 dark:bg-gray-900 ' >
+      <body className='mx-auto select-none md:select-auto bg-gray-50 dark:bg-gray-950 ' >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
