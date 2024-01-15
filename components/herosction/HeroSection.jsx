@@ -82,6 +82,7 @@ export default function HeroSection() {
               <Link
                 href={socialLink.href}
                 key={socialLink.label}
+                aria-label={socialLink.label}target="_blank"
                 className="flex items-center gap-2 px-2 py-1 ring-1 ring-black dark:ring-white rounded-md hover:bg-gray-200/80 hover:dark:bg-gray-800 active:scale-95 "
               >
                 <Image
