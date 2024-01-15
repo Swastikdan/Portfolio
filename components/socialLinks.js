@@ -2,17 +2,17 @@ const socialLinks = [
   {
     label: "Github",
     href: "https://github.com/Swastikdan",
-    icon: "/github-social.svg",
+    icon: "/images/icons/github-social.svg",
   },
   {
     label: "Linkdin",
     href: "https://www.linkedin.com/in/swastikdan",
-    icon: "/linkedin-social.svg",
+    icon: "/images/icons/linkedin-social.svg",
   },
   {
     label: "Mail",
     href: "mailto:contact@swastikdan.in",
-    icon: "/mail-icon.svg",
+    icon: "/images/icons/mail-icon.svg",
   },
 ];
 

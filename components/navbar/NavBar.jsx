@@ -12,7 +12,7 @@ export default function NavBar() {
   useEffect(() => {
     const onScroll = () => {
       const scrollY = window.scrollY || window.pageYOffset;
-      const scrollDistance = 80;
+      const scrollDistance = 60;
 
       if (scrollY > lastScrollTop) {
         // Scrolling down
@@ -23,7 +23,9 @@ export default function NavBar() {
       }
 
       if (scrollY >= scrollDistance) {
-        setBgClass("bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800 shadow-md");
+        setBgClass(
+          "bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800 shadow-md"
+        );
       } else {
         setBgClass("");
       }
@@ -46,7 +48,11 @@ export default function NavBar() {
             aria-label="Home"
             className="flex space-x-2 items-center text-2xl  font-semibold "
           >
-            <Logo width={50} height={50} className="w-10 h-10 md:w-12 hover:scale-105 hover:-rotate-6 transition-all duration-200 " />
+            <Logo
+              width={50}
+              height={50}
+              className="w-10 h-10 md:w-12 hover:scale-105 hover:-rotate-6 transition-all duration-200 "
+            />
             {/* <span className="hidden sm:flex">Swastik Dan</span> */}
           </Link>
           <NavMenu />

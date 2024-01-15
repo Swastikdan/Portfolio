@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-
+import DOMPurify from "dompurify";
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
@@ -15,16 +15,17 @@ export default function ContactForm() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-    setIsSuccess(false); // Reset the success state when the form data changes
-    setIsError(false); // Reset the error state when the form data changes
+    const sanitizedValue = DOMPurify.sanitize(value);
+    setFormData({ ...formData, [name]: sanitizedValue });
+    setIsSuccess(false); 
+    setIsError(false); 
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
 
-    fetch("https://express-mail-server.onrender.com/send-email", {
+    fetch(process.env.MAILURL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
