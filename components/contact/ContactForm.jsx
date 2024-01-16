@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import DOMPurify from "dompurify";
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
@@ -15,17 +14,16 @@ export default function ContactForm() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    const sanitizedValue = DOMPurify.sanitize(value);
-    setFormData({ ...formData, [name]: sanitizedValue });
+    setFormData({ ...formData, [name]: value });
     setIsSuccess(false); 
-    setIsError(false); 
+    setIsError(false);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
 
-    fetch(process.env.MAILURL, {
+    fetch("https://express-mail-server.onrender.com/send-email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -144,7 +142,7 @@ export default function ContactForm() {
           {isLoading ? (
             <div className="flex items-center justify-center gap-x-2 rounded-full">
               <div
-                className="animate-spin inline-block w-6 h-6 border-[3px] border-current border-t-transparent text-sky-950 dark:text-black rounded-full"
+                className="animate-spin inline-block w-6 h-6 border-[3px] border-current border-t-transparent text-white dark:text-black rounded-full"
                 role="status"
                 aria-label="Sending"
               ></div>
