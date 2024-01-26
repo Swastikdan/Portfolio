@@ -35,3 +35,23 @@ export default function page() {
     </>
   );
 }
+
+{/* <main class="mt-16">
+<ul class="mx-auto grid max-w-4xl gap-16">
+  <li>
+    <a href="/blog/essential-data-structures-algorithms">
+      <div class="grid items-center gap-5 md:grid-cols-2 md:gap-10">
+        <picture>
+          <source srcset="https://images.unsplash.com/photo-1627163439134-7a8c47e08208?&amp;fit=crop&amp;w=430&amp;h=240" type="image/webp" sizes="(max-width: 800px) 100vw, 800px" />
+          <img src="https://images.unsplash.com/photo-1627163439134-7a8c47e08208?&amp;fit=crop&amp;w=430&amp;h=240" alt="data structures &amp; algorithms" sizes="(max-width: 800px) 100vw, 800px" loading="eager" decoding="sync" class="w-full rounded-md bg-white object-cover object-center" width="800" height="600" />
+        </picture>
+        <div>
+          <span class="text-sm font-medium uppercase tracking-wider text-blue-400"> Courses </span>
+          <h2 class="mt-1 text-3xl font-semibold leading-snug tracking-tight">Introduction to the Essential Data Structures &amp; Algorithms</h2>
+          <div class="mt-3 flex gap-2"><span class="text-gray-400"> Marcell Ziemann </span> <span class="text-gray-400">• </span> <time class="text-gray-400" datetime="2022-11-09T16:39:00.000Z"> Wed Nov 09 2022 </time></div>
+        </div>
+      </div>
+    </a>
+  </li>
+  </ul>
+</main> */}
