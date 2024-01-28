@@ -11,7 +11,7 @@ export default function ContactForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isError, setIsError] = useState(false);
-
+  const [isTakingLong, setIsTakingLong] = useState(false);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -23,14 +23,32 @@ export default function ContactForm() {
     e.preventDefault();
     setIsLoading(true);
 
+    // Store the current form data before making the request
+    const previousFormData = { ...formData };
+
+    // Optimistic UI update
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
+    setIsSuccess(true);
+
+    // Set a timeout to check if the request is taking longer than expected
+    const timeout = setTimeout(() => {
+      setIsTakingLong(true);
+    }, 5000);
+
     fetch("https://express-mail-server.onrender.com/send-email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData),
+      body: JSON.stringify(previousFormData),
     })
       .then((response) => {
+        clearTimeout(timeout);
         if (response.ok) {
           return response.json();
         } else {
@@ -38,18 +56,21 @@ export default function ContactForm() {
         }
       })
       .then((data) => {
-        setFormData({
-          name: "",
-          email: "",
-          subject: "",
-          message: "",
-        });
-        setIsSuccess(true);
+        setIsTakingLong(false);
         setTimeout(() => setIsSuccess(false), 2000); // Reset the success state after 2 seconds
       })
       .catch((error) => {
+        setIsTakingLong(false);
         setIsError(true);
-        setTimeout(() => setIsError(false), 2000);
+      
+        // Remove the error message after 1 second
+        setTimeout(() => {
+          setIsError(false);
+          setIsSuccess(false)
+        }, 1000);
+      
+        // Restore the previous form data in case of an error
+        setFormData(previousFormData);
       })
       .finally(() => {
         setIsLoading(false);
@@ -156,6 +177,7 @@ export default function ContactForm() {
             "Send Message"
           )}
         </button>
+        {isTakingLong && !isError && <p className="text-center text-red-500 font-light ">Request is taking longer than expected. Please refresh and try again.</p>}
       </form>
     </>
   );
