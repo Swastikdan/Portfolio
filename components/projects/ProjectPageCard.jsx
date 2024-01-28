@@ -9,7 +9,7 @@ export default function ProjectPageCard() {
     <ul class="mx-auto grid max-w-5xl gap-10">
     {AllProjectData.map((project) => (
      
-     <li key={project.id} className=" transition-transform duration-300 hover:bg-gray-900/50 py-4 px-8 rounded-md  ">
+     <li key={project.id} className=" transition-transform duration-300 hover:dark:bg-gray-900/50 hover:bg-gray-200/50 py-4 px-8 rounded-md  ">
        <div className="grid items-center gap-5 md:grid-cols-2 md:gap-10">
          <Image
            src={project.imageSrc}
