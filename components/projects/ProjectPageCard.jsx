@@ -1,65 +1,76 @@
-import Link from "next/link";
+import AllProjectData from "./AllProjectData";
 import Image from "next/image";
 import { Eye, Github } from "lucide-react";
-export default function ProjectPageCard({ AllProjectData }) {
+import Link from "next/link";
+export default function ProjectPageCard() {
   return (
     <>
-      <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 md:gap-6 xl:gap-8">
-        {AllProjectData.map((project) => (
-          <div key={project.id} className="flex flex-col items-center overflow-hidden rounded-lg border-2 border-gray-400 dark:border-gray-600  md:flex-row bg-gray-200 dark:bg-gray-800">
-            <div
-              className="group relative block h-48 w-full shrink-0 self-start overflow-hidden bg-gray-100 md:h-full md:w-56"
-            >
-              <Image
-                src={project.imageSrc}
-                priority={true}
-                width={600}
-                height={400}
-                
-                alt={project.title}
-                className="absolute inset-0 h-full w-full object-cover object-center "
-              />
-            </div>
+  <section class="mt-16">
+    <ul class="mx-auto grid max-w-5xl gap-10">
+    {AllProjectData.map((project) => (
+     
+     <li className=" transition-transform duration-300 hover:bg-gray-900/50 py-4 px-8 rounded-md  ">
+       <div className="grid items-center gap-5 md:grid-cols-2 md:gap-10">
+         <Image
+           src={project.imageSrc}
+           sizes="(max-width: 800px) 100vw, 800px"
+           loading="eager"
+           decoding="sync"
+           className="w-full rounded-md bg-white object-cover object-center"
+           width="800"
+           height="600"
+         />
+         <div>
+           {project.ongoing ? (
+             <span className="text-green-400 text-start px-2 md:px-0 text-sm  flex">
+               Ongoing
+             </span>
+           ) : (
+             ""
+           )}
 
-            <div className="flex flex-col gap-2 p-4 lg:p-6">
-              <span className="text-sm text-gray-400">{project.date}</span>
+           <h2 className="mt-1  text-center md:text-start text-2xl lg:text-3xl font-semibold ">
+             {project.title}
+           </h2>
+           <p className="text-gray-600 dark:text-gray-400 text-center md:text-start py-2">
+             {project.description}
+           </p>
+           <div className="px-3 md:px-1 flex flex-col items-center md:items-start">
+             <div className="flex flex-wrap gap-2 pt-2">
+               {project.tags.map((tag) => (
+                 <span
+                   key={tag}
+                   className="text-xs  tracking-wider  text-blue-600 dark:text-blue-400 ring-1 px-1.5 md:px-2 py-0.5 text-[10px] md:text-xs rounded"
+                 >
+                   {tag}
+                 </span>
+               ))}
+             </div>
+           </div>
+           <div className="flex justify-center md:justify-start  space-x-2 pt-4 text-xs  md:text-sm ">
+           <Link
+             href={project.url}
+             target="_blank"
+             className="flex gap-1 ring-1 ring-black dark:ring-white px-2 py-1 rounded-md opacity-80 hover:opacity-100 active:scale-95 items-center "
+           >
+             <Eye className="p-1" /> Live Demo
+           </Link>
+           <Link
+             href={project.github}
+             target="_blank"
+             className={`flex gap-2 ring-1 ring-black dark:ring-white px-2 py-1 rounded-md opacity-80 hover:opacity-100 active:scale-95 items-center ${!project.github ? "hidden" : ""}`}
+           >
+             <Github className="p-1" /> Source Code
+           </Link>
+         </div>
+         </div>
+       </div>
+     </li>
+  
+))}
+      </ul>
+    </section>
 
-              <h2 className="text-xl font-bold">
-                <span>{project.title}</span>
-              </h2>
-
-              <p className="text-gray-600 dark:text-gray-400">{project.description}</p>
-
-              <div>
-                <div className="flex flex-wrap gap-2  pt-2 ">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="whitespace-nowrap rounded-sm bg-black dark:bg-white px-1.5 md:px-2.5 py-0.5 text-[10px] md:text-xs text-white dark:text-black "
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex  space-x-2 pt-4 text-xs  md:text-sm ">
-                  <Link
-                    href={project.url}
-                    className="flex gap-1 ring-1 ring-black dark:ring-white px-2 py-1 rounded-md opacity-80 hover:opacity-100 active:scale-95 items-center "
-                  >
-                    <Eye className="p-1" /> Live Demo
-                  </Link>
-                  <Link
-                    href={project.github}
-                    className="flex gap-2 ring-1 ring-black dark:ring-white px-2 py-1 rounded-md opacity-80 hover:opacity-100 active:scale-95 items-center "
-                  >
-                    <Github className="p-1" /> Source Code
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
     </>
   );
 }
