@@ -27,7 +27,7 @@ export default function page() {
 
         <div className="flex justify-between">
           <div></div>
-          <span className="text-sm md:text-base ">More coming soon .. </span>
+          <span className="text-sm md:text-base py-5">More coming soon .. </span>
         </div>
       </main>
       <ContactPromotionStrip />
