@@ -38,7 +38,7 @@ export default function ContactForm() {
     // Set a timeout to check if the request is taking longer than expected
     const timeout = setTimeout(() => {
       setIsTakingLong(true);
-    }, 5000);
+    }, 7000);
 
     fetch("https://express-mail-server.onrender.com/send-email", {
       method: "POST",
@@ -177,7 +177,7 @@ export default function ContactForm() {
             "Send Message"
           )}
         </button>
-        {isTakingLong && !isError && <p className="text-center text-red-500 font-light ">Request is taking longer than expected. Please refresh and try again.</p>}
+        {isTakingLong && !isError && <p className="text-center text-red-500  ">Request is taking longer than expected.</p>}
       </form>
     </>
   );
