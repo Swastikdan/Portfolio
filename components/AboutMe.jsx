@@ -9,13 +9,13 @@ export default function AboutMe() {
           <div id="cards" className="rounded-3xl md:-mx-5">
             <div className="card rounded-3xl h-80 xl:h-96">
               <Image
-                className="card-front-image h-full w-full  card-image rounded-3xl border border-black dark:border-white "
+                className="card-front-image h-full  w-full  card-image rounded-3xl border border-black dark:border-white aspect-[.80]  "
                 alt="profile Image"
                 priority={true}
-                width={250}
-                height={320}
+                width={800}
+                height={1000}
                 src={profileimage}
-                quality={100}
+                quality={20}
                 placeholder='blur'
                 blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mO88RYAAqMBx/7mcfYAAAAASUVORK5CYII='
               />
