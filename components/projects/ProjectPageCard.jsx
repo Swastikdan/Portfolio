@@ -19,6 +19,9 @@ export default function ProjectPageCard() {
            className="w-full rounded-md bg-white object-cover object-center"
            width="800"
            height="600"
+           placeholder='blur'
+           blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mO88RYAAqMBx/7mcfYAAAAASUVORK5CYII='
+          alt={`Preview image of ${project.title.toLowerCase()}`}
          />
          <div>
            {project.ongoing ? (
