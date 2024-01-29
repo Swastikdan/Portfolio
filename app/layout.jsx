@@ -59,12 +59,20 @@ export default function RootLayout({ children }) {
         <meta name="twitter:image" content="https://swastikdan.in/opengraph-image.png" />
 
       </head>
-      <body className='mx-auto select-none md:select-auto bg-gray-50 dark:bg-gray-950 ' >
+      <body className='mx-auto select-none md:select-auto bg-gray-50 dark:bg-gray-950 overflow-y-auto
+  [&::-webkit-scrollbar]:w-2
+  [&::-webkit-scrollbar-track]:rounded-none
+  [&::-webkit-scrollbar-track]:bg-gray-100
+  [&::-webkit-scrollbar-thumb]:rounded-none
+  [&::-webkit-scrollbar-thumb]:bg-gray-300
+  dark:[&::-webkit-scrollbar-track]:bg-slate-700
+  dark:[&::-webkit-scrollbar-thumb]:bg-slate-500 ' >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem
           disableTransitionOnChange>
+           
           {children}
         </ThemeProvider>
       </body>
