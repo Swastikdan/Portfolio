@@ -13,7 +13,7 @@ export default function TechStacks() {
           {TechStack.map((tech, index) => (
             <div
               key={index}
-              className="flex space-x-2 items-center justify-center md:justify-start px-2 py-1.5 rounded-sm dark:bg-gray-800/70 bg-gray-300/70"
+              className="flex space-x-2 items-center  justify-start px-2 py-1.5 rounded-sm dark:bg-gray-800/70 bg-gray-300/70"
             >
               <Image
                 src={tech.logo}
