@@ -33,7 +33,7 @@ export default function Education() {
                   Ongoing
                 </span>
               </h3>
-              <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+              <time className="block mb-2 text-sm font-normal leading-none text-gray-700 dark:text-gray-300">
                 Computer Science Engineering (CSE)
               </time>
             </li>
@@ -59,7 +59,7 @@ export default function Education() {
               <h3 className="pb-1 text-lg md:text-xl font-semibold text-gray-900 dark:text-white">
                 Tajpur Ramcharan High School
               </h3>
-              <time className="block pb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+              <time className="block pb-2 text-sm font-normal leading-none text-gray-700 dark:text-gray-300">
                 Higher Secondary Education 2018-2020
               </time>
             </li>
@@ -85,7 +85,7 @@ export default function Education() {
               <h3 className="mb-1 text-lg md:text-xl font-semibold text-gray-900 dark:text-white">
                 Kamarpukur Ramakrishna Mission MP School
               </h3>
-              <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+              <time className="block mb-2 text-sm font-normal leading-none text-gray-700 dark:text-gray-300">
                 Secondary Education till 2018
               </time>
             </li>
