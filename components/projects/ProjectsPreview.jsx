@@ -44,6 +44,7 @@ export default function ProjectsPreview() {
               imageSrc={project.imageSrc}
               tags={project.tags}
               ongoing={project.ongoing}
+              github={project.github}
               
             />
           ))}

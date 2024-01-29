@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Eye, Github } from "lucide-react"
 export default function ProjectCard({
   keys,
   title,
@@ -8,12 +9,13 @@ export default function ProjectCard({
   imageSrc,
   tags,
   ongoing,
+  github
 }) {
   return (
     <>
-      <Link
+      <div
         key={keys}
-        href={url}
+        
         aria-label={title}
         target="blank"
         rel="noopener noreferrer"
@@ -63,9 +65,22 @@ export default function ProjectCard({
                 {description.split(" ").slice(0, 30).join(" ")}
               </p>
             </div>
-            <div className="px-4">
-              buttons
-            </div>
+            <div className="flex px-4 justify-start  space-x-2 pb-4 text-xs   ">
+           <Link
+             href={url}
+             target="_blank"
+             className="flex gap-1 ring-1 ring-black dark:ring-white px-2 py-1 rounded-md opacity-80 hover:opacity-100 active:scale-95 items-center "
+           >
+             <Eye className="p-1" /> Live Demo
+           </Link>
+           <Link
+             href={github}
+             target="_blank"
+             className={`flex gap-2 ring-1 ring-black dark:ring-white px-2 py-1 rounded-md opacity-80 hover:opacity-100 active:scale-95 items-center ${!github ? "hidden" : ""}`}
+           >
+             <Github className="p-1" /> Source Code
+           </Link>
+         </div>
             <div className="flex flex-wrap gap-2 px-4 pt-2 pb-4">
               {tags.map((tag) => (
                 <span
@@ -76,9 +91,10 @@ export default function ProjectCard({
                 </span>
               ))}
             </div>
+            
           </article>
         </div>
-      </Link>
+      </div>
     </>
   );
 }
