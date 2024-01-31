@@ -2,6 +2,7 @@ import { Space_Grotesk } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from "@/components/theme-provider"
 const inter = Space_Grotesk({ subsets: ['latin'] })
+import { SpeedInsights } from "@vercel/speed-insights/next"
 export const metadata = {
   title: "Portfolio | Swastik Dan",
   description:
@@ -74,6 +75,7 @@ export default function RootLayout({ children }) {
           disableTransitionOnChange>
            
           {children}
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>
