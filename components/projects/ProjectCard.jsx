@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Eye, Github } from "lucide-react"
+import { Eye, Github } from "lucide-react";
 export default function ProjectCard({
   keys,
   title,
@@ -9,13 +9,12 @@ export default function ProjectCard({
   imageSrc,
   tags,
   ongoing,
-  github
+  github,
 }) {
   return (
     <>
       <div
         key={keys}
-        
         aria-label={title}
         target="blank"
         rel="noopener noreferrer"
@@ -31,8 +30,8 @@ export default function ProjectCard({
                 height={500}
                 quality={50}
                 priority={true}
-                placeholder='blur'
-                blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mO88RYAAqMBx/7mcfYAAAAASUVORK5CYII='
+                placeholder="blur"
+                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mO88RYAAqMBx/7mcfYAAAAASUVORK5CYII="
                 className="absolute inset-0 h-56 w-full object-cover object-center  shadow-xl transition  group-hover:scale-[1.01] "
               />
               <div className="h-56 pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50"></div>
@@ -66,32 +65,33 @@ export default function ProjectCard({
               </p>
             </div>
             <div className="flex px-4 justify-start  space-x-2 pb-4 text-xs   ">
-           <Link
-             href={url}
-             target="_blank"
-             className="flex gap-1 ring-1 ring-black dark:ring-white px-2 py-1 rounded-md opacity-80 hover:opacity-100 active:scale-95 items-center "
-           >
-             <Eye className="p-1" /> Live Demo
-           </Link>
-           <Link
-             href={github}
-             target="_blank"
-             className={`flex gap-2 ring-1 ring-black dark:ring-white px-2 py-1 rounded-md opacity-80 hover:opacity-100 active:scale-95 items-center ${!github ? "hidden" : ""}`}
-           >
-             <Github className="p-1" /> Source Code
-           </Link>
-         </div>
+              <Link
+                href={url}
+                target="_blank"
+                className="flex gap-1 ring-1 ring-black dark:ring-white px-2 py-1 rounded-md opacity-80 hover:opacity-100 active:scale-95 items-center "
+              >
+                <Eye className="p-1" /> Live Demo
+              </Link>
+              <Link
+                href={github}
+                target="_blank"
+                className={`flex gap-2 ring-1 ring-black dark:ring-white px-2 py-1 rounded-md opacity-80 hover:opacity-100 active:scale-95 items-center ${
+                  !github ? "hidden" : ""
+                }`}
+              >
+                <Github className="p-1" /> Source Code
+              </Link>
+            </div>
             <div className="flex flex-wrap gap-2 px-4 pt-2 pb-4">
               {tags.map((tag) => (
                 <span
                   key={tag}
-                  className="whitespace-nowrap font-thin rounded-sm  px-1.5 md:px-2.5 py-0.5 text-[10px] md:text-xs ring-1 ring-black dark:ring-white bg-white dark:bg-black "
+                  className="whitespace-nowrap font-light rounded-sm  px-1.5 md:px-2.5 py-0.5 text-[10px] md:text-xs ring-1 ring-black dark:ring-white  bg-white dark:bg-black "
                 >
                   {tag}
                 </span>
               ))}
             </div>
-            
           </article>
         </div>
       </div>

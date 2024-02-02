@@ -177,7 +177,7 @@ export default function ContactForm() {
             "Send Message"
           )}
         </button>
-        {isTakingLong && !isError && <p className="text-center text-red-500  ">Request is taking longer than expected.</p>}
+        {isTakingLong && !isError && <p className="text-center text-red-500  ">It's taking longer than expected. Please wait. </p>}
       </form>
     </>
   );

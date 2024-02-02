@@ -1,7 +1,7 @@
-import { Space_Grotesk } from 'next/font/google'
+import { Sora } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from "@/components/theme-provider"
-const inter = Space_Grotesk({ subsets: ['latin'] })
+const inter = Sora({ subsets: ['latin'] })
 import { SpeedInsights } from "@vercel/speed-insights/next"
 export const metadata = {
   title: "Portfolio | Swastik Dan",
@@ -9,7 +9,8 @@ export const metadata = {
     "Explore the portfolio site of Swastik Dan with a range of creative skills and experiences...",
   ogUrl: "https://swastikdan.in/",
 };
-
+import NavBar from "@/components/navbar/NavBar";
+import Footer from "@/components/footer/Footer";
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
@@ -73,8 +74,9 @@ export default function RootLayout({ children }) {
           defaultTheme="dark"
           enableSystem
           disableTransitionOnChange>
-           
+           <NavBar />
           {children}
+          <Footer />
           <SpeedInsights />
         </ThemeProvider>
       </body>

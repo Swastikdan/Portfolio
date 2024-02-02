@@ -1,12 +1,14 @@
-import NavBar from "@/components/navbar/NavBar";
-import Footer from "@/components/footer/Footer";
 import ProjectPageCard from "@/components/projects/ProjectPageCard";
 import AllProjectData from "@/components/projects/AllProjectData";
 import ContactPromotionStrip from "@/components/ContactPromotionStrip";
+export const metadata = {
+  title: "Projects | Swastik Dan",
+  
+};
 export default function page() {
   return (
     <>
-      <NavBar />
+ 
       <div
         aria-hidden="true"
         className="absolute inset-0 top-0 grid grid-cols-2 space-x-52 opacity-30 dark:opacity-20"
@@ -31,7 +33,7 @@ export default function page() {
         </div>
       </main>
       <ContactPromotionStrip />
-      <Footer />
+      
     </>
   );
 }

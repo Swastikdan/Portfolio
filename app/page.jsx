@@ -1,16 +1,16 @@
 
 
-import NavBar from "@/components/navbar/NavBar";
+// import NavBar from "@/components/navbar/NavBar";
 import HeroSection from "@/components/herosction/HeroSection";
 import Skills from "@/components/Skills";
 import ProjectsPreview from "@/components/projects/ProjectsPreview";
 import Contact from "@/components/contact/Contact";
-import Footer from "@/components/footer/Footer";
+// import Footer from "@/components/footer/Footer";
 
 export default function Home() {
   return (
     <>
-      <NavBar />
+      {/* <NavBar /> */}
       <main className="pt-20 max-w-7xl mx-auto py-4 px-5 ">
         <HeroSection />
         <Skills />
@@ -18,7 +18,7 @@ export default function Home() {
         <Contact />
       </main>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

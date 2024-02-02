@@ -1,7 +1,3 @@
-import NavBar from "@/components/navbar/NavBar";
-
-import Footer from "@/components/footer/Footer";
-
 export default function loading() {
   return (
     <>
@@ -13,7 +9,7 @@ export default function loading() {
         <div className="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 "></div>
       </div>
 
-      <NavBar />
+     
       <div className="relative grid h-screen place-content-center  px-4 ">
         <div className="flex flex-auto flex-col justify-center items-center p-4 md:p-5">
           <div className="flex justify-center">
@@ -28,7 +24,7 @@ export default function loading() {
         </div>
       </div>
 
-      <Footer />
+      
     </>
   );
 }
