@@ -12,7 +12,7 @@ export default function HeroSection() {
         <div className="h-40 bg-gradient-to-r from-cyan-400 to-sky-300 blur-[106px] dark:to-indigo-600"></div>
       </div>
       <section className="relative  max-w-7xl mx-auto ">
-        <h1 className="text-[40px] md:text-7xl lg:text-8xl xl:text-9xl  font-black flex flex-col text-center py-6 group text-gray-800 dark:text-gray-200 tracking-wide">
+        <h1 className="text-[38px] md:text-7xl lg:text-8xl xl:text-9xl  font-black flex flex-col text-center py-6 group text-gray-800 dark:text-gray-200 tracking-wide">
           <span className="z-10 -rotate-1">Hay , I'm</span>
           <span>
             <span className="bg-gradient-to-r from-blue-500 to-cyan-400/80 text-white px-2 ">

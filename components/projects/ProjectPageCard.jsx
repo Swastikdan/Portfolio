@@ -5,8 +5,8 @@ import Link from "next/link";
 export default function ProjectPageCard() {
   return (
     <>
-  <section class="mt-16">
-    <ul class="mx-auto grid max-w-5xl gap-10">
+  <section className="mt-16">
+    <ul className="mx-auto grid max-w-5xl gap-10">
     {AllProjectData.map((project) => (
      
      <li key={project.id} className=" transition-transform duration-300 hover:dark:bg-gray-900/50 hover:bg-gray-200/50 py-4 px-8 rounded-md  ">
