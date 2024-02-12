@@ -1,4 +1,4 @@
-import Image from "next/image";
+import LazyImage from "./LazyImage";
 import { ArrowDownToLine } from "lucide-react";
 import profileimage from "../public/profile-pic-final.jpg";
 export default function AboutMe() {
@@ -8,7 +8,7 @@ export default function AboutMe() {
         <div className="md:w-5/12 lg:w-1/3">
           <div id="cards" className="rounded-3xl md:-mx-5">
             <div className="card rounded-3xl h-80 xl:h-96">
-              <Image
+              <LazyImage
                 className="card-front-image h-full  w-full  card-image rounded-3xl border border-black dark:border-white aspect-[.80]  "
                 alt="profile Image"
                 priority={true}
@@ -16,8 +16,6 @@ export default function AboutMe() {
                 height={1000}
                 src={profileimage}
                 quality={20}
-                placeholder='blur'
-                blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mO88RYAAqMBx/7mcfYAAAAASUVORK5CYII='
               />
             </div>
           </div>

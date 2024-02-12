@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import LazyImage from "../LazyImage";
 import { Eye, Github } from "lucide-react";
 export default function ProjectCard({
   keys,
@@ -23,15 +23,13 @@ export default function ProjectCard({
         <div className="relative flex h-full flex-col gap-6 rounded-2xl bg-gray-100 p-2 dark:bg-gray-800">
           <article className="">
             <div className="group relative flex h-56 items-end justify-end overflow-hidden rounded-lg bg-gray-100 shadow-lg">
-              <Image
+              <LazyImage
                 alt={title}
                 src={imageSrc}
                 width={1170}
                 height={500}
                 quality={50}
                 priority={true}
-                placeholder="blur"
-                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mO88RYAAqMBx/7mcfYAAAAASUVORK5CYII="
                 className="absolute inset-0 h-56 w-full object-cover object-center  shadow-xl transition  group-hover:scale-[1.01] "
               />
               <div className="h-56 pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50"></div>
