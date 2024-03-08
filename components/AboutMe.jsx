@@ -7,14 +7,14 @@ export default function AboutMe() {
       <div className="lg:bg-gray-200/50 dark:lg:bg-gray-800 lg:p-10 rounded-[4rem] space-y-6 md:flex md:gap-6 justify-center md:space-y-0 lg:items-center mt-20">
         <div className="md:w-5/12 lg:w-1/3">
           <div id="cards" className="rounded-3xl md:-mx-5">
-            <div className="card rounded-3xl h-80 xl:h-96">
+            <div className="card rounded-3xl ">
               <LazyImage
-                className="card-front-image h-full  w-full  card-image rounded-3xl border border-black dark:border-white aspect-[.80]  "
+                className="card-front-image h-80 xl:h-96  w-full  card-image rounded-3xl border border-black dark:border-white aspect-[.80]  "
                 alt="profile Image"
                 priority={true}
                 width={800}
                 height={1000}
-                src={profileimage}
+                src="/profile-pic-final.jpg"
                 quality={20}
               />
             </div>

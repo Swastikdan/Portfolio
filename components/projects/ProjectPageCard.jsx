@@ -20,7 +20,7 @@ export default function ProjectPageCard() {
                   decoding="sync"
                   className="w-full rounded-md bg-white object-cover object-center"
                   width="800"
-                  height="600"
+                  height="350"
                   alt={`Preview image of ${project.title.toLowerCase()}`}
                 />
                 <div>

@@ -4,7 +4,8 @@
 import HeroSection from "@/components/herosction/HeroSection";
 import Skills from "@/components/Skills";
 import ProjectsPreview from "@/components/projects/ProjectsPreview";
-import Contact from "@/components/contact/Contact";
+import ContactPromotionStrip from "@/components/ContactPromotionStrip";
+// import Contact from "@/components/contact/Contact";
 // import Footer from "@/components/footer/Footer";
 
 export default function Home() {
@@ -15,7 +16,8 @@ export default function Home() {
         <HeroSection />
         <Skills />
         <ProjectsPreview />
-        <Contact />
+        <ContactPromotionStrip />
+        {/* <Contact /> */}
       </main>
 
       {/* <Footer /> */}
