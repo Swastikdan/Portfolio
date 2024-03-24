@@ -30,7 +30,7 @@ export default function Footer() {
               </Link>
             ))}
           </div>
-        </div>
+        </div>  <a rel="me" href="https://hachyderm.io/@swastik">Mastodon</a>
       </footer>
     </>
   );
