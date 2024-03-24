@@ -29,6 +29,7 @@ export default function Footer() {
                 {link.label}
               </Link>
             ))}
+            
           </div>
         </div>
       </footer>
