@@ -59,7 +59,7 @@ export default function RootLayout({ children }) {
         <meta name="twitter:title" content="Portfolio | Swastik Dan" />
         <meta name="twitter:description" content="Explore the portfolio site of Swastik Dan with a range of creative skills and experiences..." />
         <meta name="twitter:image" content="https://swastikdan.in/opengraph-image.png" />
-
+<a rel="me" href="https://hachyderm.io/@swastik">Mastodon</a>
       </head>
       <body className='mx-auto select-none md:select-auto bg-gray-50 dark:bg-gray-950 overflow-y-auto
   [&::-webkit-scrollbar]:w-2
