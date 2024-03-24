@@ -75,6 +75,7 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange>
            <NavBar />
+           <a rel="me" href="https://hachyderm.io/@swastik">Mastodon</a>
           {children}
           <Footer />
           <SpeedInsights />
