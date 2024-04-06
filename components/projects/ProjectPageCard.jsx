@@ -23,7 +23,7 @@ export default function ProjectPageCard() {
                   height={350}
                   quality={100}
                   loading="lazy"
-                  className="w-full rounded-md bg-gray-200 object-cover object-center"
+                  className="w-full rounded-md bg-gray-600 object-cover object-center"
                   alt={`Preview image of ${project.title.toLowerCase()}`}
                 />
                 <div>
