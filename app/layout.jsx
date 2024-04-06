@@ -9,7 +9,7 @@ export const metadata = {
     "Explore the portfolio site of Swastik Dan with a range of creative skills and experiences...",
   ogUrl: "https://swastikdan.in/",
 };
-import NavBar from "@/components/navbar/Navbar";
+import NavBar from "@/components/navbar/NavBar";
 import Footer from "@/components/Footer";
 export default function RootLayout({ children }) {
   return (
