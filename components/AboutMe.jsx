@@ -5,10 +5,12 @@ export default function AboutMe() {
     <>
       <section className="flex flex-col md:flex-row gap-10 mx-auto w-full justify-center items-center ">
         <Image
-          className=" transition-all duration-200 aspect-auto rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800 max-w-60"
+          className=" transition-all duration-200 aspect-auto rounded-2xl object-cover bg-gray-600 max-w-60"
           src="/profile-pic-final.jpg"
           width={300}
           height={500}
+          quality={30}
+          priority={true}
           alt="Profile picture of Spencer Sharp"
         />
         <div className="w-full md:w-7/12 lg:w-2/3">
