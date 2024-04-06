@@ -1,7 +1,10 @@
 import AboutMe from "@/components/AboutMe";
 import Education from "@/components/Education";
 import TechStacks from "@/components/TechStacks";
-
+export const metadata = {
+  title: "About | Swastik Dan",
+  
+};
 export default function page() {
   return (
     <section className="max-w-7xl mx-auto  px-4 md:px-8 relative ">

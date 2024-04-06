@@ -1,6 +1,10 @@
 import React from "react";
 import ProjectPageCard from "@/components/projects/ProjectPageCard";
 import AllProjectData from "@/components/projects/AllProjectData";
+export const metadata = {
+  title: "Projects | Swastik Dan",
+  
+};
 export default function page() {
   return (
     <section
