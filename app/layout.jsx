@@ -9,7 +9,7 @@ export const metadata = {
     "Explore the portfolio site of Swastik Dan with a range of creative skills and experiences...",
   ogUrl: "https://swastikdan.in/",
 };
-import Navbar from "@/components/navbar/Navbar";
+import NavBar from "@/components/navbar/Navbar";
 import Footer from "@/components/Footer";
 export default function RootLayout({ children }) {
   return (
@@ -151,7 +151,7 @@ export default function RootLayout({ children }) {
         className={`${pathwayextreme.className} overflow-y-auto scroll-smooth bg-gray-950 text-white `}
       >
         <main>
-          <Navbar />
+          <NavBar />
           {children}
           <Footer />
         </main>

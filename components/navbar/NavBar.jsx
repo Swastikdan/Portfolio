@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import Navlinks from "./Navlinks";
-export default function Navbar() {
+export default function NavBar() {
   return (
     <header className="">
       <nav className="items-center flex justify-between max-w-7xl mx-auto py-5 px-5">
