@@ -1,105 +1,90 @@
 "use server";
-import { NextResponse } from "next/server";
+
 import nodemailer from "nodemailer";
 
 const mail = process.env.MAIL;
 const gmailUsername = process.env.USERNAME_GMAIL;
 const gmailPassword = process.env.GMAIL_PASSKEY;
 
-export async function POST(request) {
-  const { name, email, comment, honeypot } = await request.json();
+export default async function sendMail(formData) {
+  const { name, email, comment, honeypot } = formData;
 
-  if (honeypot) {
-    return NextResponse.json({ message: "😁 Success" }, { status: 200 });
-  }
+    if (honeypot) {
+        return { success: true, message: "😁 Success" };
+    }
 
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: gmailUsername,
-      pass: gmailPassword,
-    },
-  });
+    const transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+            user: gmailUsername,
+            pass: gmailPassword,
+        },
+    });
 
-  const mailOptions = {
-    from: `${email}`,
-    to: `${mail}`,
-    subject: `New message from ${name}`,
-    html: `
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <style>
-        body {
-          font-family: 'Helvetica', Arial, sans-serif;
-          background-color: #f4f4f4;
-          margin: 0;
-          padding: 0;
-        }
-        h2 {
-          color: skyblue;
-        }
-        p {
-          margin: 0 0 10px;
-          line-height: 1.5;
-          color: #555;
-        }
-        strong {
-          font-weight: bold;
-        }
-        .container {
-          background-color: #ffffff;
-          padding: 20px;
-          border-radius: 5px;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-          margin: 20px auto;
-          max-width: 600px;
-          width: 100%;
-        }
-        .message-button {
-          display: inline-block;
-          background-color: skyblue;
-          color: white;
-          padding: 10px 20px;
-          margin-top: 20px;
-          border-radius: 5px;
-          text-decoration: none;
-        }
-      </style>
-    </head>
-    <body>
-      <div class="container">
-        <h2>Message Details</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong> ${comment}</p>
-      </div>
-    </body>
-    </html>
-      
+
+    const mailOptions = {
+        from: `${email}`,
+        to: `${mail}`,
+        subject: `New message from ${name}`,
+        html: `
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <style>
+                body {
+                    font-family: 'Helvetica', Arial, sans-serif;
+                    background-color: #f4f4f4;
+                    margin: 0;
+                    padding: 0;
+                }
+                h2 {
+                    color: skyblue;
+                }
+                p {
+                    margin: 0 0 10px;
+                    line-height: 1.5;
+                    color: #555;
+                }
+                strong {
+                    font-weight: bold;
+                }
+                .container {
+                    background-color: #ffffff;
+                    padding: 20px;
+                    border-radius: 5px;
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                    margin: 20px auto;
+                    max-width: 600px;
+                    width: 100%;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h2>New message from ${name}</h2>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Message:</strong> ${comment}</p>
+            </div>
+        </body>
+        </html>
         `,
-  };
+    };
 
-  return new Promise(async (resolve, reject) => {
-    transporter.sendMail(mailOptions, async (error, info) => {
-      if (error) {
-        console.error("Error sending email:", error);
-        resolve(
-          NextResponse.json(
-            { message: "😢 Error sending email" },
-            { status: 500 }
-          )
-        );
-      } else {
-        console.log("Email sent:", info.response);
+     return new Promise(async (resolve, reject) => {
+       transporter.sendMail(mailOptions, async (error, info) => {
+         if (error) {
+           console.error("Error sending email:", error);
+           resolve({ success:false , message: "😢 Error sending email" });
+         } else {
+           console.log("Email sent:", info.response);
 
-     const confirmationMailOptions = {
-       from: `${mail}`,
-       to: `${email}`,
-       subject: ` Message Received`,
-       html: `
+           const confirmationMailOptions = {
+             from: `${mail}`,
+             to: `${email}`,
+             subject: ` Message Received`,
+             html: `
         <!DOCTYPE html>
         <html lang="en">
         
@@ -222,22 +207,18 @@ export async function POST(request) {
         </html>
         
               `,
-     };
+           };
 
-        try {
-          await transporter.sendMail(confirmationMailOptions);
-          console.log("Confirmation email sent");
-        } catch (error) {
-          console.error("Error sending confirmation email:", error);
-        }
+           try {
+             await transporter.sendMail(confirmationMailOptions);
+             console.log("Confirmation email sent");
+           } catch (error) {
+             console.error("Error sending confirmation email:", error);
+           }
 
-        resolve(
-          NextResponse.json(
-            { message: "🎉 Message sent successfully" },
-            { status: 200 }
-          )
-        );
-      }
-    });
-  });
+           resolve({ success: true, message: "🎉 Message sent successfully" });
+         }
+       });
+     });
+
 }
