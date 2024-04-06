@@ -1,38 +1,34 @@
 const SelectedProjectData = [
-
-    {
-        title: "Stayz - Booking Website",
-        description: "Find, compare, and reserve your ideal hotel.",
-        url: "https://stayz.vercel.app",
-        github: "",
-        imageSrc: "/images/project-image/stayz.vercel.app.jpg",
-        tags: ["Next Js", "Javascript", "Clerk Auth", "Mongo DB", "Tailwind", "shadcn/ui", "Swiper Js"],
-        id: 2,
-        ongoing: true,
-
-    },
-    ,
-    {
-        title: "Recipe Seeker Webapp",
-        description: "A web app where users can search for recipes.",
-        url: "https://racipe-seeker.swastikdan.in/",
-        github: 'https://github.com/Swastikdan/Racipe-Seeker-App',
-        imageSrc: "/images/project-image/racipe-seeker.swastikdan.in.png",
-        tags: ["Node Js", "Express Js", "Mongo DB", "Tailwind", "JavaScript"],
-        id: 3,
-        ongoing: false,
-    },
-     {
-        title: "E-Commerce Website",
-        description: "E-Commerce Web app built using Django",
-        url: "https://swastikpyprojects.pythonanywhere.com/",
-        github: 'hhttps://github.com/Swastikdan/E-Commerce-Django',
-        imageSrc: "/images/project-image/swastikpyprojects.pythonanywhere.com.jpg",
-        tags: ["Django", "Tailwind", "JavaScript", "SQLite", "Python", "Swiper Js"],
-        id: 1,
-        ongoing: false,
-    }
-
+  {
+    title: "Urban Utopia",
+    description: "Find, compare, and reserve your ideal hotel.",
+    url: "http://urbanutopia.vercel.app/",
+    github: "https://github.com/Swastikdan/Urban-Urtopia",
+    imageSrc: "/images/project-image/urbanutopia.vercel.app.png",
+    tags: ["Next Js", "Javascript", "Mongo DB", "Tailwind", "shadcn/ui"],
+    id: 2,
+    ongoing: true,
+  },
+  {
+    title: "Recipe Seeker ",
+    description: "A web app where users can search for recipes.",
+    url: "https://therecipedb.vercel.app/",
+    github: "https://github.com/Swastikdan/Racipe-Seeker-Ap",
+    imageSrc: "/images/project-image/therecipedb.vercel.app.png",
+    tags: ["Node Js", "Express Js", "Mongo DB", "Tailwind", "JavaScript"],
+    id: 5,
+    ongoing: false,
+  },
+  {
+    title: "Film Fanatic",
+    description: "A movie data display website with TMDB api.",
+    github: "https://github.com/Swastikdan/Film-Fanatic",
+    url: "https://film-fanatic.vercel.app/",
+    imageSrc: "/images/project-image/film-fanatic.vercel.app.png",
+    tags: ["Node Js", "JavaScript", "Tailwind", "TMDB API"],
+    id: 3,
+    ongoing: false,
+  },
 ];
 
 export default SelectedProjectData;

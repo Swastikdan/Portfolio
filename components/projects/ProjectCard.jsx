@@ -1,8 +1,7 @@
 import Link from "next/link";
-import LazyImage from "../LazyImage";
 import { Eye, Github } from "lucide-react";
+import Image from "next/image";
 export default function ProjectCard({
-  keys,
   title,
   description,
   url,
@@ -13,86 +12,63 @@ export default function ProjectCard({
 }) {
   return (
     <>
-      <div
-        key={keys}
-        aria-label={title}
-        target="blank"
-        rel="noopener noreferrer"
-        className="overflow-hidden rounded-2xl bg-gradient-to-b from-gray-400 to-gray-300 p-px dark:from-gray-500 dark:via-gray-400 dark:to-darker  shadow-sm transition hover:shadow-lg  dark:shadow-gray-700/25  group "
-      >
-        <div className="relative flex h-full flex-col gap-6 rounded-2xl bg-gray-100 p-2 dark:bg-gray-800">
-          <article className="">
-            <div className="group relative flex h-56 items-end justify-end overflow-hidden rounded-lg bg-gray-100 shadow-lg">
-              <LazyImage
-                alt={title}
-                src={imageSrc}
-                width={1170}
-                height={500}
-                quality={50}
-                priority={true}
-                className="absolute inset-0 h-56 w-full object-cover object-center  shadow-xl transition  group-hover:scale-[1.01] "
-              />
-              <div className="h-56 pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50"></div>
+  <div class="group flex flex-col h-full shadow-sm rounded-xl border bg-gray-900/50 border-gray-500 shadow-gray-600/[.7]">
+  <Image
+    src={imageSrc}
+    alt={`Project ${title}`}
+    width={1170}
+    height={500}
+    quality={50}
+    className="h-52 bg-gray-600 rounded-t-xl object-cover object-center"
+  />
 
-              {ongoing && (
-                <span className="relative mr-3 mb-3 text-xs whitespace-nowrap rounded-md bg-green-500/80 px-2.5 py-0.5 text-white">
-                  Ongoing
-                </span>
-              )}
-            </div>
+  <div class="p-3 md:pt-4 md:pb-6">
+    <div className="flex items-center justify-between">
+      <h3 class="text-xl font-semibold text-gray-300 hover:text-white">
+        {title}
+      </h3>
+      {ongoing && (
+        <span className="text-xs  font-light text-green-400 px-2 py-.5 bg-green-900 rounded-sm">
+          Ongoing
+        </span>
+      )}
+    </div>
+    <p class=" text-gray-500 text-xs sm:text-sm">
+      {description.split(" ").slice(0, 30).join(" ")}
+    </p>
+    <div className="flex flex-wrap gap-1  pt-3">
+      {tags.map((tag) => (
+        <span
+          key={tag}
+          className="text-[8px] md:text-[9px] inline-flex items-center gap-1.5 py-1 px-2 rounded-md  font-medium  bg-gray-700 text-gray-200"
+        >
+          {tag}
+        </span>
+      ))}
+    </div>
+  </div>
 
-            {/* <Image
-              alt={title}
-              src={imageSrc}
-              width={1170}
-              height={500}
-              quality={50}
-              priority={true} 
-              className="h-56 w-full rounded-xl object-cover shadow-xl transition  group-hover:scale-[1.01] "
-            /> */}
-
-            <div className="px-4 py-3">
-              <div className="flex items-center justify-between">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                  {title}
-                </h3>
-              </div>
-
-              <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-600 dark:text-gray-400">
-                {description.split(" ").slice(0, 30).join(" ")}
-              </p>
-            </div>
-            <div className="flex px-4 justify-start  space-x-2 pb-4 text-xs   ">
-              <Link
-                href={url}
-                target="_blank"
-                className="flex gap-1 ring-1 ring-black dark:ring-white px-2 py-1 rounded-md opacity-80 hover:opacity-100 active:scale-95 items-center "
-              >
-                <Eye className="p-1" /> Live Demo
-              </Link>
-              <Link
-                href={github}
-                target="_blank"
-                className={`flex gap-2 ring-1 ring-black dark:ring-white px-2 py-1 rounded-md opacity-80 hover:opacity-100 active:scale-95 items-center ${
-                  !github ? "hidden" : ""
-                }`}
-              >
-                <Github className="p-1" /> Source Code
-              </Link>
-            </div>
-            <div className="flex flex-wrap gap-2 px-4 pt-2 pb-4">
-              {tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="whitespace-nowrap font-light rounded-sm  px-1.5 md:px-2.5 py-0.5 text-[10px] md:text-xs ring-1 ring-black dark:ring-white  bg-white dark:bg-black "
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </article>
-        </div>
-      </div>
+  <div class="mt-auto flex border-t divide-x border-gray-500 divide-gray-700">
+    <Link
+      href={url}
+      target="_blank"
+      aria-label="Link to live demo of project"
+      rel="noopener noreferrer" // improves security for links that open in a new tab
+      class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl   shadow-sm  disabled:opacity-50 disabled:pointer-events-none bg-gray-900/50 border-gray-500 text-white hover:bg-gray-800"
+    >
+      <Eye className="p-1" aria-hidden="true" /> Live Demo
+    </Link>
+    <Link
+      href={github}
+      target="_blank"
+      aria-label="Link to source code of project"
+      rel="noopener noreferrer" // improves security for links that open in a new tab
+      class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-xl  shadow-sm  disabled:opacity-50 disabled:pointer-events-none bg-gray-900/50 border-gray-500 text-white hover:bg-gray-800"
+    >
+      <Github className="p-1" aria-hidden="true" /> Source Code
+    </Link>
+  </div>
+</div>
     </>
   );
 }

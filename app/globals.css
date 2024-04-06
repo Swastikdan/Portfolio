@@ -31,27 +31,27 @@
     --radius: 0.5rem;
   }
 
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 48%;
-  }
+}
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) var(--primary);
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--primary);
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--secondary);
+  border-radius: 14px;
+  border: 3px solid var(--primary);
 }
 
 @layer base {
@@ -63,38 +63,3 @@
   }
 }
 
-#cards {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.card {
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  cursor: pointer;
-  outline: none;
-  transition: scale 100ms;
-}
-
-.card .card-front-image {
-  position: relative;
-  z-index: 2;
-}
-
-.card .card-image {
-  width: clamp(250px, 20vw, 450px);
-  aspect-ratio: auto 1 / 1;
-  border-radius: clamp(2.5rem, 0.75vw, 3rem);
-}
-
-
-.slide-down {
-  transform: translateY(0);
-  transition: transform 0.3s ease-in-out;
-}
-.slide-up {
-  transform: translateY(-100%);
-  transition: transform 0.1s ease-in-out;
-}

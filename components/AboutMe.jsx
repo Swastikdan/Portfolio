@@ -1,30 +1,21 @@
-import LazyImage from "./LazyImage";
+import Image from "next/image";
 import { ArrowDownToLine } from "lucide-react";
-import profileimage from "../public/profile-pic-final.jpg";
 export default function AboutMe() {
   return (
     <>
-      <div className="lg:bg-gray-200/50 dark:lg:bg-gray-800 lg:p-10 rounded-[4rem] space-y-6 md:flex md:gap-6 justify-center md:space-y-0 lg:items-center mt-20">
-        <div className="md:w-5/12 lg:w-1/3">
-          <div id="cards" className="rounded-3xl md:-mx-5">
-            <div className="card rounded-3xl ">
-              <LazyImage
-                className="card-front-image h-80 xl:h-96  w-full  card-image rounded-3xl border border-black dark:border-white aspect-[.80]  "
-                alt="profile Image"
-                priority={true}
-                width={800}
-                height={1000}
-                src="/profile-pic-final.jpg"
-                quality={20}
-              />
-            </div>
-          </div>
-        </div>
-        <div className="md:w-7/12 lg:w-2/3">
+      <section className="flex flex-col md:flex-row gap-10 mx-auto w-full justify-center items-center ">
+        <Image
+          className=" transition-all duration-200 aspect-auto rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800 max-w-60"
+          src="/profile-pic-final.jpg"
+          width={300}
+          height={500}
+          alt="Profile picture of Spencer Sharp"
+        />
+        <div className="w-full md:w-7/12 lg:w-2/3">
           <h2 className="text-2xl md:text-3xl lg:text-4xl pt-4 font-bold">
             So, Who Am I?
           </h2>
-          <p className="my-4 text-gray-600 dark:text-gray-300 gotham">
+          <p className="my-4 text-gray-300 gotham">
             A web development enthusiast currently pursuing a B.Tech in CSE. I'm
             all about coding, design, and, of course music. As an individual, I
             take pride in my laid-back and down-to-earth nature. I approach life
@@ -34,17 +25,18 @@ export default function AboutMe() {
           </p>
 
           <a
-            href="/resume.pdf"
+            href="https://drive.google.com/file/d/1SaMS5VGh7uxcxIqZpNIkxPK0BExwfiLB/view?usp=sharing"
+            download="Resume.pdf"
             aria-label="Download Resume"
-            className="group inline-flex py-2 items-center gap-2.5 rounded-md bg-gray-300 hover:bg-gray-300/70 px-4 transition-all duration-500 dark:bg-gray-600 dark:hover:bg-gray-700"
+            className="group inline-flex py-2 items-center gap-2.5 rounded-md px-4 transition-all duration-500 bg-gray-600 hover:bg-gray-700"
           >
-            <ArrowDownToLine />
+            <ArrowDownToLine aria-hidden="true" />
             <span className="text-lg  lg:text-xl font-medium tracking-normal ">
               Resume
             </span>
           </a>
         </div>
-      </div>
+      </section>
     </>
   );
 }

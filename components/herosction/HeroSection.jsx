@@ -1,21 +1,30 @@
 import Link from "next/link";
 import Image from "next/image";
-import socialLinks from "../socialLinks";
+const socialLinks = [
+  {
+    label: "Github",
+    href: "https://github.com/Swastikdan",
+    icon: "/images/icons/github-social.svg",
+  },
+  {
+    label: "Linkdin",
+    href: "https://www.linkedin.com/in/swastikdan",
+    icon: "/images/icons/linkedin-social.svg",
+  },
+  {
+    label: "Mail",
+    href: "mailto:contact@swastikdan.in",
+    icon: "/images/icons/mail-icon.svg",
+  },
+];
 export default function HeroSection() {
   return (
     <>
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 top-0 grid grid-cols-2 space-x-52 opacity-30 dark:opacity-20"
-      >
-        <div className="h-60 bg-gradient-to-br from-primary to-purple-400 blur-[106px] dark:from-blue-700"></div>
-        <div className="h-40 bg-gradient-to-r from-cyan-400 to-sky-300 blur-[106px] dark:to-indigo-600"></div>
-      </div>
-      <section className="relative  max-w-7xl mx-auto ">
-        <h1 className="text-[38px] md:text-7xl lg:text-8xl xl:text-9xl  font-black flex flex-col text-center py-6 group text-gray-800 dark:text-gray-200 tracking-wide">
+      <section className="max-w-7xl mx-auto ">
+        <h1 className="text-[34px] md:text-7xl lg:text-8xl xl:text-9xl  font-black flex flex-col text-center py-6 group text-gray-200 tracking-wide">
           <span className="z-10 -rotate-1">Hay , I'm</span>
           <span>
-            <span className="bg-gradient-to-r from-blue-500 to-cyan-400/80 text-white px-2 ">
+            <span className="bg-gradient-to-r from-blue-500 to-cyan-400/80 text-white px-2  ">
               Swastik Dan ,
             </span>
             <span className=""> I </span>
@@ -26,7 +35,7 @@ export default function HeroSection() {
           From coffee to code, I build pixel-perfect, accessible products for
           the web and beyond.
         </h2>
-        <h2 className="lg:text-xl text-center hidden md:inline-flex">
+        <h2 className="lg:text-lg font-light text-center hidden md:inline-flex">
           Fueled by coffee and a passion for pixel perfection, I'm a UI/UX
           designer and web developer from India, crafting experiences that are
           both beautiful and intuitive.
@@ -37,7 +46,7 @@ export default function HeroSection() {
             <Link
               href="#contact"
               aria-label="Contact Me"
-              className="group text-lg md:text-xl  inline-flex py-1 items-center gap-2.5 rounded-md bg-gray-300/80 hover:bg-gray-200 px-3 transition-colors duration-500 dark:bg-gray-800 dark:hover:bg-gray-700 active:scale-95"
+              className="group text-lg md:text-xl  inline-flex py-1 items-center gap-2.5 rounded-md  px-3 transition-colors duration-500 bg-gray-800 hover:bg-gray-700 active:scale-95"
             >
               <span className="text-lg  lg:text-xl font-medium tracking-normal ">
                 Let's talk
@@ -46,7 +55,8 @@ export default function HeroSection() {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="h-5 w-5 text-black/60 dark:text-white/60  transition duration-300 group-hover:rotate-45 group-hover:text-black dark:group-hover:text-white"
+                className="h-5 w-5 text-white/60  transition duration-300 group-hover:rotate-45 group-hover:text-white"
+                aria-hidden="true" // hides this icon from screen readers
               >
                 <path
                   fillRule="evenodd"
@@ -59,31 +69,21 @@ export default function HeroSection() {
             <Link
               href="/about"
               aria-label="About Me"
-              className="text-lg lg:text-xl font-medium tracking-normal gap-2.5 px-3 py-1 rounded-md  hover:bg-gray-200  dark:hover:bg-gray-700 transition-colors duration-300 active:scale-95"
+              className="text-lg lg:text-xl font-medium tracking-normal gap-2.5 px-3 py-1 rounded-md  hover:bg-gray-700 transition-colors duration-300 active:scale-95"
             >
               About Me
             </Link>
           </div>
 
           <div className="flex items-center gap-4 text-sm md:text-base py-5">
-            {/* <Link href="/" className="flex items-center gap-2 px-2 py-1 ring-1 ring-black dark:ring-white rounded-md hover:bg-gray-200/80 hover:dark:bg-gray-800 active:scale-95 " >
-              <Image src="/images/icons/github-social.svg" className="p-[2px] -mt-[1px]" width={20} height={20} alt="Github logo" />
-              Github
-            </Link>
-            <Link href="/" className="flex items-center gap-2 px-2 py-1 ring-1 ring-black dark:ring-white rounded-md hover:bg-gray-200/80 hover:dark:bg-gray-800 active:scale-95 " >
-              <Image src="/images/icons/linkedin-social.svg" className="p-[2px] -mt-1" width={20} height={20} alt="LinkedIn logo" />
-              LinkedIn
-            </Link>
-            <Link href="/" className="flex items-center gap-2 px-2 py-1 ring-1 ring-black dark:ring-white rounded-md hover:bg-gray-200/80 hover:dark:bg-gray-800 active:scale-95 " >
-              <Image src="/images/icons/mail-icon.svg" className="p-[2px] -mt-[1px]" width={20} height={20} alt="Mail icon" />
-              Mail
-            </Link> */}
             {socialLinks.map((socialLink) => (
               <Link
                 href={socialLink.href}
                 key={socialLink.label}
-                aria-label={socialLink.label}target="_blank"
-                className="flex items-center gap-2 px-2 py-1 ring-1 ring-black dark:ring-white rounded-md hover:bg-gray-200/80 hover:dark:bg-gray-800 active:scale-95 "
+                aria-label={socialLink.label}
+                target="_blank"
+                rel="noopener noreferrer" // improves security for links that open in a new tab
+                className="flex items-center gap-2 px-2 py-1 ring-1 ring-white rounded-md hover:bg-gray-800/80 active:scale-95 "
               >
                 <Image
                   src={socialLink.icon}

@@ -2,16 +2,16 @@ export default function Education() {
   return (
     <>
     
-    <h2 className="mb-2  text-2xl font-bold text-sky-800 dark:text-white lg:mb-0 lg:text-3xl py-10 underline-offset-8 underline">
+    <h2 className="mb-2  text-2xl font-bold text-white lg:mb-0 lg:text-3xl py-10 underline-offset-8 underline">
           My Education
         </h2>
 
         <div className="px-10 pb-10">
-          <ol className="relative border-l border-gray-200 dark:border-gray-700">
+          <ol className="relative border-l border-gray-700">
             <li className="mb-10 pl-6 reveal-element">
-              <span className="absolute flex items-center justify-center w-6 h-6 bg-sky-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-sky-900">
+              <span className="absolute flex items-center justify-center w-6 h-6  rounded-full -left-3 ring-8 ring-gray-900 bg-sky-900">
                 <svg
-                  className="w-5 h-5 text-sky-800 dark:text-sky-300 cf-icon-svg"
+                  className="w-5 h-5 text-sky-300 cf-icon-svg"
                   viewBox="-1 0 19 19"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -27,20 +27,20 @@ export default function Education() {
                   </g>
                 </svg>
               </span>
-              <h3 className="flex items-center mb-1 text-lg md:text-xl font-semibold text-gray-900 dark:text-white">
+              <h3 className="flex items-center mb-1 text-lg md:text-xl font-semibold text-white">
                 Bengal Institute Of Technology
-                <span className="bg-sky-100 text-sky-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-sky-900 dark:text-sky-300 ml-3 hidden md:block">
+                <span className=" text-sm font-medium mr-2 px-2.5 py-0.5 rounded bg-sky-600 k:text-sky-300 ml-3 hidden md:block">
                   Ongoing
                 </span>
               </h3>
-              <time className="block mb-2 text-sm font-normal leading-none text-gray-700 dark:text-gray-300">
+              <time className="block mb-2 text-sm font-normal leading-none text-gray-300">
                 Computer Science Engineering (CSE)
               </time>
             </li>
             <li className="mb-10 pl-6 reveal-element">
-              <span className="absolute flex items-center justify-center w-6 h-6 bg-sky-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-sky-900">
+              <span className="absolute flex items-center justify-center w-6 h-6  rounded-full -left-3 ring-8 ring-gray-900 bg-sky-900">
                 <svg
-                  className="w-5 h-5 text-sky-800 dark:text-sky-300 cf-icon-svg"
+                  className="w-5 h-5 text-sky-300 cf-icon-svg"
                   viewBox="-1 0 19 19"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -56,17 +56,17 @@ export default function Education() {
                   </g>
                 </svg>
               </span>
-              <h3 className="pb-1 text-lg md:text-xl font-semibold text-gray-900 dark:text-white">
+              <h3 className="pb-1 text-lg md:text-xl font-semibold text-white">
                 Tajpur Ramcharan High School
               </h3>
-              <time className="block pb-2 text-sm font-normal leading-none text-gray-700 dark:text-gray-300">
+              <time className="block pb-2 text-sm font-normal leading-none text-gray-300">
                 Higher Secondary Education 2018-2020
               </time>
             </li>
             <li className="pl-6 reveal-element">
-              <span className="absolute flex items-center justify-center w-6 h-6 bg-sky-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-sky-900">
+              <span className="absolute flex items-center justify-center w-6 h-6  rounded-full -left-3 ring-8 ring-gray-900 bg-sky-900">
                 <svg
-                  className="w-5 h-5 text-sky-800 dark:text-sky-300 cf-icon-svg"
+                  className="w-5 h-5 text-sky-300 cf-icon-svg"
                   viewBox="-1 0 19 19"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -82,10 +82,10 @@ export default function Education() {
                   </g>
                 </svg>
               </span>
-              <h3 className="mb-1 text-lg md:text-xl font-semibold text-gray-900 dark:text-white">
+              <h3 className="mb-1 text-lg md:text-xl font-semibold text-white">
                 Kamarpukur Ramakrishna Mission MP School
               </h3>
-              <time className="block mb-2 text-sm font-normal leading-none text-gray-700 dark:text-gray-300">
+              <time className="block mb-2 text-sm font-normal leading-none text-gray-300">
                 Secondary Education till 2018
               </time>
             </li>
