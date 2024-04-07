@@ -4,15 +4,17 @@ export default function AboutMe() {
   return (
     <>
       <section className="flex flex-col md:flex-row gap-10 mx-auto w-full justify-center items-center ">
-        <Image
-          className=" transition-all duration-200 aspect-auto rounded-2xl object-cover bg-gray-600 max-w-60"
-          src="/profile-pic-final.jpg"
-          width={300}
-          height={500}
-          quality={30}
-          priority={true}
-          alt="Profile picture of Spencer Sharp"
-        />
+        <div className="">
+          <Image
+            className="transition-all duration-200 aspect-auto rounded-2xl object-cover bg-gray-600 max-w-60 w-[300px] h-full"
+            src="/profile-pic-final.jpg"
+            width={300}
+            height={500}
+            quality={30}
+            priority={true}
+            alt="Profile picture of Spencer Sharp"
+          />
+        </div>
         <div className="w-full md:w-7/12 lg:w-2/3">
           <h2 className="text-2xl md:text-3xl lg:text-4xl pt-4 font-bold">
             So, Who Am I?

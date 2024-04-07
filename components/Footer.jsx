@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <>
 <footer className=" py-6  relative border-t">
-  <div className="flex flex-col flex-wrap items-center justify-between gap-4 py-6 text-sm  sm:flex-row sm:gap-6 mx-auto max-w-7xl">
+  <div className="flex flex-col flex-wrap items-center justify-between gap-4 py-6 text-sm  sm:flex-row sm:gap-6 mx-auto max-w-7xl px-2">
     <span className="order-last sm:order-first">
       Made with ❤️ by{" "}
       <a
@@ -25,13 +25,13 @@ export default function Footer() {
           href={link.href}
           target="_blank"
           rel="noopener noreferrer"
-          className=" hover:underline underline-offset-2"
+          className=" hover:underline underline-offset-2 px-5 sm:px-3 md:px-0"
         >
           {link.label}
         </a>
       ))}
     </div>
-    <div className="flex">
+    {/* <div className="flex">
       {navLinks.map((link) => (
         <a
           key={link.title}
@@ -42,7 +42,7 @@ export default function Footer() {
           {link.title}
         </a>
       ))}
-    </div>
+    </div> */}
   </div>
 </footer>
     </>

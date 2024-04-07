@@ -14,7 +14,7 @@ export default function ProjectsPreview() {
           <Link
             href="/projects"
             aria-label="Link to view all projects"
-            className="inline-flex items-center md:text-lg lg:text-xl font-medium tracking-normal gap-2.5  px-3 py-1 rounded-md  hover:bg-gray-200  dark:hover:bg-gray-700/80 transition-colors duration-300 active:scale-95 "
+            className="inline-flex items-center md:text-lg lg:text-xl font-medium tracking-normal gap-2.5  px-3 py-1 rounded-md  hover:bg-gray-700/80 transition-colors duration-300 active:scale-95 "
           >
             View All
             <svg

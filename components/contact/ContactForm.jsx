@@ -68,7 +68,7 @@ export default function ContactForm() {
     }
   };
   return (
-    <div className="mx-auto max-w-2xl md:-mt-20">
+    <div className="mx-auto max-w-2xl mt-10 md:mt-0">
       <div className="p-4 relative z-10 border-[2px] rounded-xl sm:mt-10 md:p-10 border-gray-600">
         <form onSubmit={handleSubmit}>
           <div className="mb-4 sm:mb-8">
@@ -130,7 +130,7 @@ export default function ContactForm() {
                 id="comment"
                 name="comment"
                 rows="5"
-                className="py-3 px-4 block w-full rounded-lg text-sm disabled:opacity-50 disabled:pointer-events-none bg-slate-900 border-gray-700 text-gray-400 focus:ring-gray-600"
+                className="py-3 px-4 block w-full rounded-lg text-sm disabled:opacity-50 disabled:pointer-events-none bg-slate-900 border-gray-700 text-gray-400 focus:ring-gray-600 resize-none"
                 placeholder="Leave your comment here..."
                 value={formData.comment}
                 onChange={handleChange}
