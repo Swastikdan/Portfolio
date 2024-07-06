@@ -1,27 +1,36 @@
 {
   "name": "portfolio",
-  "version": "2.0.0",
-  "private": true,
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "astro dev",
+    "dev:network": "astro dev --host",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "preview:network": "astro preview --host",
+    "astro": "astro",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.0",
-    "lucide-react": "^0.365.0",
-    "next": "14.1.4",
-    "nodemailer": "^6.9.13",
-    "react": "^18",
-    "react-dom": "^18",
-    "tailwind-merge": "^2.2.2",
-    "tailwindcss-animate": "^1.0.7"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.0.1",
-    "postcss": "^8",
-    "tailwindcss": "^3.3.0"
+    "@astrojs/check": "^0.7.0",
+    "@astrojs/mdx": "^3.1.2",
+    "@astrojs/rss": "^4.0.7",
+    "@astrojs/sitemap": "^3.1.6",
+    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/vercel": "^7.7.2",
+    "@fontsource/inter": "^5.0.19",
+    "@tailwindcss/typography": "^0.5.13",
+    "@typescript-eslint/eslint-plugin": "^7.15.0",
+    "@typescript-eslint/parser": "^7.15.0",
+    "astro": "^4.11.5",
+    "clsx": "^2.1.1",
+    "eslint": "^9.6.0",
+    "eslint-plugin-astro": "^1.2.2",
+    "eslint-plugin-jsx-a11y": "^6.9.0",
+    "sharp": "^0.33.4",
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.5.3"
   }
 }

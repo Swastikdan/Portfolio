@@ -1,0 +1,166 @@
+---
+import { getCollection } from 'astro:content';
+import Container from '@components/Container.astro';
+import Layout from '@layouts/Layout.astro';
+import ProjectCard from '@components/ProjectCard.astro';
+import BlogCard from '@components/BlogCard.astro';
+import Link from '@components/Link.astro';
+import Resume from '@components/Resume.astro';
+import { dateRange } from '@lib/utils';
+import { site, home, studies, skills, socials } from '@consts';
+
+const projects = (await getCollection('projects'))
+  .filter((project) => !project.data.draft)
+  .sort((a, b) => b.data.startdate.valueOf() - a.data.startdate.valueOf())
+  .slice(0, site.num_projects_homepage);
+const blog = (await getCollection('blog'))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+---
+
+<Layout title={home.title} description={home.description}>
+  <Container>
+    <h1
+      class='animate font-black text-black dark:text-white text-3xl md:text-4xl'>
+      Hi, I'm Swastik <span class='pl-1'>👋</span>
+    </h1>
+    <div class='space-y-10'>
+      <section>
+        <article class='space-y-4'>
+          <p class='animate'>
+            I am a minimal, seo friendly, accessible portfolio and blog for
+            developers. I am an even more lightweight version of my popular
+            theme
+            <Link
+              href='https://github.com/markhorn-dev/astro-sphere'
+              aria-label='Astro Sphere on Github'
+              external>
+              Astro Sphere
+            </Link>. I have a lighthouse scores of 100 across the board for
+            performance, accesibility, best practices and SEO.
+          </p>
+          <Resume />
+        </article>
+      </section>
+      <section class='animate space-y-6'>
+        <div class='flex flex-wrap gap-y-2 items-center justify-between'>
+          <h5 class='font-bold text-lg md:text-xl text-black dark:text-white'>
+            Skills
+          </h5>
+        </div>
+        <ul class='flex flex-row flex-wrap items-start gap-1 animate'>
+          {
+            skills.map((entry) => (
+              <li>
+                <span class='  inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-md text-xs font-semibold bg-black text-white dark:bg-white dark:text-black'>
+                  {entry}
+                </span>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+      <section class='animate space-y-6'>
+        <div class='flex flex-wrap gap-y-2 items-center justify-between'>
+          <h5 class='font-bold text-lg md:text-xl text-black dark:text-white'>
+            Projects
+          </h5>
+          <Link href='/project'> See all projects </Link>
+        </div>
+
+        <div class='grid grid-cols-1 md:grid-cols-2 gap-5'>
+
+			{
+				projects.map((project) => (
+					<ProjectCard entry={project} />
+				))
+			}
+
+		</div>
+        <!-- <ul class='inline-flex flex-wrap gap-3 animate'>
+          {
+            skills.map((entry) => (
+              <li>
+                <span class='  inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-md text-xs font-semibold bg-black text-white dark:bg-white dark:text-black'>
+                  {entry}
+                </span>
+              </li>
+            ))
+          }
+        </ul> -->
+      </section>
+      <section class='animate space-y-6'>
+        <div class='flex flex-wrap gap-y-2 items-center justify-between'>
+          <h5 class='font-bold text-lg md:text-xl text-black dark:text-white'>
+            Studies
+          </h5>
+        </div>
+        <ul class='flex flex-col space-y-4'>
+          {
+            studies.map((entry) => (
+              <li>
+                <div class='text-sm opacity-75'>
+                  {dateRange(entry.start, entry.end)}
+                </div>
+                <div class='font-semibold text-black dark:text-white'>
+                  {entry.school}
+                </div>
+                <div class='text-sm opacity-75 pt-1'>{entry.degree}</div>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+      <section class='animate space-y-6'>
+        <div class='flex flex-wrap gap-y-2 items-center justify-between'>
+          <h5 class='font-bold text-lg md:text-xl text-black dark:text-white'>
+            Latest posts
+          </h5>
+          <Link href='/blog'> See all posts </Link>
+        </div>
+        <ul class='flex flex-col gap-4'>
+          {
+            blog.map((post) => (
+              <li>
+                <BlogCard entry={post} />
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+      <section class='animate space-y-4'>
+        <h5 class='font-semibold text-black dark:text-white'>Let's Connect</h5>
+        <article>
+          <p>
+            If you want to get in touch with me about something or just to say
+            hi, reach out on social media or send me an email.
+          </p>
+        </article>
+
+        <ul class='flex flex-wrap gap-2'>
+          {
+            socials.map((social) => (
+              <li class='flex gap-x-2 text-nowrap'>
+                <Link
+                  href={social.url}
+                  external
+                  aria-label={`${site.name} on ${social.name}`}>
+                  {social.name}
+                </Link>
+                {'/'}
+              </li>
+            ))
+          }
+          <li class='line-clamp-1'>
+            <Link
+              href={`mailto:${site.email}`}
+              aria-label={`Email ${site.name}`}>
+              {site.email}
+            </Link>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </Container>
+</Layout>
