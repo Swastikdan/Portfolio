@@ -29,6 +29,9 @@ importers:
       '@fontsource/inter':
         specifier: ^5.0.19
         version: 5.0.19
+      '@fontsource/poppins':
+        specifier: ^5.0.14
+        version: 5.0.14
       '@tailwindcss/typography':
         specifier: ^0.5.13
         version: 0.5.13(tailwindcss@3.4.4)
@@ -435,6 +438,9 @@ packages:
 
   '@fontsource/inter@5.0.19':
     resolution: {integrity: sha512-tVU77yjKnsoUotrXGYbbYxmL9nbm/MSo3deZietmf8V2FEDlbi9fvkJHMrYbo7ZsOqR1AYBBqRYmemz4pSE5Mg==}
+
+  '@fontsource/poppins@5.0.14':
+    resolution: {integrity: sha512-nmM1zpPo3Uh4JcGAVSQuWaZNYh2FbbwWhZ5t6hRaynmJaNTBW85d3nEh9zMmzI0HX7X5xqQVdRHeDatKpOGsnA==}
 
   '@humanwhocodes/module-importer@1.0.1':
     resolution: {integrity: sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA==}
@@ -3648,6 +3654,8 @@ snapshots:
   '@eslint/object-schema@2.1.4': {}
 
   '@fontsource/inter@5.0.19': {}
+
+  '@fontsource/poppins@5.0.14': {}
 
   '@humanwhocodes/module-importer@1.0.1': {}
 
