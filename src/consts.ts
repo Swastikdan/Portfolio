@@ -25,7 +25,7 @@ export const notFound: Metadata = {
   title: '404 | Page Not Found',
   description: 'Page not found.',
 };
-export const  errorPage: Metadata = {
+export const errorPage: Metadata = {
   title: '500 | Internal Server Error',
   description: 'Internal Server Error.',
 };
@@ -38,21 +38,7 @@ export const studies: Studies = [
     start: new Date('06/01/2020'),
     end: new Date('07/01/2024'),
   },
-  // {
-  //   degree: 'Higher Secondary',
-  //   school: 'Tajpur Ramcharan High School, Tajpur',
-  //   start: '1/01/2018',
-  //   end: '1/01/2020',
-  // },
-  // {
-  //   degree: 'Secondary',
-  //   school: '',
-  //   start: '1/01/2008',
-  //   end: '1/01/2018',
-  // },
 ];
-
-
 
 export const skills: Skills = [
   'Java',
@@ -66,49 +52,6 @@ export const skills: Skills = [
   'SQL',
   'MongoDB',
 ];
-
-// export const skills: Skills = [
-//   {
-//     name:'Java',
-//     icon:''
-//   },
-//   {
-//     name:'JavaScript',
-//     icon:''
-//   },
-//   {
-//     name:'React',
-//     icon:''
-//   },
-//   {
-//     name:'Next JS',
-//     icon:''
-//   },
-//   {
-//     name:'Astro JS',
-//     icon:''
-//   },
-//   {
-//     name:'Express JS',
-//     icon:''
-//   },
-//   {
-//     name:'Node JS',
-//     icon:''
-//   },
-//   {
-//     name:'Tailwind CSS',
-//     icon:''
-//   },
-//   {
-//     name:'SQL',
-//     icon:''
-//   },
-//   {
-//     name:'MongoDB',
-//     icon:''
-//   }
-// ];
 
 export const socials: Socials = [
   {
