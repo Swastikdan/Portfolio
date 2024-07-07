@@ -1,0 +1,34 @@
+---
+import { Image } from 'astro:assets';
+type Props = {
+  name: string;
+  icon: string;
+  link: string;
+};
+
+const { name, icon, link } = Astro.props;
+---
+
+<a
+  href={link}
+  target='_blank'
+  class='w-fit px-2.5 py-1.5 group rounded-md border-[2px] flex gap-2 items-center border-neutral-200 dark:border-neutral-700 hover:bg-neutral-100 hover:dark:bg-neutral-800 blend'>
+  <Image
+    height={20}
+    width={20}
+    class='w-5 h-5 block dark:hidden group-hover:text-black group-hover:dark:text-white blend smooth-image'
+    src={`/icon/${icon}-light.svg`}
+    alt={name}
+  />
+  <Image
+    height={20}
+    width={20}
+    class='w-5 h-5 hidden dark:block group-hover:text-black group-hover:dark:text-white blend smooth-image'
+    src={`/icon/${icon}-dark.svg`}
+    alt={name}
+  />
+  <span
+    class='text-sm font-medium capitalize text-neutral-500 dark:text-neutral-400 group-hover:text-black group-hover:dark:text-white blend'>
+    {name}
+  </span>
+</a>

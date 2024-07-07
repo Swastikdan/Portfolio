@@ -17,12 +17,12 @@ export type Studies = {
   end: Date | string;
 }[];
 
-// export type Skills = {
-//     name : string;
-//     icon? : string;
-// }[];
 
-export type Skills =  String[];
+export type Skills = {
+  name: string;
+  icon: string;
+  link: string;
+}[];
 
 export type Socials = {
     name : string;

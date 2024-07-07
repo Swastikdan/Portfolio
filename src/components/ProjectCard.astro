@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
 import { dateRange } from '@lib/utils';
 type Props = {
   entry: CollectionEntry<'projects'>;
@@ -10,9 +11,11 @@ const { entry } = Astro.props;
 
 <div
   class='flex flex-col bg-white border border-gray-200 hover:shadow-lg dark:hover:shadow transition-all duration-300 ease-out rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70'>
-  <img
+  <Image
+    width={400}
+    height={200}
     class='w-full h-auto rounded-t-xl'
-    src='https://www.swastikdan.in/_next/image?url=%2Fimages%2Fproject-image%2Furbanutopia.vercel.app.png&w=1200&q=50'
+    src={entry.data.image}
     alt='Image Description'
   />
   <div class='p-2 flex flex-col space-y-2'>
@@ -30,14 +33,14 @@ const { entry } = Astro.props;
     >
     <p class='text-xs font-light'>
       {
-        entry.data.description.length > 200
-          ? entry.data.description.slice(0, 200) + '...'
-          : entry.data.description
+        entry.data.summary.length > 200
+          ? entry.data.summary.slice(0, 200) + '...'
+          : entry.data.summary
       }
     </p>
     <div class='flex flex-row flex-wrap items-start gap-1'>
       {
-        entry.data.tech.map((entry) => (
+        entry.data.tags.map((entry) => (
           <span class='inline-flex items-center gap-x-1.5 py-1 px-2 font-semibold text-[10px] bg-gray-100 text-black rounded-md dark:bg-neutral-500/20 dark:text-white'>
             {entry}
           </span>

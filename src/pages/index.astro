@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import Container from '@components/Container.astro';
 import Layout from '@layouts/Layout.astro';
 import ProjectCard from '@components/ProjectCard.astro';
-import BlogCard from '@components/BlogCard.astro';
+import StackCard from '@components/StackCard.astro';
 import Link from '@components/Link.astro';
 import Resume from '@components/Resume.astro';
 import { dateRange } from '@lib/utils';
@@ -13,10 +13,10 @@ const projects = (await getCollection('projects'))
   .filter((project) => !project.data.draft)
   .sort((a, b) => b.data.startdate.valueOf() - a.data.startdate.valueOf())
   .slice(0, site.num_projects_homepage);
-const blog = (await getCollection('blog'))
-  .filter((post) => !post.data.draft)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, 3);
+// const blog = (await getCollection('blog'))
+//   .filter((post) => !post.data.draft)
+//   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+//   .slice(0, 3);
 ---
 
 <Layout title={home.title} description={home.description}>
@@ -27,21 +27,25 @@ const blog = (await getCollection('blog'))
     </h1>
     <div class='space-y-10'>
       <section>
-        <article class='space-y-4'>
-          <p class='animate'>
-            I am a minimal, seo friendly, accessible portfolio and blog for
-            developers. I am an even more lightweight version of my popular
-            theme
-            <Link
-              href='https://github.com/markhorn-dev/astro-sphere'
-              aria-label='Astro Sphere on Github'
-              external>
-              Astro Sphere
-            </Link>. I have a lighthouse scores of 100 across the board for
-            performance, accesibility, best practices and SEO.
-          </p>
+        <section class='animate'>
+          <article>
+            <p>
+              I am a <b><i>software engineer</i></b>, <b
+                ><i>ui/ux designer</i></b
+              >, <b
+                ><i>student</i></b
+              >, <b><i>minimalist</i></b>, <b><i>eternal optimist</i></b>.
+            </p>
+            <p class="font-light text-sm">
+              I love to both build and break things. I am motivated by
+              challenging projects with self-guided research and dynamic problem
+              solving. I am always looking for new opportunities to learn and
+              grow.
+            </p>
+            
+          </article>
           <Resume />
-        </article>
+        </section>
       </section>
       <section class='animate space-y-6'>
         <div class='flex flex-wrap gap-y-2 items-center justify-between'>
@@ -49,8 +53,8 @@ const blog = (await getCollection('blog'))
             Skills
           </h5>
         </div>
-        <ul class='flex flex-row flex-wrap items-start gap-1 animate'>
-          {
+        <ul class='flex flex-row flex-wrap items-start gap-1.5 animate'>
+          <!-- {
             skills.map((entry) => (
               <li>
                 <span class='  inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-md text-xs font-semibold bg-black text-white dark:bg-white dark:text-black'>
@@ -58,7 +62,14 @@ const blog = (await getCollection('blog'))
                 </span>
               </li>
             ))
+          } -->
+
+          {
+            skills.map((entry) => (
+              <StackCard name={entry.name} icon={entry.icon} link={entry.link} />
+            ))
           }
+
         </ul>
       </section>
       <section class='animate space-y-6'>
@@ -70,14 +81,8 @@ const blog = (await getCollection('blog'))
         </div>
 
         <div class='grid grid-cols-1 md:grid-cols-2 gap-5'>
-
-			{
-				projects.map((project) => (
-					<ProjectCard entry={project} />
-				))
-			}
-
-		</div>
+          {projects.map((project) => <ProjectCard entry={project} />)}
+        </div>
         <!-- <ul class='inline-flex flex-wrap gap-3 animate'>
           {
             skills.map((entry) => (
@@ -112,7 +117,7 @@ const blog = (await getCollection('blog'))
           }
         </ul>
       </section>
-      <section class='animate space-y-6'>
+      <!-- <section class='animate space-y-6'>
         <div class='flex flex-wrap gap-y-2 items-center justify-between'>
           <h5 class='font-bold text-lg md:text-xl text-black dark:text-white'>
             Latest posts
@@ -128,7 +133,7 @@ const blog = (await getCollection('blog'))
             ))
           }
         </ul>
-      </section>
+      </section> -->
       <section class='animate space-y-4'>
         <h5 class='font-semibold text-black dark:text-white'>Let's Connect</h5>
         <article>

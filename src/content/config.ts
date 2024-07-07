@@ -1,27 +1,29 @@
 import { date } from 'astro/zod';
 import { defineCollection, z } from 'astro:content';
-const blog = defineCollection({
-  type: 'content',
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    date: z.coerce.date(),
-    draft: z.boolean().optional(),
-  }),
-});
+// const blog = defineCollection({
+//   type: 'content',
+//   schema: z.object({
+//     title: z.string(),
+//     description: z.string(),
+//     date: z.coerce.date(),
+//     draft: z.boolean().optional(),
+//   }),
+// });
 const projects = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
+    image: z.string(),
     description: z.string(),
+    summary: z.string(),
     date: z.coerce.date(),
     startdate: z.coerce.date(),
     enddate: z.coerce.date().optional(),
-    tech: z.array(z.string()),
+    tags: z.array(z.string()),
     draft: z.boolean().optional(),
     demourl: z.string().optional(),
     repourl: z.string().optional(),
   }),
 });
 
-export const collections = { blog, projects };
+export const collections = { projects };

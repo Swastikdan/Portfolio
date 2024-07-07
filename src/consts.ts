@@ -40,18 +40,65 @@ export const studies: Studies = [
   },
 ];
 
+
 export const skills: Skills = [
-  'Java',
-  'JavaScript',
-  'React',
-  'Next JS',
-  'Astro JS',
-  'Express JS',
-  'Node JS',
-  'Tailwind CSS',
-  'SQL',
-  'MongoDB',
+  {
+    name: 'Java',
+    icon: 'java',
+    link: 'https://www.java.com/',
+  },
+  {
+    name: 'JavaScript',
+    icon: 'javascript',
+    link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+  },
+  {
+    name: 'React',
+    icon: 'react',
+    link: 'https://reactjs.org/',
+  },
+  {
+    name: 'Next JS',
+    icon: 'nextjs',
+    link: 'https://nextjs.org/',
+  },
+  {
+    name: 'Astro',
+    icon: 'astro',
+    link: 'https://astro.build/',
+  },
+  {
+    name: 'Express JS',
+    icon: 'expressjs',
+    link: 'https://expressjs.com/',
+  },
+  {
+    name: 'Node JS',
+    icon: 'nodejs',
+    link: 'https://nodejs.org/',
+  },
+  {
+    name: 'Tailwind CSS',
+    icon: 'tailwindcss',
+    link: 'https://tailwindcss.com/',
+  },
+  {
+    name:'Prisma',
+    icon:'prisma',
+    link:'https://www.prisma.io/',
+  },
+  {
+    name: 'SQL',
+    icon: 'sql',
+    link: 'https://www.w3schools.com/sql/',
+  },
+  {
+    name: 'MongoDB',
+    icon: 'mongodb',
+    link: 'https://www.mongodb.com/',
+  },
 ];
+
 
 export const socials: Socials = [
   {
