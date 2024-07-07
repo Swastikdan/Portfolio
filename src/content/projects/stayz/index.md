@@ -1,6 +1,6 @@
 ---
 title: "Stayz"
-image: "/project-img/stayz.png"
+image: "https://utfs.io/f/b1665d0d-2004-4f82-88f2-39f6c7744ef7-1tchmp.png"
 summary: "A vacation rental platform  with Next.js, Prisma , Next Auth and Shadcn/ui"
 description: "A vacation rental platform  with Next.js, Prisma , Next Auth and Shadcn/ui"
 tags: ['Next.js', 'Prisma', 'Next Auth', 'Shadcn/ui' , 'Tailwind' , 'Stripe' ]

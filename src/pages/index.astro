@@ -13,10 +13,7 @@ const projects = (await getCollection('projects'))
   .filter((project) => !project.data.draft)
   .sort((a, b) => b.data.startdate.valueOf() - a.data.startdate.valueOf())
   .slice(0, site.num_projects_homepage);
-// const blog = (await getCollection('blog'))
-//   .filter((post) => !post.data.draft)
-//   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-//   .slice(0, 3);
+
 ---
 
 <Layout title={home.title} description={home.description}>

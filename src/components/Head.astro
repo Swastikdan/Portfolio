@@ -12,7 +12,11 @@ interface Props {
   image?: string;
 }
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const { title, description, image = '/twitter-image.png' } = Astro.props;
+const {
+  title,
+  description,
+  image = 'https://utfs.io/f/7c236dd9-5c3b-4e68-ac92-2741708553fd-oymriy.png',
+} = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -21,13 +25,13 @@ const { title, description, image = '/twitter-image.png' } = Astro.props;
 <link
   rel='icon'
   type='image/svg+xml'
-  href='/favicon-dark.svg'
+  href='https://utfs.io/f/dbbb766a-98cb-4341-ae70-82aafef6818b-huys1d.svg'
   media='(prefers-color-scheme: dark)'
 />
 <link
   rel='icon'
   type='image/svg+xml'
-  href='/favicon-light.svg'
+  href='/https://utfs.io/f/fce7dbfd-81b5-49b9-93c3-73b673beb23b-ephj4t.svg'
   media='(prefers-color-scheme: light)'
 />
 <link rel='icon' type='image/x-icon' href='/favicon-light.svg' />

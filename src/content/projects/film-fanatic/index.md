@@ -1,6 +1,6 @@
 ---
 title: "Film Fanatic"
-image: "/project-img/film-fanatic.png"
+image: "https://utfs.io/f/87b40589-2a11-4e0f-8297-c740f63aa242-nit0pj.png"
 summary: "Built an Astro web application utilizing the TMDB API for seamless movie discovery."
 description: "Built an Astro web application utilizing the TMDB API for seamless movie discovery."
 tags: ['Astro Js', 'React Js', 'TMDB Api', 'Tailwind CSS']
