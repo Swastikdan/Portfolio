@@ -40,6 +40,11 @@ const { title, description, image = '/nano.png' } = Astro.props;
 <!-- Canonical URL -->
 <link rel='canonical' href={canonicalURL} />
 
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name='title' content={title} />
+<meta name='description' content={description} />
+<link rel='manifest' href='site.webmanifest' />
 <!-- Open Graph / Facebook -->
 <meta property='og:type' content='website' />
 <meta property='og:url' content={Astro.url} />
@@ -53,7 +58,8 @@ const { title, description, image = '/nano.png' } = Astro.props;
 <meta property='twitter:title' content={title} />
 <meta property='twitter:description' content={description} />
 <meta property='twitter:image' content={new URL(image, Astro.url)} />
-
+<!-- Sitemap -->
+<link rel='sitemap' href='/sitemap-index.xml' />
 <ViewTransitions />
 
 <script>
