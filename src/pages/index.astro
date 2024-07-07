@@ -49,7 +49,13 @@ const projects = (await getCollection('projects'))
           </span>
         </div>
         <ul class='animate flex flex-row flex-wrap items-start gap-1.5'>
-          {skills.map((entry) => <li><StackCard name={entry.name} /></li> )}
+          {
+            skills.map((entry) => (
+              <li>
+                <StackCard name={entry.name} />
+              </li>
+            ))
+          }
         </ul>
       </section>
       <section class='animate space-y-6'>
@@ -74,20 +80,24 @@ const projects = (await getCollection('projects'))
           {
             studies.map((entry) => (
               <li>
-                <div class='text-sm opacity-75'>
+                <div class='text-sm text-gray-800 opacity-80 dark:text-gray-200'>
                   {dateRange(entry.start, entry.end)}
                 </div>
                 <div class='font-semibold text-black dark:text-white'>
                   {entry.school}
                 </div>
-                <div class='pt-1 text-sm opacity-75'>{entry.degree}</div>
+                <div class='pt-1 text-sm text-gray-800 opacity-80 dark:text-gray-200'>
+                  {entry.degree}
+                </div>
               </li>
             ))
           }
         </ul>
       </section>
       <section class='animate space-y-4'>
-        <span class='font-semibold text-black dark:text-white'>Let's Connect</span>
+        <span class='font-semibold text-black dark:text-white'
+          >Let's Connect</span
+        >
         <article>
           <p>
             If you want to get in touch with me about something or just to say

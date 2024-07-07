@@ -14,7 +14,7 @@ repourl: "https://github.com/Swastikdan/Random-Password-Generator"
 
 ---
 
-# Random Password Generator
+# Password Generator
 
 ![Random Password Generator](https://utfs.io/f/4689e62d-aec1-4099-8015-6f6a81ceaca7-q2chfg.vercel.app.png)
 
