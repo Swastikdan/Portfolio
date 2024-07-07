@@ -37,7 +37,7 @@ const { entry, pill = false } = Astro.props;
       {
         entry.data.tags.map(
           (
-            tag: string // this line has an error; Parameter 'tag' implicitly has an 'any' type.ts(7006)
+            tag: string 
           ) => (
             <li class='rounded bg-black/5 px-1.5 py-0.5 text-xs capitalize text-black/75 dark:bg-white/20 dark:text-white/75'>
               {tag}
