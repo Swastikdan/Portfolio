@@ -173,13 +173,16 @@ const {
   }
 
   function preloadTheme() {
-    const userTheme = localStorage.theme;
-
-    if (userTheme === 'light' || userTheme === 'dark') {
-      toggleTheme(userTheme === 'dark');
-    } else {
-      toggleTheme(window.matchMedia('(prefers-color-scheme: dark)').matches);
-    }
+      // Attempt to retrieve the user's theme preference from localStorage
+      const userTheme = localStorage.getItem('theme');
+  
+      // If a theme preference exists, apply it
+      if (userTheme === 'light' || userTheme === 'dark') {
+          toggleTheme(userTheme === 'dark');
+      } else {
+          // If no preference is found, default to dark mode
+          toggleTheme(true);
+      }
   }
 
   document.addEventListener('DOMContentLoaded', () => init());
