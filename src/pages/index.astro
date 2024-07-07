@@ -36,7 +36,7 @@ const projects = (await getCollection('projects'))
                 ><i>student</i></b
               >, <b><i>minimalist</i></b>, <b><i>eternal optimist</i></b>.
             </p>
-            <p class="font-light text-sm">
+            <p class="font-light ">
               I love to both build and break things. I am motivated by
               challenging projects with self-guided research and dynamic problem
               solving. I am always looking for new opportunities to learn and
@@ -54,15 +54,6 @@ const projects = (await getCollection('projects'))
           </h5>
         </div>
         <ul class='flex flex-row flex-wrap items-start gap-1.5 animate'>
-          <!-- {
-            skills.map((entry) => (
-              <li>
-                <span class='  inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-md text-xs font-semibold bg-black text-white dark:bg-white dark:text-black'>
-                  {entry}
-                </span>
-              </li>
-            ))
-          } -->
 
           {
             skills.map((entry) => (
@@ -77,7 +68,7 @@ const projects = (await getCollection('projects'))
           <h5 class='font-bold text-lg md:text-xl text-black dark:text-white'>
             Projects
           </h5>
-          <Link href='/project'> See all projects </Link>
+          <Link href='/projects'> See all projects </Link>
         </div>
 
         <div class='grid grid-cols-1 md:grid-cols-2 gap-5'>

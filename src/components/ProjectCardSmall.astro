@@ -12,7 +12,7 @@ const { entry, pill = false } = Astro.props;
 
 <a
   href={`/${entry.collection}/${entry.slug}`}
-  class='group p-4 gap-3 flex items-center border rounded-lg hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out'>
+  class='group p-4 gap-3 flex items-center border-[2px] rounded-lg hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out'>
   <div class='w-full group-hover:text-black group-hover:dark:text-white blend'>
     <div class='flex flex-wrap items-center gap-2'>
       {
@@ -22,7 +22,7 @@ const { entry, pill = false } = Astro.props;
           </div>
         )
       }
-      <div class='text-sm uppercase'>
+      <div class='text-sm capitalize'>
         {formatDate(entry.data.date)}
       </div>
     </div>
@@ -39,7 +39,7 @@ const { entry, pill = false } = Astro.props;
           (
             tag: string // this line has an error; Parameter 'tag' implicitly has an 'any' type.ts(7006)
           ) => (
-            <li class='text-xs uppercase py-0.5 px-1 rounded bg-black/5 dark:bg-white/20 text-black/75 dark:text-white/75'>
+            <li class='text-xs capitalize py-0.5 px-1.5 rounded bg-black/5 dark:bg-white/20 text-black/75 dark:text-white/75'>
               {tag}
             </li>
           )

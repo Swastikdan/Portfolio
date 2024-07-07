@@ -1,0 +1,24 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '@layouts/Layout.astro';
+import Container from '@components/Container.astro';
+import ProjectCardSmall from '@components/ProjectCardSmall.astro';
+import { projects } from '@consts';
+
+const all_projects = (await getCollection('projects'))
+  .filter((project) => !project.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Layout title={projects.title} description={projects.description}>
+  <Container>
+    <div class='space-y-10'>
+      <div class='animate font-semibold text-black dark:text-white'>
+        Projects
+      </div>
+      <ul class='animate flex flex-col gap-4'>
+        {all_projects.map((project) => <ProjectCardSmall entry={project} />)}
+      </ul>
+    </div>
+  </Container>
+</Layout>
