@@ -54,7 +54,7 @@ const projects = (await getCollection('projects'))
 
           {
             skills.map((entry) => (
-              <StackCard name={entry.name} icon={entry.icon} link={entry.link} />
+              <StackCard name={entry.name} />
             ))
           }
 
