@@ -20,12 +20,12 @@ const manifest = {
   lang: 'en-US',
   icons: [
     {
-      src: '/favicon-light.svg',
+      src: 'https://utfs.io/f/fce7dbfd-81b5-49b9-93c3-73b673beb23b-ephj4t.svg',
       sizes: '192x192',
       type: 'image/svg+xml',
     },
     {
-      src: '/favicon-light.svg',
+      src: 'https://utfs.io/f/fce7dbfd-81b5-49b9-93c3-73b673beb23b-ephj4t.svg',
       sizes: '512x512',
       type: 'image/svg+xml',
     },
