@@ -6,20 +6,18 @@ import { notFound } from '@consts';
 
 <Layout title={notFound.title} description={notFound.description}>
   <Container>
-
-      <div class='text-center py-20 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center'>
-        <h1
-          class='block text-7xl font-bold text-gray-800 sm:text-9xl dark:text-white animate'>
-          404
-        </h1>
-        <p class='mt-3 text-gray-600 dark:text-neutral-400 animate'>
-          Oops, something went wrong.
-        </p>
-        <p class='text-gray-600 dark:text-neutral-400 animate'>
-          Sorry, we couldn't find your page.
-        </p>
-     
-      </div>
-
+    <div
+      class='flex flex-col items-center justify-center px-4 py-20 text-center sm:px-6 lg:px-8'>
+      <h1
+        class='animate block text-7xl font-bold text-gray-800 dark:text-white sm:text-9xl'>
+        404
+      </h1>
+      <p class='animate mt-3 text-gray-600 dark:text-neutral-400'>
+        Oops, something went wrong.
+      </p>
+      <p class='animate text-gray-600 dark:text-neutral-400'>
+        Sorry, we couldn't find your page.
+      </p>
+    </div>
   </Container>
 </Layout>

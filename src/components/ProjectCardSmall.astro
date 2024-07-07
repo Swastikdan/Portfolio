@@ -12,12 +12,12 @@ const { entry, pill = false } = Astro.props;
 
 <a
   href={`/${entry.collection}/${entry.slug}`}
-  class='group p-4 gap-3 flex items-center border-[2px] rounded-lg hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out'>
-  <div class='w-full group-hover:text-black group-hover:dark:text-white blend'>
+  class='animate group flex items-center gap-3 rounded-lg border-[2px] border-black/15 p-4 transition-colors duration-300 ease-in-out hover:bg-black/5 dark:border-white/20 hover:dark:bg-white/10'>
+  <div class='blend w-full group-hover:text-black group-hover:dark:text-white'>
     <div class='flex flex-wrap items-center gap-2'>
       {
         pill && (
-          <div class='text-sm capitalize px-2 py-0.5 rounded-full border border-black/15 dark:border-white/25'>
+          <div class='rounded-full border border-black/15 px-2 py-0.5 text-sm capitalize dark:border-white/25'>
             {'project'}
           </div>
         )
@@ -26,20 +26,20 @@ const { entry, pill = false } = Astro.props;
         {formatDate(entry.data.date)}
       </div>
     </div>
-    <div class='font-semibold mt-3 text-black dark:text-white'>
+    <div class='mt-3 font-semibold text-black dark:text-white'>
       {entry.data.title}
     </div>
 
-    <div class='text-sm line-clamp-2'>
+    <div class='line-clamp-2 text-sm'>
       {entry.data.summary}
     </div>
-    <ul class='flex flex-wrap mt-2 gap-1'>
+    <ul class='mt-2 flex flex-wrap gap-1'>
       {
         entry.data.tags.map(
           (
             tag: string // this line has an error; Parameter 'tag' implicitly has an 'any' type.ts(7006)
           ) => (
-            <li class='text-xs capitalize py-0.5 px-1.5 rounded bg-black/5 dark:bg-white/20 text-black/75 dark:text-white/75'>
+            <li class='rounded bg-black/5 px-1.5 py-0.5 text-xs capitalize text-black/75 dark:bg-white/20 dark:text-white/75'>
               {tag}
             </li>
           )
@@ -62,11 +62,11 @@ const { entry, pill = false } = Astro.props;
       y1='12'
       x2='19'
       y2='12'
-      class='scale-x-0 group-hover:scale-x-100 translate-x-4 group-hover:translate-x-1 transition-all duration-300 ease-in-out'
+      class='translate-x-4 scale-x-0 transition-all duration-300 ease-in-out group-hover:translate-x-1 group-hover:scale-x-100'
     ></line>
     <polyline
       points='12 5 19 12 12 19'
-      class='translate-x-0 group-hover:translate-x-1 transition-all duration-300 ease-in-out'
+      class='translate-x-0 transition-all duration-300 ease-in-out group-hover:translate-x-1'
     ></polyline>
   </svg>
 </a>

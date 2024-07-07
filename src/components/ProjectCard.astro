@@ -10,16 +10,16 @@ const { entry } = Astro.props;
 ---
 
 <div
-  class='flex flex-col bg-white border-[2px] border-gray-200 hover:shadow-lg dark:hover:shadow transition-all duration-300 ease-out rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70'>
+  class='flex flex-col rounded-xl border-[2px] border-gray-200 bg-white transition-all duration-300 ease-out hover:shadow-lg dark:border-neutral-700 dark:bg-neutral-900 dark:shadow-neutral-700/70 dark:hover:shadow'>
   <Image
     width={400}
     height={200}
-    class='w-full h-auto rounded-t-xl'
+    class='h-auto w-full rounded-t-xl'
     src={entry.data.image}
     alt={entry.data.title}
     loading='eager'
   />
-  <div class='p-2 flex flex-col space-y-2 justify-between h-full'>
+  <div class='flex h-full flex-col justify-between space-y-2 p-2'>
     <div class='flex flex-col space-y-2'>
       <span class='font-semibold text-black dark:text-white'
         >{entry.data.title}</span
@@ -43,23 +43,23 @@ const { entry } = Astro.props;
       <div class='flex flex-row flex-wrap items-start gap-1'>
         {
           entry.data.tags.map((entry) => (
-            <span class='inline-flex items-center gap-x-1.5 py-1 px-2 font-light text-[10px] bg-gray-100 text-black rounded dark:bg-neutral-500/20 dark:text-white'>
+            <span class='inline-flex items-center gap-x-1.5 rounded bg-gray-100 px-2 py-1 text-[10px] font-light text-black dark:bg-neutral-500/20 dark:text-white'>
               {entry}
             </span>
           ))
         }
       </div>
     </div>
-    <div class='flex items-center justify-start align-bottom gap-3 py-1'>
+    <div class='flex items-center justify-start gap-3 py-1 align-bottom'>
       {
         entry.data.demourl && (
           <a
             href={entry.data.demourl}
             target='_blank'
             rel='noopener noreferrer'
-            class='inline-flex gap-x-1 pt-1.5 pb-1 px-3 items-center rounded-md text-[10px] font-semibold bg-black hover:bg-black/80 text-white dark:bg-white hover:dark:bg-white/80 dark:text-black'>
+            class='inline-flex items-center gap-x-1 rounded-md bg-black px-3 pb-1 pt-1.5 text-[10px] font-semibold text-white hover:bg-black/80 dark:bg-white dark:text-black hover:dark:bg-white/80'>
             <svg
-              class='size-3 fill-current group-hover:fill-black group-hover:dark:fill-white blend'
+              class='blend size-3 fill-current group-hover:fill-black group-hover:dark:fill-white'
               viewBox='0 0 16 16'>
               <path
                 fill-rule='evenodd'
@@ -75,9 +75,9 @@ const { entry } = Astro.props;
         href={entry.data.repourl}
         target='_blank'
         rel='noopener noreferrer'
-        class='inline-flex gap-x-1 pt-1.5 pb-1 px-3 items-center rounded-md text-[10px] font-semibold bg-black hover:bg-black/70 text-white dark:bg-white hover:dark:bg-white/70 dark:text-black'>
+        class='inline-flex items-center gap-x-1 rounded-md bg-black px-3 pb-1 pt-1.5 text-[10px] font-semibold text-white hover:bg-black/70 dark:bg-white dark:text-black hover:dark:bg-white/70'>
         <svg
-          class='size-3 fill-current group-hover:fill-black group-hover:dark:fill-white blend'
+          class='blend size-3 fill-current group-hover:fill-black group-hover:dark:fill-white'
           viewBox='0 0 16 16'>
           <path
             d='M8.46968 1.46968C10.1433 -0.203925 12.8567 -0.203923 14.5303 1.46968C16.2039 3.14329 16.2039 5.85674 14.5303 7.53034L12.0303 10.0303L10.9697 8.96968L13.4697 6.46968C14.5575 5.38186 14.5575 3.61816 13.4697 2.53034C12.3819 1.44252 10.6182 1.44252 9.53034 2.53034L7.03034 5.03034L5.96968 3.96968L8.46968 1.46968ZM11.5303 5.53034L5.53034 11.5303L4.46968 10.4697L10.4697 4.46968L11.5303 5.53034ZM1.46968 14.5303C3.14329 16.2039 5.85673 16.204 7.53034 14.5303L10.0303 12.0303L8.96968 10.9697L6.46968 13.4697C5.38186 14.5575 3.61816 14.5575 2.53034 13.4697C1.44252 12.3819 1.44252 10.6182 2.53034 9.53034L5.03034 7.03034L3.96968 5.96968L1.46968 8.46968C-0.203923 10.1433 -0.203925 12.8567 1.46968 14.5303Z'
