@@ -1,14 +1,14 @@
 import type { APIRoute } from 'astro';
 
 const manifest = {
-  name: 'Swastik Dan',
+  name: 'Swastik Dan | Portfolio',
   short_name: 'Swastik Dan',
   description:
     'Explore the portfolio site of Swastik Dan with a range of creative skills and experiences...',
   start_url: '/',
   display: 'standalone',
-  background_color: '#111827',
-  theme_color: '#111827',
+  background_color: '#000000', // black
+  theme_color: '#000000',
   orientation: 'portrait',
   categories: [
     'web developer',
