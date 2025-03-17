@@ -3,6 +3,7 @@ export const site: Site = {
   name: 'Swastik Dan',
   url: 'https://swastikdan.in/',
   email: 'thisisswastikdan@gmail.com',
+  logo: 'https://utfs.io/f/fce7dbfd-81b5-49b9-93c3-73b673beb23b-ephj4t.svg',
   num_projects_homepage: 2,
 };
 

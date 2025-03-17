@@ -1,10 +1,13 @@
 ---
 import '../styles/global.css';
-import '@fontsource/poppins/400.css';
-import '@fontsource/poppins/600.css';
-import poppins400 from '@fontsource/poppins/files/poppins-latin-400-italic.woff2';
-import poppins600 from '@fontsource/poppins/files/poppins-latin-600-normal.woff2';
-import { ViewTransitions } from 'astro:transitions';
+
+import '@fontsource/parkinsans/400.css';
+import '@fontsource/parkinsans/600.css';
+
+import parken400 from '@fontsource/parkinsans/files/parkinsans-latin-400-normal.woff2';
+import parken600 from '@fontsource/parkinsans/files/parkinsans-latin-600-normal.woff2';
+
+import { ClientRouter } from "astro:transitions";
 
 interface Props {
   title: string;
@@ -38,8 +41,8 @@ const {
 <meta name='generator' content={Astro.generator} />
 
 <!-- Font preloads -->
-<link rel='preload' href={poppins400} as='font' type='font/woff2' crossorigin />
-<link rel='preload' href={poppins600} as='font' type='font/woff2' crossorigin />
+<link rel='preload' href={parken400} as='font' type='font/woff2' crossorigin />
+<link rel='preload' href={parken600} as='font' type='font/woff2' crossorigin />
 
 <!-- Canonical URL -->
 <link rel='canonical' href={canonicalURL} />
@@ -64,49 +67,57 @@ const {
 <meta property='twitter:image' content={new URL(image, Astro.url)} />
 <!-- Sitemap -->
 <link rel='sitemap' href='/sitemap-index.xml' />
-<ViewTransitions />
+<ClientRouter />
 
 <script>
+  // Import type definition for Astro's transition event handling
   import type { TransitionBeforeSwapEvent } from 'astro:transitions/client';
-  document.addEventListener('astro:before-swap', (e) =>
+
+  // Listen for Astro page transitions before content swap
+  document.addEventListener('astro:before-swap', (e) => {
+    // Remove preloaded font links from the new document to avoid conflicts
     [
       ...(e as TransitionBeforeSwapEvent).newDocument.head.querySelectorAll(
         'link[as="font"]'
       ),
-    ].forEach((link) => link.remove())
-  );
+    ].forEach((link) => link.remove());
+  });
 </script>
 
 <script is:inline>
   function init() {
-    preloadTheme();
-    onScroll();
-    animate();
+    preloadTheme(); // Load theme preference
+    onScroll(); // Handle scrolling behavior
+    animate(); // Trigger animations on page load
 
+    // Back-to-top button event listener
     const backToTop = document.getElementById('back-to-top');
     backToTop?.addEventListener('click', (event) => scrollToTop(event));
 
+    // Back-to-previous-page button event listener
     const backToPrev = document.getElementById('back-to-prev');
     backToPrev?.addEventListener('click', () => window.history.back());
 
+    // Theme switch buttons event listeners
     const lightThemeButton = document.getElementById('light-theme-button');
     lightThemeButton?.addEventListener('click', () => {
-      localStorage.setItem('theme', 'light');
-      toggleTheme(false);
+      localStorage.setItem('theme', 'light'); // Save theme preference
+      toggleTheme(false); // Apply light theme
     });
 
     const darkThemeButton = document.getElementById('dark-theme-button');
     darkThemeButton?.addEventListener('click', () => {
-      localStorage.setItem('theme', 'dark');
-      toggleTheme(true);
+      localStorage.setItem('theme', 'dark'); // Save theme preference
+      toggleTheme(true); // Apply dark theme
     });
 
     const systemThemeButton = document.getElementById('system-theme-button');
     systemThemeButton?.addEventListener('click', () => {
-      localStorage.setItem('theme', 'system');
-      toggleTheme(window.matchMedia('(prefers-color-scheme: dark)').matches);
+      localStorage.setItem('theme', 'system'); // Save system theme preference
+      toggleTheme(window.matchMedia('(prefers-color-scheme: dark)').matches); // Match system setting
     });
 
+    // Auto-update theme when system preference changes
     window
       .matchMedia('(prefers-color-scheme: dark)')
       .addEventListener('change', (event) => {
@@ -115,19 +126,22 @@ const {
         }
       });
 
+    // Detect scroll events
     document.addEventListener('scroll', onScroll);
   }
 
+  // Function to animate elements with the "animate" class
   function animate() {
     const animateElements = document.querySelectorAll('.animate');
 
     animateElements.forEach((element, index) => {
       setTimeout(() => {
-        element.classList.add('show');
-      }, index * 150);
+        element.classList.add('show'); // Add "show" class with a delay
+      }, index * 100);
     });
   }
 
+  // Function to handle scroll behavior (adds a "scrolled" class when scrolling)
   function onScroll() {
     if (window.scrollY > 0) {
       document.documentElement.classList.add('scrolled');
@@ -136,6 +150,7 @@ const {
     }
   }
 
+  // Smooth scroll to top functionality
   function scrollToTop(event) {
     event.preventDefault();
     window.scrollTo({
@@ -144,9 +159,11 @@ const {
     });
   }
 
+  // Function to toggle between light and dark themes
   function toggleTheme(dark) {
     const css = document.createElement('style');
 
+    // Disable all transitions temporarily to prevent flickering
     css.appendChild(
       document.createTextNode(
         `* {
@@ -162,30 +179,39 @@ const {
 
     document.head.appendChild(css);
 
+    // Apply the dark or light mode
     if (dark) {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
 
+    // Force repaint before removing the CSS rule
     window.getComputedStyle(css).opacity;
     document.head.removeChild(css);
   }
 
+  // Function to preload theme settings from local storage
   function preloadTheme() {
-      // Attempt to retrieve the user's theme preference from localStorage
-      const userTheme = localStorage.getItem('theme');
-  
-      // If a theme preference exists, apply it
-      if (userTheme === 'light' || userTheme === 'dark') {
-          toggleTheme(userTheme === 'dark');
-      } else {
-          // If no preference is found, default to dark mode
-          toggleTheme(true);
-      }
+    // Retrieve user preference from local storage
+    const userTheme = localStorage.getItem('theme');
+
+    // If a user preference exists, apply it
+    if (userTheme === 'light' || userTheme === 'dark') {
+      toggleTheme(userTheme === 'dark');
+    } else {
+      // Default to system theme (if not set, default to dark mode)
+      toggleTheme(window.matchMedia('(prefers-color-scheme: dark)').matches);
+    }
   }
 
+  // Run initialization when the document is loaded
   document.addEventListener('DOMContentLoaded', () => init());
+
+  // Re-run initialization after Astro page swaps
   document.addEventListener('astro:after-swap', () => init());
+
+  // Preload the theme as soon as the script loads
   preloadTheme();
 </script>
+
