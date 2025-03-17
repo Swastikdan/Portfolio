@@ -13,8 +13,7 @@ import BackToTop from '@components/BackToTop.astro';
     </div>
     <div class='flex items-center justify-between text-black dark:text-white'>
       <div>
-        &copy; <span id="currentyear"></span> {`|`}
-        {site.name}
+        &copy; <span id="currentyear"></span> {`|`} {site.name}
       </div>
       <div class='flex flex-wrap items-center gap-1'>
         <button
@@ -86,10 +85,4 @@ import BackToTop from '@components/BackToTop.astro';
   </Container>
 </footer>
 
-<script  is:raw >
-  const currentYear = new Date().getFullYear().toString();
-  const yearElement = document.getElementById('currentyear');
-  if (yearElement) {
-    yearElement.innerHTML = currentYear;
-  }
-</script>
+
