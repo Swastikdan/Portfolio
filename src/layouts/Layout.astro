@@ -1,27 +1,78 @@
 ---
+//export const prerender = true;
 
-export const prerender = true
-import Head from '@components/Head.astro';
-import Header from '@components/Header.astro';
-import Footer from '@components/Footer.astro';
+import "@/styles/global.css";
+
+import "@fontsource/ia-writer-quattro/400.css";
+import font_source_400 from "@fontsource/ia-writer-quattro/files/ia-writer-quattro-latin-400-italic.woff2";
+
 type Props = {
-  title: string;
-  description: string;
+	title: string;
+	description: string;
 };
-
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const og_image =
+	"https://sdhwfcnr1k.ufs.sh/f/7c236dd9-5c3b-4e68-ac92-2741708553fd-oymriy.png";
 const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang='en' class='dark'>
+<html lang="en" class="dark">
   <head>
-    <Head title={`${title}`} description={description} />
+    <!-- Global Metadata -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://sdhwfcnr1k.ufs.sh/f/fce7dbfd-81b5-49b9-93c3-73b673beb23b-ephj4t.svg"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://sdhwfcnr1k.ufs.sh/f/fce7dbfd-81b5-49b9-93c3-73b673beb23b-ephj4t.svg"
+      media="(prefers-color-scheme: light)"
+    />
+    <link rel="icon" type="image/x-icon" href="/favicon-light.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="preconnect" href="https://sdhwfcnr1k.ufs.sh" />
+    <!-- Font preloads -->
+    <link
+      rel="preload"
+      href={font_source_400}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <link rel="manifest" href="site.webmanifest" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(og_image, Astro.url)} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(og_image, Astro.url)} />
   </head>
+
   <body class="min-h-screen">
-    <Header />
     <main>
       <slot />
     </main>
-    <Footer />
   </body>
 </html>
