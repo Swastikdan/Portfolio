@@ -16,6 +16,7 @@ import { dateRange } from "@/lib";
           alt="Avatar of Swastik Dan"
           width={16}
           height={16}
+          loading="eager"
           class="shrink-0 size-16 rounded-full bg-neutral-500"
         />
       </div>
@@ -106,7 +107,7 @@ import { dateRange } from "@/lib";
               <Image
                 width={400}
                 height={200}
-                class="h-30 w-full rounded-t-lg overflow-clip"
+                class="h-30 w-full rounded-t-lg overflow-clip bg-neutral-500"
                 src={project.poster_image}
                 alt={`Project: ${project.title}`}
                 loading="eager"
