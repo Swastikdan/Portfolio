@@ -1,78 +1,23 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "iA Writer Quattro", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
 
 html {
   overflow-y: scroll;
-  color-scheme: light;
   scroll-behavior: smooth;
 }
 
-html.dark {
-  color-scheme: dark;
-}
-
-html,
 body {
-  @apply size-full;
+  @apply bg-neutral-900 antialiased font-sans;
 }
 
-body {
-  @apply font-sans antialiased;
-  @apply flex flex-col;
-  @apply bg-white dark:bg-black;
-  @apply text-black/50 dark:text-white/75;
+.link {
+  @apply px-2 py-1 border-1 border-transparent focus:border-neutral-600 focus:outline-none focus:ring-0 focus:ring-offset-0 rounded-lg hover:decoration-2 focus:outline-hidden focus:decoration-2 text-neutral-300 hover:text-neutral-400 text-sm;
 }
 
-header {
-  @apply fixed left-0 right-0 top-0 z-50 py-5;
-  @apply bg-neutral-100/75 dark:bg-neutral-900/25;
-  @apply saturate-200 backdrop-blur-sm;
-}
-
-main {
-  @apply flex-1 pb-32 pt-24;
-}
-
-footer {
-  @apply py-5 text-sm;
-}
-
-article {
-  @apply prose max-w-full dark:prose-invert prose-img:mx-auto prose-img:my-auto;
-  @apply prose-headings:font-semibold;
-  @apply prose-headings:text-black prose-headings:dark:text-white;
-}
-
-@layer utilities {
-  article a {
-    @apply font-sans text-current underline underline-offset-2;
-    @apply decoration-black/15 dark:decoration-white/30;
-    @apply transition-colors duration-300 ease-in-out;
-  }
-  article a:hover {
-    @apply text-black dark:text-white;
-    @apply decoration-black/25 dark:decoration-white/50;
-  }
-}
-
-.animate {
-  @apply translate-y-3 opacity-0;
-  @apply transition-all duration-500 ease-out;
-}
-
-.animate.show {
-  @apply translate-y-0 opacity-100;
-}
-
-html #back-to-top {
-  @apply pointer-events-none opacity-0;
-}
-
-html.scrolled #back-to-top {
-  @apply pointer-events-auto opacity-100;
-}
-
-.smooth-image {
-  image-rendering: smooth;
+.focus {
+  @apply px-2 py-1 border-1 border-transparent focus:border-neutral-600 focus:outline-none focus:ring-0 focus:ring-offset-0 rounded-lg;
 }
