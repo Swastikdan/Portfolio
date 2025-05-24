@@ -1,9 +1,6 @@
 ---
 import "@/styles/global.css";
 
-import "@fontsource/ia-writer-quattro/400.css";
-import font_source_400 from "@fontsource/ia-writer-quattro/files/ia-writer-quattro-latin-400-italic.woff2";
-
 type Props = {
     title: string;
     description: string;
@@ -37,12 +34,11 @@ const { title, description } = Astro.props;
 
         <link rel="preconnect" href="https://sdhwfcnr1k.ufs.sh" />
         <!-- Font preloads -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            rel="preload"
-            href={font_source_400}
-            as="font"
-            type="font/woff2"
-            crossorigin
+            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap"
+            rel="stylesheet"
         />
 
         <!-- Canonical URL -->
