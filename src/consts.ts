@@ -1,7 +1,7 @@
 export const site = {
   name: "Swastik Dan",
   url: "https://swastikdan.in/",
-  email: "thisisswastikdan@gmail.com",
+  email: "hello@swastikdan.in",
   github_profile: "@Swastikdan",
   github_url: "https://github.com/Swastikdan",
   linkdin_profile: "@swastikdan",
