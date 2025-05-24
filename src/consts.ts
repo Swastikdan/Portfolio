@@ -1,7 +1,7 @@
 export const site = {
   name: "Swastik Dan",
   url: "https://swastikdan.in/",
-  email: "thisisswastikdan@gmail.com",
+  email: "hello@swastikdan.in",
   github_profile: "@Swastikdan",
   github_url: "https://github.com/Swastikdan",
   linkdin_profile: "@swastikdan",
@@ -112,10 +112,10 @@ export const skills = [
 export const socials = [
   {
     name: "GitHub",
-    url: "https:github.com/Swastikdan",
+    url: "https://github.com/Swastikdan",
   },
   {
     name: "LinkedIn",
-    url: "https:linkedin.com/in/swastikdan",
+    url: "https://linkedin.com/in/swastikdan",
   },
 ];

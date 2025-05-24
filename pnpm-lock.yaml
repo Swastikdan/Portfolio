@@ -14,6 +14,9 @@ importers:
       '@fontsource/ia-writer-quattro':
         specifier: ^5.2.5
         version: 5.2.5
+      '@fontsource/parkinsans':
+        specifier: ^5.2.5
+        version: 5.2.5
       '@tailwindcss/vite':
         specifier: ^4.1.4
         version: 4.1.4(vite@6.3.3(jiti@2.4.2)(lightningcss@1.29.2))
@@ -280,6 +283,9 @@ packages:
 
   '@fontsource/ia-writer-quattro@5.2.5':
     resolution: {integrity: sha512-aCQ3n2B4VFAIiV3RFuDPe4cog2L9G7+9I9AwiwMZeFMM3fJoZrXhy01LdiqERDFnqKSFRIiibbhwQn/ucYkCGQ==}
+
+  '@fontsource/parkinsans@5.2.5':
+    resolution: {integrity: sha512-3B+qhb1aMl8v1EAY+8aIb6sJ9amXa9oejY3TVTJTCL6UeWI94EtkIgUsJamvdVhI66AQ7Pz6U0qjXV9L4L+OHQ==}
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -2111,6 +2117,8 @@ snapshots:
     optional: true
 
   '@fontsource/ia-writer-quattro@5.2.5': {}
+
+  '@fontsource/parkinsans@5.2.5': {}
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:
