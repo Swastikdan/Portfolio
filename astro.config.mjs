@@ -10,6 +10,10 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   site: "https://swastikdan.in/",
-  
+
   adapter: vercel(),
+  output: "static",
+  build: {
+    inlineStylesheets: "always",
+  },
 });
