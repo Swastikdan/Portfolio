@@ -112,10 +112,10 @@ export const skills = [
 export const socials = [
   {
     name: "GitHub",
-    url: "https:github.com/Swastikdan",
+    url: "https://github.com/Swastikdan",
   },
   {
     name: "LinkedIn",
-    url: "https:linkedin.com/in/swastikdan",
+    url: "https://linkedin.com/in/swastikdan",
   },
 ];
