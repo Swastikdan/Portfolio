@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 
 import Layout from "@/layouts/Layout.astro";
-import { site, home, projects, skills, studies, socials } from "@/consts";
+import { site, home, projects, skills, studies, socials , cloudkaptan_logo } from "@/consts";
 import { dateRange } from "@/lib";
 ---
 
@@ -112,7 +112,7 @@ import { dateRange } from "@/lib";
                             <Image
                                 width={400}
                                 height={200}
-                                class="h-36 flex flex-col justify-center items-center rounded-t-xl"
+                                class="h-36 w-full object-cover rounded-t-xl"
                                 src={project.poster_image}
                                 alt={`Project: ${project.title}`}
                                 loading="eager"
@@ -121,7 +121,7 @@ import { dateRange } from "@/lib";
                                 <h3 class="text-sm md:text-base font-semibold text-neutral-200">
                                     {project.title}
                                 </h3>
-                                <p class="mt-2 text-xs md:text-sm text-neutral-500">
+                                <p class="mt-2 text-xs md:text-sm text-neutral-300">
                                     {project.summary}
                                 </p>
                             </div>
@@ -144,7 +144,7 @@ import { dateRange } from "@/lib";
                                     class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-xl shadow-2xs  focus:outline-hidden  disabled:opacity-50 disabled:pointer-events-none bg-neutral-900 border-neutral-700 text-white hover:bg-neutral-800 focus:bg-neutral-800"
                                     href={project.github_url}
                                 >
-                                    Githib
+                                    GitHub
                                 </a>
                             </div>
                         </div>
@@ -160,7 +160,7 @@ import { dateRange } from "@/lib";
             <ul class="flex flex-row flex-wrap items-start gap-1.5">
                 {
                     skills.map((skill) => (
-                        <div>
+                        <li>
                             <span class="py-2 px-3 inline-flex items-center gap-x-1 text-sm  rounded-md bg-neutral-500/20 text-neutral-300">
                                 <Image
                                     src={skill.icon_url}
@@ -172,7 +172,7 @@ import { dateRange } from "@/lib";
                                 />
                                 {skill.title}
                             </span>
-                        </div>
+                        </li>
                     ))
                 }
             </ul>
@@ -192,11 +192,11 @@ import { dateRange } from "@/lib";
                         class="relative z-10 hight-6 w-full flex justify-center items-center"
                     >
                         <Image
-                            src="https://sdhwfcnr1k.ufs.sh/f/aOW1BUeuSRYLcvM0YO8Fvs7qd9uVfpWPjmJY3HoLEi4Mtc62"
+                            src={cloudkaptan_logo}
                             alt="Cloudkaptan logo"
                             width={24}
                             height={24}
-                            class="shrink-0 h-4 w-full"
+                            class="shrink-0 size-8"
                             aria-hidden="true"
                         />
                     </div>

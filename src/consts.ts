@@ -6,9 +6,9 @@ export const site = {
   github_url: "https://github.com/Swastikdan",
   linkdin_profile: "@swastikdan",
   linkdin_url: "https://www.linkedin.com/in/swastikdan",
-  logo: "https://sdhwfcnr1k.ufs.sh/f/fce7dbfd-81b5-49b9-93c3-73b673beb23b-ephj4t.svg",
+  logo: "https://ik.imagekit.io/swastikdan/tr:q-50,pr-true/Portfolio/logo.svg",
   profile_image:
-    "https://sdhwfcnr1k.ufs.sh/f/aOW1BUeuSRYLf0EDXkgwe5MLrO3Wv1bHSgXVuUJh6p0sQtcY",
+    "https://ik.imagekit.io/swastikdan/tr:q-50,pr-true/Portfolio/profile.jpg",
 };
 
 export const home = {
@@ -35,7 +35,7 @@ export const projects = [
   {
     title: "Film Fanatic",
     poster_image:
-      "https://sdhwfcnr1k.ufs.sh/f/aOW1BUeuSRYLQs389kPdi3hWIUgDs8B4k2AaSXwLt9zrGFvP",
+      "https://ik.imagekit.io/swastikdan/tr:q-50,pr-true/Portfolio/film-fanatic.webp",
     description:
       "A modern and sleek web application built with Next.js for exploring movies and TV shows, powered by the TMDB API. Dive into the world of cinema with a seamless and visually stunning experience.",
     summary:
@@ -47,7 +47,7 @@ export const projects = [
   {
     title: "Stayz",
     poster_image:
-      "https://utfs.io/f/2605b1e4-6be0-4225-b39b-d86792c26b9f-1tchmp.webp",
+      "https://ik.imagekit.io/swastikdan/tr:q-50,pr-true/Portfolio/stayz.webp",
     description:
       "A travel app that allows users to search for hotels, save favorite destinations, and enjoy seamless browsing, profile management, and date selection, enhancing the user experience with a responsive interface using Tailwind CSS, implementing a search feature with Next.js, user authentication with Stripe and MongoDB.",
     summary:
@@ -69,43 +69,49 @@ export const skills = [
     title: "React",
     link: "https://reactjs.org/",
     icon_url:
-      "https://sdhwfcnr1k.ufs.sh/f/aOW1BUeuSRYL81JHRtEnMhyxqmHQuZjD15vkgTeEJ0rpBXFA",
+      "https://ik.imagekit.io/swastikdan/tr:q-10,pr-true/Portfolio/react.svg",
   },
   {
     title: "Next.js",
     link: "https://nextjs.org/",
     icon_url:
-      "https://sdhwfcnr1k.ufs.sh/f/aOW1BUeuSRYLKPOGSXf32hpVdaZc934XNx8MCuOTEI7nJiFj",
+      "https://ik.imagekit.io/swastikdan/tr:q-10,pr-true/Portfolio/nextjs.svg",
   },
   {
     title: "TypeScript",
     link: "https://www.typescriptlang.org/",
     icon_url:
-      "https://sdhwfcnr1k.ufs.sh/f/aOW1BUeuSRYLu8N3sP9QRCmvoZ8WUkxBbEgI4jLp7AGF0XYK",
+      "https://ik.imagekit.io/swastikdan/tr:q-10,pr-true/Portfolio/typescript.svg",
   },
   {
     title: "Node.js",
     link: "https://nodejs.org/en/",
     icon_url:
-      "https://sdhwfcnr1k.ufs.sh/f/aOW1BUeuSRYLEMM3CS40QLIWR35sAt8oG4lJxnBNhFPuyXZV",
+      "https://ik.imagekit.io/swastikdan/tr:q-10,pr-true/Portfolio/nodejs.svg",
   },
   {
     title: "Java",
     link: "https://www.java.com/",
     icon_url:
-      "https://sdhwfcnr1k.ufs.sh/f/aOW1BUeuSRYL81JHRtEnMhyxqmHQuZjD15vkgTeEJ0rpBXFA",
+      "https://ik.imagekit.io/swastikdan/tr:q-10,pr-true/Portfolio/java.svg",
+  },
+  {
+    title: "Salesforce",
+    link: "https://www.salesforce.com/",
+    icon_url:
+      "https://ik.imagekit.io/swastikdan/tr:q-10,pr-true/Portfolio/salesforce.svg",
   },
   {
     title: "Postgres",
     link: "https://www.postgresql.org/",
     icon_url:
-      "https://sdhwfcnr1k.ufs.sh/f/aOW1BUeuSRYLBmOM07cKc3rCYXP0IhOGvBw6uiWaUopl7Zje",
+      "https://ik.imagekit.io/swastikdan/tr:q-10,pr-true/Portfolio/postgresql.svg",
   },
   {
     title: "Astro",
     link: "https://astro.build/",
     icon_url:
-      "https://sdhwfcnr1k.ufs.sh/f/aOW1BUeuSRYLlUU9GBy5xRZs4kGLSX3wh8PECA0grKMQabO2",
+      "https://ik.imagekit.io/swastikdan/tr:q-10,pr-true/Portfolio/astro.svg",
   },
 ];
 
@@ -119,3 +125,6 @@ export const socials = [
     url: "https://linkedin.com/in/swastikdan",
   },
 ];
+
+export const cloudkaptan_logo =
+  "https://ik.imagekit.io/swastikdan/tr:q-10,pr-true/Portfolio/cloudkaptan.svg";
