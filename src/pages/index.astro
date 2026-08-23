@@ -1,8 +1,16 @@
 ---
 import { Image } from "astro:assets";
 
+import {
+	cloudkaptan_logo,
+	home,
+	projects,
+	site,
+	skills,
+	socials,
+	studies,
+} from "@/consts";
 import Layout from "@/layouts/Layout.astro";
-import { site, home, projects, skills, studies, socials , cloudkaptan_logo } from "@/consts";
 import { dateRange } from "@/lib";
 ---
 
@@ -41,10 +49,9 @@ import { dateRange } from "@/lib";
                 learning something new.
             </p>
             <p class="mt-3 text-sm text-neutral-300 font-light">
-                Currently, I am working on Cloudkaptan with a focus on
-                Salesforce, Apex, and providing comprehensive support to our
-                users. I am passionate about crafting elegant and functional web
-                apps that enhance user experience and deliver real-world value.
+                These days I’m at CloudKaptan, working with Salesforce, Apex,
+                and LWC. Off the clock I build web apps that load fast and feel
+                good to use.
             </p>
             <ul class="mt-5 flex flex-col gap-y-3">
                 <li class="flex items-center gap-x-2.5">
@@ -131,8 +138,7 @@ import { dateRange } from "@/lib";
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label={`View live demo of ${project.title}`}
-                                    class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl shadow-2xs  focus:outline-hidden  disabled:opacity-50 disabled:pointer-events-none bg-neutral-900 border-neutral-700 text-white hover:bg-neutral-800 focus:bg-neutral-800"
-                                    href={project.live_url}
+                                    class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl shadow-2xs focus:outline-hidden disabled:opacity-50 disabled:pointer-events-none bg-neutral-900 border-neutral-700 text-white hover:bg-neutral-800 focus:bg-neutral-800"
                                 >
                                     Demo
                                 </a>
@@ -141,8 +147,7 @@ import { dateRange } from "@/lib";
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label={`View repository of ${project.title} on GitHub`}
-                                    class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-xl shadow-2xs  focus:outline-hidden  disabled:opacity-50 disabled:pointer-events-none bg-neutral-900 border-neutral-700 text-white hover:bg-neutral-800 focus:bg-neutral-800"
-                                    href={project.github_url}
+                                    class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-xl shadow-2xs focus:outline-hidden disabled:opacity-50 disabled:pointer-events-none bg-neutral-900 border-neutral-700 text-white hover:bg-neutral-800 focus:bg-neutral-800"
                                 >
                                     GitHub
                                 </a>
@@ -189,7 +194,7 @@ import { dateRange } from "@/lib";
                     class="relative group-last:after:hidden after:absolute after:top-8 after:bottom-2 after:start-3 after:w-px after:-translate-x-[0.5px] after:bg-neutral-700"
                 >
                     <div
-                        class="relative z-10 hight-6 w-full flex justify-center items-center"
+                        class="relative z-10 h-6 w-full flex justify-center items-center"
                     >
                         <Image
                             src={cloudkaptan_logo}
@@ -209,18 +214,28 @@ import { dateRange } from "@/lib";
                         Software Engineer at CloudKaptan
                     </p>
                     <p class="mt-1 text-sm text-neutral-400">
-                        Working at the intersection of AI, Data, and Cloud to
-                        build scalable solutions and elevate customer
-                        experience.
+                        I build backend features on Salesforce, Apex, and LWC,
+                        mostly across Sales Cloud and Cloud Lending. The work
+                        ranges from new integrations to untangling legacy flows
+                        that nobody wants to touch.
                     </p>
                     <ul class="list-disc ms-6 mt-3 space-y-1.5">
                         <li class="ps-1 text-sm text-neutral-400">
-                            Building and scaling solutions with Salesforce and
-                            Apex.
+                            Integrated 4+ external platforms, including Plaid,
+                            Aurora, Enerflo, and DocuSign, into
+                            business-critical lending workflows.
                         </li>
                         <li class="ps-1 text-sm text-neutral-400">
-                            Supporting users and keeping things clear with
-                            helpful documentation.
+                            Built and maintain APIs for internal services and
+                            third-party integrations.
+                        </li>
+                        <li class="ps-1 text-sm text-neutral-400">
+                            Helping move file storage from Salesforce to AWS so
+                            it scales without the platform limits.
+                        </li>
+                        <li class="ps-1 text-sm text-neutral-400">
+                            Write technical documentation and support users
+                            through product and process changes.
                         </li>
                     </ul>
                 </div>
@@ -257,8 +272,8 @@ import { dateRange } from "@/lib";
                 Let’s Connect
             </h2>
             <p class="text-sm text-neutral-200 pb-3">
-                If you want to get in touch with me about something or just to
-                say hi, reach out on social media or send me an email.
+                Want to talk about work, or just say hi? Reach out on social
+                media or send me an email.
             </p>
             <ul class="flex flex-wrap gap-2 text-sm">
                 {
